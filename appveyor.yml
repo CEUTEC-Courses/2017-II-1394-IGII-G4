@@ -1,0 +1,13 @@
+version: 1.0.{build}
+max_jobs: 1
+build:
+  verbosity: minimal
+after_build:
+- cmd: 7z a Sistema_TCS.zip TCS\bin\Debug\*.*
+artifacts:
+- path: Sistema_TCS.zip
+  name: Sistema TCS
+deploy:
+- provider: Environment
+  name: G4 Pruebas
+  artifact : Sistema TCS
