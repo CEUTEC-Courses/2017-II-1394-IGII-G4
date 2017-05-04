@@ -6,8 +6,8 @@ after_build:
 - cmd: 7z a Sistema_TCS.zip TCS\bin\Debug\*.*
 artifacts:
 - path: Sistema_TCS.zip
-  name: Sistema TCS
+  name: Sistema_TCS
 deploy:
 - provider: Environment
   name: G4 Pruebas
-  artifact : Sistema TCS
+  artifact : Sistema_TCS
