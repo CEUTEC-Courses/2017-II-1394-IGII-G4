@@ -15,11 +15,14 @@ namespace TCS
         public Form1()
         {
             InitializeComponent();
+            this.MinimumSize = this.MaximumSize = this.Size;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }
