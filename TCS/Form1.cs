@@ -18,7 +18,7 @@ namespace TCS
             this.MinimumSize = this.MaximumSize = this.Size;
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
