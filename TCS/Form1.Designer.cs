@@ -38,70 +38,76 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(9, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 212);
+            this.button1.Size = new System.Drawing.Size(159, 172);
             this.button1.TabIndex = 0;
             this.button1.Text = "Control de Viajes";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 230);
+            this.button2.Location = new System.Drawing.Point(9, 187);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 212);
+            this.button2.Size = new System.Drawing.Size(159, 172);
             this.button2.TabIndex = 1;
             this.button2.Text = "Rutas";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(230, 12);
+            this.button3.Location = new System.Drawing.Point(172, 10);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 212);
+            this.button3.Size = new System.Drawing.Size(159, 172);
             this.button3.TabIndex = 2;
             this.button3.Text = "Control de Usuarios";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(230, 230);
+            this.button4.Location = new System.Drawing.Point(172, 187);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(212, 212);
+            this.button4.Size = new System.Drawing.Size(159, 172);
             this.button4.TabIndex = 3;
             this.button4.Text = "Mantenimiento";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(448, 12);
+            this.button5.Location = new System.Drawing.Point(336, 10);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(212, 212);
+            this.button5.Size = new System.Drawing.Size(159, 172);
             this.button5.TabIndex = 4;
             this.button5.Text = "Flota";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(448, 230);
+            this.button6.Location = new System.Drawing.Point(336, 187);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(212, 212);
+            this.button6.Size = new System.Drawing.Size(159, 172);
             this.button6.TabIndex = 5;
-            this.button6.Text = "ALV";
+            this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 454);
+            this.ClientSize = new System.Drawing.Size(506, 369);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
