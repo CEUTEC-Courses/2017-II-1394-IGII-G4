@@ -28,95 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnViajes = new System.Windows.Forms.Button();
-            this.btnRutas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnMantenimiento = new System.Windows.Forms.Button();
-            this.btnFlota = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnFlota = new System.Windows.Forms.Button();
+            this.btnMantenimiento = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnRutas = new System.Windows.Forms.Button();
+            this.btnViajes = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnViajes
+            // panel1
             // 
-            this.btnViajes.Location = new System.Drawing.Point(9, 10);
-            this.btnViajes.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViajes.Name = "btnViajes";
-            this.btnViajes.Size = new System.Drawing.Size(159, 172);
-            this.btnViajes.TabIndex = 0;
-            this.btnViajes.Text = "Control de Viajes";
-            this.btnViajes.UseVisualStyleBackColor = true;
-            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(623, 139);
+            this.panel1.TabIndex = 6;
             // 
-            // btnRutas
+            // pictureBox1
             // 
-            this.btnRutas.Location = new System.Drawing.Point(9, 187);
-            this.btnRutas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRutas.Name = "btnRutas";
-            this.btnRutas.Size = new System.Drawing.Size(159, 172);
-            this.btnRutas.TabIndex = 1;
-            this.btnRutas.Text = "Rutas";
-            this.btnRutas.UseVisualStyleBackColor = true;
-            this.btnRutas.Click += new System.EventHandler(this.btnRutas_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Location = new System.Drawing.Point(172, 10);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(159, 172);
-            this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Control de Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnMantenimiento
-            // 
-            this.btnMantenimiento.Location = new System.Drawing.Point(172, 187);
-            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMantenimiento.Name = "btnMantenimiento";
-            this.btnMantenimiento.Size = new System.Drawing.Size(159, 172);
-            this.btnMantenimiento.TabIndex = 3;
-            this.btnMantenimiento.Text = "Mantenimiento";
-            this.btnMantenimiento.UseVisualStyleBackColor = true;
-            this.btnMantenimiento.Click += new System.EventHandler(this.btnMantenimiento_Click);
-            // 
-            // btnFlota
-            // 
-            this.btnFlota.Location = new System.Drawing.Point(336, 10);
-            this.btnFlota.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFlota.Name = "btnFlota";
-            this.btnFlota.Size = new System.Drawing.Size(159, 172);
-            this.btnFlota.TabIndex = 4;
-            this.btnFlota.Text = "Flota";
-            this.btnFlota.UseVisualStyleBackColor = true;
-            this.btnFlota.Click += new System.EventHandler(this.btnFlota_Click);
+            this.pictureBox1.BackgroundImage = global::TCS.Properties.Resources.TCS_Logo_Oficial;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 139);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(336, 187);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.BackgroundImage = global::TCS.Properties.Resources.primary_logout;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Location = new System.Drawing.Point(434, 346);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(159, 172);
+            this.btnSalir.Size = new System.Drawing.Size(150, 140);
             this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnFlota
+            // 
+            this.btnFlota.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFlota.BackgroundImage = global::TCS.Properties.Resources.frontal_truck_318_61636;
+            this.btnFlota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFlota.Location = new System.Drawing.Point(434, 166);
+            this.btnFlota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFlota.Name = "btnFlota";
+            this.btnFlota.Size = new System.Drawing.Size(150, 140);
+            this.btnFlota.TabIndex = 4;
+            this.btnFlota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFlota.UseVisualStyleBackColor = false;
+            this.btnFlota.Click += new System.EventHandler(this.btnFlota_Click);
+            // 
+            // btnMantenimiento
+            // 
+            this.btnMantenimiento.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMantenimiento.BackgroundImage = global::TCS.Properties.Resources._027_512;
+            this.btnMantenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMantenimiento.Location = new System.Drawing.Point(231, 346);
+            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMantenimiento.Name = "btnMantenimiento";
+            this.btnMantenimiento.Size = new System.Drawing.Size(150, 140);
+            this.btnMantenimiento.TabIndex = 3;
+            this.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMantenimiento.UseVisualStyleBackColor = false;
+            this.btnMantenimiento.Click += new System.EventHandler(this.btnMantenimiento_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUsuarios.BackgroundImage = global::TCS.Properties.Resources.abstract_user_flat_3;
+            this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUsuarios.Location = new System.Drawing.Point(231, 166);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(150, 140);
+            this.btnUsuarios.TabIndex = 2;
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnRutas
+            // 
+            this.btnRutas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRutas.BackgroundImage = global::TCS.Properties.Resources.raphael_road_map_flat_rounded_square_white_on_black_512x512;
+            this.btnRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRutas.Location = new System.Drawing.Point(29, 346);
+            this.btnRutas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRutas.Name = "btnRutas";
+            this.btnRutas.Size = new System.Drawing.Size(150, 140);
+            this.btnRutas.TabIndex = 1;
+            this.btnRutas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRutas.UseVisualStyleBackColor = false;
+            this.btnRutas.Click += new System.EventHandler(this.btnRutas_Click);
+            // 
+            // btnViajes
+            // 
+            this.btnViajes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnViajes.BackgroundImage = global::TCS.Properties.Resources.road_ahead_straight_perspective;
+            this.btnViajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViajes.Location = new System.Drawing.Point(29, 166);
+            this.btnViajes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViajes.Name = "btnViajes";
+            this.btnViajes.Size = new System.Drawing.Size(150, 140);
+            this.btnViajes.TabIndex = 0;
+            this.btnViajes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnViajes.UseVisualStyleBackColor = false;
+            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
             // Form_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 369);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(623, 519);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnFlota);
             this.Controls.Add(this.btnMantenimiento);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnRutas);
             this.Controls.Add(this.btnViajes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Principal";
             this.Text = "Sistema TCS";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,6 +180,8 @@
         private System.Windows.Forms.Button btnMantenimiento;
         private System.Windows.Forms.Button btnFlota;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

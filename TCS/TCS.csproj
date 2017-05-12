@@ -67,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,6 +81,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frontal-truck_318-61636.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-user-flat-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road-ahead-straight-perspective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raphael_road-map_flat-rounded-square-white-on-black_512x512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\027-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\primary-logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TCS Logo Oficial.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
