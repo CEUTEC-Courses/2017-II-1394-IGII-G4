@@ -10,6 +10,8 @@ after_build:
 artifacts:
 - path: Sistema_TCS.zip
   name: Sistema_TCS
+services:
+  - mysql
 deploy:
 - provider: Environment
   name: G4 Pruebas
