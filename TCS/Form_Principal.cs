@@ -57,5 +57,10 @@ namespace TCS
         {
 
         }
+
+        private void Form_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
