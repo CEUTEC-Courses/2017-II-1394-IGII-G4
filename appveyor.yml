@@ -15,4 +15,4 @@ deploy:
   name: G4 Pruebas
   artifact : Sistema_TCS
 after_deploy:
-- cmd: '"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe -u root -p12345678 < C:\appveyor\projects\2017-ii-1394-igii-g4\applications\Sistema_TCS\TCS\bin\Debug\TCS_DB.sql"'
+- cmd: '"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p12345678'
