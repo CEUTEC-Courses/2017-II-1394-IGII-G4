@@ -111,7 +111,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)/TCS_DB.sql" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(SolutionDir)/TCS_DB.sql" "$(TargetDir)"
+copy /Y "$(SolutionDir)/MySQLSetup.bat" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
