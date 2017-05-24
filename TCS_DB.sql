@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `tcs_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `tcs_db`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tcs_db
@@ -280,6 +278,7 @@ CREATE TABLE `viaje` (
   `FechaPartida` date DEFAULT NULL,
   `FechaRegreso` date DEFAULT NULL,
   `Descripcion` varchar(100) DEFAULT NULL,
+  `Orden` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`VaijeID`),
   KEY `FKVaijeUnidad` (`UnidadID`),
   KEY `FKVaijeRuta` (`RutaID`),
@@ -390,4 +389,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-11 18:12:37
+-- Dump completed on 2017-05-23 23:16:13
