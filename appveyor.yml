@@ -3,6 +3,8 @@ branches:
   only:
   - master
 max_jobs: 1
+before_build:
+  - nuget restore
 build:
   verbosity: minimal
 after_build:
@@ -10,7 +12,11 @@ after_build:
 artifacts:
 - path: Sistema_TCS.zip
   name: Sistema_TCS
+services:
+  - mysql
 deploy:
 - provider: Environment
   name: G4 Pruebas
   artifact : Sistema_TCS
+after_deploy:
+- cmd: MySQLSetup.bat
