@@ -79,7 +79,10 @@ CREATE TABLE `persona` (
   `PersonaID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `NombrePersona` varchar(100) DEFAULT NULL,
   `Licencia` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`PersonaID`)
+  `UsuarioID` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`PersonaID`),
+  KEY `FKPersonaUsuario` (`UsuarioID`),
+  CONSTRAINT `FKPersonaUsuario` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`UsuarioID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -245,6 +248,31 @@ LOCK TABLES `unidad` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuario` (
+  `UsuarioID` int(10) unsigned NOT NULL,
+  `Usuario` varchar(20) NOT NULL,
+  `Contrasena` varchar(20) NOT NULL,
+  `Privilegio` varchar(20) NOT NULL,
+  PRIMARY KEY (`UsuarioID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Temporary view structure for view `vflotaunidad`
 --
 
@@ -389,4 +417,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-23 23:16:13
+-- Dump completed on 2017-05-29 23:16:58
