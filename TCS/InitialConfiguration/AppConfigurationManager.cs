@@ -16,7 +16,7 @@ namespace TCS.InitialConfiguration
         private String database;
         private String username;
         private String password;
-        private SqlConnection mysqlConnection;
+        private SqlConnection sqlConnection;
         public String Host
         {
             get
@@ -100,7 +100,7 @@ namespace TCS.InitialConfiguration
 
         public bool checkConfiguration()
         {
-            return checkMySQLConnection();
+            return checkSQLConnection();
         }
 
         public bool commmitConfiguration()
@@ -121,15 +121,15 @@ namespace TCS.InitialConfiguration
             
         }
 
-        private bool checkMySQLConnection()
+        private bool checkSQLConnection()
         {
             bool status = false;
-            mysqlConnection = new SqlConnection(String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database));
+            sqlConnection = new SqlConnection(String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database));
             try
             { 
-                mysqlConnection.Open();
+                sqlConnection.Open();
                 status = true;
-                mysqlConnection.Close();
+                sqlConnection.Close();
             }
             catch(SqlException myex)
             {
@@ -167,7 +167,7 @@ namespace TCS.InitialConfiguration
             if (String.IsNullOrEmpty(host) || String.IsNullOrEmpty(database) || String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
                 return false;
 
-            return true;
+            return checkSQLConnection();
             
         }
 
