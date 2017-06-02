@@ -133,7 +133,7 @@ namespace TCS.InitialConfiguration
             }
             catch(SqlException myex)
             {
-                System.Windows.Forms.MessageBox.Show("Error de conexion a base de datos MySQL. Mensaje : " + myex.Message);
+                System.Windows.Forms.MessageBox.Show("Error de conexion a base de datos SQL. Mensaje : " + myex.Message);
                 status = false;
             }
             catch(Exception ex)
