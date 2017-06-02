@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
-using MySql.Data.Entity;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace TCS.InitialConfiguration
 {
@@ -17,7 +16,7 @@ namespace TCS.InitialConfiguration
         private String database;
         private String username;
         private String password;
-        private MySqlConnection mysqlConnection;
+        private SqlConnection mysqlConnection;
         public String Host
         {
             get
@@ -125,14 +124,14 @@ namespace TCS.InitialConfiguration
         private bool checkMySQLConnection()
         {
             bool status = false;
-            mysqlConnection = new MySqlConnection(String.Format("server={0};uid={1};password={2};database={3}", Host, Username, Password, Database));
+            mysqlConnection = new SqlConnection(String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database));
             try
             { 
                 mysqlConnection.Open();
                 status = true;
                 mysqlConnection.Close();
             }
-            catch(MySqlException myex)
+            catch(SqlException myex)
             {
                 System.Windows.Forms.MessageBox.Show("Error de conexion a base de datos MySQL. Mensaje : " + myex.Message);
                 status = false;

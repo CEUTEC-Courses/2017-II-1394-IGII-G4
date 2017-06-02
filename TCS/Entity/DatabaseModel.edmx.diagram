@@ -16,6 +16,18 @@
         <EntityTypeShape EntityType="DatabaseModel.unidad" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="DatabaseModel.usuario" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="DatabaseModel.viaje" Width="1.5" PointX="4.75" PointY="6.75" />
+        <AssociationConnector Association="DatabaseModel.FK_flotaunidad_flota" />
+        <AssociationConnector Association="DatabaseModel.FK_flotaunidad_unidad" />
+        <AssociationConnector Association="DatabaseModel.FK_persona_usuario" />
+        <AssociationConnector Association="DatabaseModel.FK_personarol_persona" />
+        <AssociationConnector Association="DatabaseModel.FK_viaje_persona" />
+        <AssociationConnector Association="DatabaseModel.FK_personarol_rol" />
+        <AssociationConnector Association="DatabaseModel.FK_rutapunto_ruta" />
+        <AssociationConnector Association="DatabaseModel.FK_viaje_ruta" />
+        <AssociationConnector Association="DatabaseModel.FK_viaje_unidad" />
+        <EntityTypeShape EntityType="DatabaseModel.privilegio" Width="1.5" PointX="4.5" PointY="11.125" />
+        <EntityTypeShape EntityType="DatabaseModel.sysdiagram" Width="1.5" PointX="7.375" PointY="7.75" />
+        <AssociationConnector Association="DatabaseModel.FK_usuario_privilegio" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
