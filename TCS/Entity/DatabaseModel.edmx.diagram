@@ -4,7 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b6a37849cd3a4e52b7268f3b2ac8eaa9" Name="Diagram1" />
+      <Diagram DiagramId="b6a37849cd3a4e52b7268f3b2ac8eaa9" Name="Diagram1" >
+        <EntityTypeShape EntityType="DatabaseModel.flota" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.flotaunidad" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.persona" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.personarol" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.punto" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.rol" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.ruta" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.rutapunto" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DatabaseModel.unidad" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DatabaseModel.usuario" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.viaje" Width="1.5" PointX="4.75" PointY="6.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
