@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a535c5e93433488a831091555043cbe1" Name="Diagram1">
+        <EntityTypeShape EntityType="tcs_dbModel.flota" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.flotaunidad" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.persona" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.personarol" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.privilegio" Width="1.5" PointX="1.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.punto" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.rol" Width="1.5" PointX="3.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.ruta" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.rutapunto" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.unidad" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.usuario" Width="1.5" PointX="1.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tcs_dbModel.viaje" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="tcs_dbModel.FK_flotaunidad_flota" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_flotaunidad_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_persona_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_personarol_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_viaje_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_personarol_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_usuario_privilegio" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_rutapunto_ruta" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_viaje_ruta" ManuallyRouted="false" />
+        <AssociationConnector Association="tcs_dbModel.FK_viaje_unidad" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
