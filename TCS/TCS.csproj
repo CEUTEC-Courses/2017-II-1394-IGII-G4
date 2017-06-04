@@ -149,6 +149,12 @@
     <Compile Include="InitialConfiguration\DatabaseConfigurationWizard.Designer.cs">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFlota\Form_MenuFlota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFlota\Form_MenuFlota.Designer.cs">
+      <DependentUpon>Form_MenuFlota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutas\Punto.cs" />
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFlota\Form_MenuFlota.resx">
+      <DependentUpon>Form_MenuFlota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
