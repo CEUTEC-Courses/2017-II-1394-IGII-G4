@@ -76,65 +76,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\DatabaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\DatabaseModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\DatabaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Entity\flota.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\flotaunidad.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\persona.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\personarol.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\privilegio.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\punto.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\rol.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ruta.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\rutapunto.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    <Compile Include="Entity\TCS_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TCS_Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    <Compile Include="Entity\TCS_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\sysdiagram.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    <Compile Include="Entity\TCS_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TCS_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entity\unidad.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\usuario.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\viaje.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
@@ -183,12 +174,12 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Entity\DatabaseModel.edmx">
+    <EntityDeploy Include="Entity\TCS_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>TCS_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entity\DatabaseModel.edmx.diagram">
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    <None Include="Entity\TCS_Model.edmx.diagram">
+      <DependentUpon>TCS_Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -228,15 +219,15 @@
     <None Include="Resources\TCS Logo Oficial.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entity\DatabaseModel.Context.tt">
+    <Content Include="Entity\TCS_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Context.cs</LastGenOutput>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <DependentUpon>TCS_Model.edmx</DependentUpon>
+      <LastGenOutput>TCS_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entity\DatabaseModel.tt">
+    <Content Include="Entity\TCS_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseModel.cs</LastGenOutput>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <DependentUpon>TCS_Model.edmx</DependentUpon>
+      <LastGenOutput>TCS_Model.cs</LastGenOutput>
     </Content>
     <Content Include="tcs logo t.png.ico" />
   </ItemGroup>
@@ -255,6 +246,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(SolutionDir)/tcs_db.bak" "$(TargetDir)"</PostBuildEvent>
