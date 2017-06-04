@@ -7,24 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCS.Entity
+namespace TCS
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class viaje
+    public partial class personarol
     {
-        public int ViajeID { get; set; }
-        public Nullable<int> UnidadID { get; set; }
-        public Nullable<int> RutaID { get; set; }
+        public int PersonaRol1 { get; set; }
         public Nullable<int> PersonaID { get; set; }
-        public Nullable<System.DateTime> FechaPartida { get; set; }
-        public Nullable<System.DateTime> FechaRegreso { get; set; }
-        public string Descripcion { get; set; }
-        public string Orden { get; set; }
+        public Nullable<int> RolID { get; set; }
     
         public virtual persona persona { get; set; }
-        public virtual ruta ruta { get; set; }
-        public virtual unidad unidad { get; set; }
+        public virtual rol rol { get; set; }
     }
 }

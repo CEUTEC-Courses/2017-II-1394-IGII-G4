@@ -7,26 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCS.Entity
+namespace TCS
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ruta
+    public partial class flota
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ruta()
+        public flota()
         {
-            this.rutapunto = new HashSet<rutapunto>();
-            this.viaje = new HashSet<viaje>();
+            this.flotaunidad = new HashSet<flotaunidad>();
         }
     
-        public int RutaID { get; set; }
-        public string NombreRuta { get; set; }
+        public int FlotaID { get; set; }
+        public string Empresa { get; set; }
+        public string Dueno { get; set; }
+        public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<rutapunto> rutapunto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<viaje> viaje { get; set; }
+        public virtual ICollection<flotaunidad> flotaunidad { get; set; }
     }
 }

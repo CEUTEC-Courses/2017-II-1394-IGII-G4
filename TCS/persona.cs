@@ -7,25 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCS.Entity
+namespace TCS
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ruta
+    public partial class persona
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ruta()
+        public persona()
         {
-            this.rutapunto = new HashSet<rutapunto>();
+            this.personarol = new HashSet<personarol>();
             this.viaje = new HashSet<viaje>();
         }
     
-        public int RutaID { get; set; }
-        public string NombreRuta { get; set; }
+        public int PersonaID { get; set; }
+        public string NombrePersona { get; set; }
+        public string Licencia { get; set; }
+        public Nullable<int> UsuarioID { get; set; }
     
+        public virtual usuario usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<rutapunto> rutapunto { get; set; }
+        public virtual ICollection<personarol> personarol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<viaje> viaje { get; set; }
     }

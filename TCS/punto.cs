@@ -7,23 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCS.Entity
+namespace TCS
 {
     using System;
     using System.Collections.Generic;
     
     public partial class punto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public punto()
-        {
-            this.rutapunto = new HashSet<rutapunto>();
-        }
-    
         public int PuntoID { get; set; }
         public string NombrePunto { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<rutapunto> rutapunto { get; set; }
     }
 }

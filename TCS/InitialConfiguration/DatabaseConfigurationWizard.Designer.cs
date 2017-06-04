@@ -43,9 +43,10 @@
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(20, 135);
+            this.testBtn.Location = new System.Drawing.Point(13, 168);
+            this.testBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(75, 23);
+            this.testBtn.Size = new System.Drawing.Size(100, 28);
             this.testBtn.TabIndex = 0;
             this.testBtn.Text = "Probar";
             this.testBtn.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // saveBtn
             // 
             this.saveBtn.Enabled = false;
-            this.saveBtn.Location = new System.Drawing.Point(168, 135);
+            this.saveBtn.Location = new System.Drawing.Point(195, 168);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 1;
             this.saveBtn.Text = "Guardar";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(249, 135);
+            this.cancelBtn.Location = new System.Drawing.Point(303, 168);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(100, 28);
             this.cancelBtn.TabIndex = 2;
             this.cancelBtn.Text = "Cancelar";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -75,76 +78,85 @@
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(122, 18);
+            this.txtServer.Location = new System.Drawing.Point(163, 22);
+            this.txtServer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(157, 20);
+            this.txtServer.Size = new System.Drawing.Size(240, 22);
             this.txtServer.TabIndex = 3;
             // 
             // txtDB
             // 
-            this.txtDB.Location = new System.Drawing.Point(122, 44);
+            this.txtDB.Location = new System.Drawing.Point(163, 54);
+            this.txtDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDB.Name = "txtDB";
-            this.txtDB.Size = new System.Drawing.Size(157, 20);
+            this.txtDB.Size = new System.Drawing.Size(240, 22);
             this.txtDB.TabIndex = 4;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(122, 70);
+            this.txtUser.Location = new System.Drawing.Point(163, 86);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(157, 20);
+            this.txtUser.Size = new System.Drawing.Size(240, 22);
             this.txtUser.TabIndex = 5;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(122, 96);
+            this.txtPassword.Location = new System.Drawing.Point(163, 118);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(157, 20);
+            this.txtPassword.Size = new System.Drawing.Size(240, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 21);
+            this.label1.Location = new System.Drawing.Point(23, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Host o IP Servidor :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 47);
+            this.label2.Location = new System.Drawing.Point(44, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Base de Datos :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 73);
+            this.label3.Location = new System.Drawing.Point(85, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Usuario : ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 99);
+            this.label4.Location = new System.Drawing.Point(72, 122);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Password : ";
             // 
             // DatabaseConfigurationWizard
             // 
             this.AcceptButton = this.testBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(337, 170);
+            this.ClientSize = new System.Drawing.Size(449, 209);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -156,6 +168,7 @@
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.testBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DatabaseConfigurationWizard";
