@@ -88,6 +88,12 @@
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Viajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Viajes.Designer.cs">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialConfiguration\AppConfigurationManager.cs" />
     <Compile Include="InitialConfiguration\DatabaseConfigurationWizard.cs">
       <SubType>Form</SubType>
@@ -103,6 +109,9 @@
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Viajes.resx">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
