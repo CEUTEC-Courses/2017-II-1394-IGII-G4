@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCS.Rutas;
 
 namespace TCS
 {
@@ -30,7 +31,8 @@ namespace TCS
 
         private void btnRutas_Click(object sender, EventArgs e)
         {
-
+            Form_Rutas formRutas = new Form_Rutas();
+            formRutas.ShowDialog();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
