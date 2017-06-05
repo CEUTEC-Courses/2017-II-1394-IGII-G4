@@ -52,6 +52,8 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnAgregarPuntos = new System.Windows.Forms.Button();
             this.btnBorrarPuntos = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNombrePunto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -268,6 +270,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtNombrePunto);
+            this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.btnBorrarPuntos);
             this.groupBox5.Controls.Add(this.btnAgregarPuntos);
             this.groupBox5.Location = new System.Drawing.Point(14, 12);
@@ -279,7 +283,7 @@
             // 
             // btnAgregarPuntos
             // 
-            this.btnAgregarPuntos.Location = new System.Drawing.Point(91, 36);
+            this.btnAgregarPuntos.Location = new System.Drawing.Point(174, 55);
             this.btnAgregarPuntos.Name = "btnAgregarPuntos";
             this.btnAgregarPuntos.Size = new System.Drawing.Size(81, 23);
             this.btnAgregarPuntos.TabIndex = 0;
@@ -289,13 +293,29 @@
             // 
             // btnBorrarPuntos
             // 
-            this.btnBorrarPuntos.Location = new System.Drawing.Point(178, 36);
+            this.btnBorrarPuntos.Location = new System.Drawing.Point(91, 55);
             this.btnBorrarPuntos.Name = "btnBorrarPuntos";
-            this.btnBorrarPuntos.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrarPuntos.Size = new System.Drawing.Size(81, 23);
             this.btnBorrarPuntos.TabIndex = 1;
             this.btnBorrarPuntos.Text = "Borrar";
             this.btnBorrarPuntos.UseVisualStyleBackColor = true;
             this.btnBorrarPuntos.Click += new System.EventHandler(this.btnBorrarPuntos_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Nombre : ";
+            // 
+            // txtNombrePunto
+            // 
+            this.txtNombrePunto.Location = new System.Drawing.Point(90, 26);
+            this.txtNombrePunto.Name = "txtNombrePunto";
+            this.txtNombrePunto.Size = new System.Drawing.Size(165, 20);
+            this.txtNombrePunto.TabIndex = 3;
             // 
             // Form_Rutas
             // 
@@ -318,6 +338,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -348,5 +369,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnBorrarPuntos;
         private System.Windows.Forms.Button btnAgregarPuntos;
+        private System.Windows.Forms.TextBox txtNombrePunto;
+        private System.Windows.Forms.Label label7;
     }
 }
