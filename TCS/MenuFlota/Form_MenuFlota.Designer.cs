@@ -49,15 +49,16 @@
             this.AbrirFormularioUnidad.TabIndex = 1;
             this.AbrirFormularioUnidad.Text = "Unidad";
             this.AbrirFormularioUnidad.UseVisualStyleBackColor = true;
+            this.AbrirFormularioUnidad.Click += new System.EventHandler(this.AbrirFormularioUnidad_Click);
             // 
-            // MenuFlota
+            // Form_MenuFlota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 258);
             this.Controls.Add(this.AbrirFormularioUnidad);
             this.Controls.Add(this.AbrirFormularioFlota);
-            this.Name = "MenuFlota";
+            this.Name = "Form_MenuFlota";
             this.Text = "MenuFlota";
             this.Load += new System.EventHandler(this.MenuFlota_Load);
             this.ResumeLayout(false);
