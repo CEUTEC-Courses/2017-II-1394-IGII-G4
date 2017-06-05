@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TCS.MenuFlota;
+using TCS.Rutas;
 
 namespace TCS
 {
@@ -31,7 +31,8 @@ namespace TCS
 
         private void btnRutas_Click(object sender, EventArgs e)
         {
-
+            Form_Rutas formRutas = new Form_Rutas();
+            formRutas.ShowDialog();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -46,10 +47,7 @@ namespace TCS
 
         private void btnFlota_Click(object sender, EventArgs e)
         {
-            Form_MenuFlota AbrirFormuarioMenuFlota = new Form_MenuFlota();
-            AbrirFormuarioMenuFlota.Show();
-            //Form_Principal ocultarFormularioPrincipal = new Form_Principal();
-            this.Hide();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -63,11 +61,6 @@ namespace TCS
         }
 
         private void Form_Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
