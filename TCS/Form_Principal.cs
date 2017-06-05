@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCS.Rutas;
+using TCS.MenuFlota;
 
 namespace TCS
 {
@@ -47,7 +48,8 @@ namespace TCS
 
         private void btnFlota_Click(object sender, EventArgs e)
         {
-
+            Form_MenuFlota menuFlota = new Form_MenuFlota();
+            menuFlota.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
