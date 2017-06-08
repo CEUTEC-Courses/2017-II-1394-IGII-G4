@@ -38,8 +38,8 @@ namespace TCS
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            UsuariosForm uf = new UsuariosForm();
-            uf.Show();
+            MenuUsuario mu = new MenuUsuario();
+            mu.Show();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)

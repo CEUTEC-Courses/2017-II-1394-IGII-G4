@@ -158,6 +158,12 @@
     <Compile Include="MenuFlota\Unidad\FormularioUnidad.Designer.cs">
       <DependentUpon>FormularioUnidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUsuario.Designer.cs">
+      <DependentUpon>MenuUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutas\Form_Rutas.cs">
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFlota\Unidad\FormularioUnidad.resx">
       <DependentUpon>FormularioUnidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUsuario.resx">
+      <DependentUpon>MenuUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -256,6 +265,11 @@
       <DependentUpon>TCS_Model.edmx</DependentUpon>
       <LastGenOutput>TCS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1496969268_add_user.ico" />
+    <None Include="Resources\1496969351_add_user.png" />
+    <None Include="Resources\1496969469_remove_user.png" />
+    <None Include="Resources\1496969692_checked_user.png" />
+    <None Include="Resources\1496969740_group2.png" />
     <Content Include="tcs logo t.png.ico" />
   </ItemGroup>
   <ItemGroup>
