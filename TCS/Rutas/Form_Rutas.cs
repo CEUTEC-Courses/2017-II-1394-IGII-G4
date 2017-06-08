@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCS.Entity;
+using TCS.InitialConfiguration;
 
 namespace TCS.Rutas
 {
@@ -20,7 +22,22 @@ namespace TCS.Rutas
 
         private void btnAgregarPuntos_Click(object sender, EventArgs e)
         {
-
+            using (var context = new TCS_Entities())
+            {
+                try
+                {
+                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                    context.Database.Connection.Open();
+                    var nuevoPunto = context.punto.Add(new punto { NombrePunto = txtNombrePunto.Text });
+                    context.SaveChanges();
+                    txtNombrePunto.Clear();
+                    MessageBox.Show("Punto agregado exitosamente!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al crear punto. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnBorrarPuntos_Click(object sender, EventArgs e)
@@ -30,12 +47,24 @@ namespace TCS.Rutas
 
         private void btnSeleccionarPuntoOrigenNuevaRuta_Click(object sender, EventArgs e)
         {
-
+            Form_Puntos formPuntos = new Form_Puntos();
+            var resultado = formPuntos.ShowDialog();
+            if(resultado == DialogResult.OK)
+            {
+                if(formPuntos.NombreRutaSeleccionada != null)
+                    btnSeleccionarPuntoOrigenNuevaRuta.Text = formPuntos.NombreRutaSeleccionada;
+            }
         }
 
         private void btnSeleccionarPuntoDestinoRutaNueva_Click(object sender, EventArgs e)
         {
-
+            Form_Puntos formPuntos = new Form_Puntos();
+            var resultado = formPuntos.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                if (formPuntos.NombreRutaSeleccionada != null)
+                    btnSeleccionarPuntoDestinoRutaNueva.Text = formPuntos.NombreRutaSeleccionada;
+            }
         }
 
         private void btnAgregarRuta_Click(object sender, EventArgs e)

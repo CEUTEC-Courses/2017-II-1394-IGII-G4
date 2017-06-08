@@ -138,7 +138,7 @@ namespace TCS.InitialConfiguration
             { 
                 sqlConnection.Open();
                 status = true;
-                sqlconnectionstring = sqlConnection.ConnectionString;
+                sqlconnectionstring = String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database);
                 sqlConnection.Close();
             }
             catch(SqlException myex)
