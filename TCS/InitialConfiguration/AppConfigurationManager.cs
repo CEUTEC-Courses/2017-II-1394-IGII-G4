@@ -17,6 +17,15 @@ namespace TCS.InitialConfiguration
         private String username;
         private String password;
         private SqlConnection sqlConnection;
+        private String sqlconnectionstring;
+
+        public String SQLConnectionString
+        {
+            get
+            {
+                return sqlconnectionstring;
+            }
+        }
         public String Host
         {
             get
@@ -129,6 +138,7 @@ namespace TCS.InitialConfiguration
             { 
                 sqlConnection.Open();
                 status = true;
+                sqlconnectionstring = String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database);
                 sqlConnection.Close();
             }
             catch(SqlException myex)
