@@ -133,12 +133,6 @@
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viajes\Form_Viajes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Viajes\Form_Viajes.Designer.cs">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
-    </Compile>
     <Compile Include="InitialConfiguration\AppConfigurationManager.cs" />
     <Compile Include="InitialConfiguration\DatabaseConfigurationWizard.cs">
       <SubType>Form</SubType>
@@ -164,11 +158,14 @@
     <Compile Include="Rutas\Ruta.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="Viajes\Form_Viajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viajes\Form_Viajes.Designer.cs">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Viajes\Form_Viajes.resx">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
@@ -189,6 +186,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Viajes\Form_Viajes.resx">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
