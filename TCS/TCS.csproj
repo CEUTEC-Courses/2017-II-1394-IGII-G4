@@ -76,57 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\flota.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\flotaunidad.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\persona.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\personarol.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\privilegio.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\punto.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\rol.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\ruta.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\rutapunto.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TCS_Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TCS_Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TCS_Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TCS_Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TCS_Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\unidad.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\usuario.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\viaje.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,13 +168,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Entity\TCS_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TCS_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Entity\TCS_Model.edmx.diagram">
-      <DependentUpon>TCS_Model.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -264,16 +206,6 @@
     <None Include="Resources\TCS Logo Oficial.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entity\TCS_Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TCS_Model.edmx</DependentUpon>
-      <LastGenOutput>TCS_Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entity\TCS_Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TCS_Model.edmx</DependentUpon>
-      <LastGenOutput>TCS_Model.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\1496969268_add_user.ico" />
     <None Include="Resources\1496969351_add_user.png" />
     <None Include="Resources\1496969469_remove_user.png" />
@@ -296,7 +228,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entity\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(SolutionDir)/TCS_DB.sql" "$(TargetDir)"
