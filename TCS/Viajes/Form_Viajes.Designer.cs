@@ -45,10 +45,12 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.lbBusqueda = new System.Windows.Forms.ListBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbBusqueda = new System.Windows.Forms.ListBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gbViajes.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -190,6 +192,7 @@
             // 
             this.gbViajes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbViajes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbViajes.Controls.Add(this.btnNuevo);
             this.gbViajes.Controls.Add(this.btnGuardar);
             this.gbViajes.Controls.Add(this.txtNumero);
             this.gbViajes.Controls.Add(this.label9);
@@ -253,6 +256,7 @@
             // 
             this.gbBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbBusqueda.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbBusqueda.Controls.Add(this.btnEliminar);
             this.gbBusqueda.Controls.Add(this.lbBusqueda);
             this.gbBusqueda.Controls.Add(this.btnEditar);
             this.gbBusqueda.Controls.Add(this.txtBusqueda);
@@ -266,6 +270,16 @@
             this.gbBusqueda.TabIndex = 18;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda";
+            // 
+            // lbBusqueda
+            // 
+            this.lbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBusqueda.FormattingEnabled = true;
+            this.lbBusqueda.ItemHeight = 18;
+            this.lbBusqueda.Location = new System.Drawing.Point(102, 68);
+            this.lbBusqueda.Name = "lbBusqueda";
+            this.lbBusqueda.Size = new System.Drawing.Size(176, 202);
+            this.lbBusqueda.TabIndex = 18;
             // 
             // btnEditar
             // 
@@ -301,15 +315,31 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Busqueda:";
             // 
-            // lbBusqueda
+            // btnNuevo
             // 
-            this.lbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBusqueda.FormattingEnabled = true;
-            this.lbBusqueda.ItemHeight = 18;
-            this.lbBusqueda.Location = new System.Drawing.Point(102, 68);
-            this.lbBusqueda.Name = "lbBusqueda";
-            this.lbBusqueda.Size = new System.Drawing.Size(176, 202);
-            this.lbBusqueda.TabIndex = 18;
+            this.btnNuevo.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNuevo.Location = new System.Drawing.Point(113, 381);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(101, 37);
+            this.btnNuevo.TabIndex = 18;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Coral;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminar.Location = new System.Drawing.Point(113, 381);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(101, 37);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // Form_Viajes
             // 
@@ -352,5 +382,7 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbBusqueda;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
