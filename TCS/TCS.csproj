@@ -133,12 +133,6 @@
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viajes\Form_Viajes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Viajes\Form_Viajes.Designer.cs">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
-    </Compile>
     <Compile Include="InitialConfiguration\AppConfigurationManager.cs" />
     <Compile Include="InitialConfiguration\DatabaseConfigurationWizard.cs">
       <SubType>Form</SubType>
@@ -160,27 +154,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rutas\Form_Puntos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rutas\Form_Puntos.Designer.cs">
-      <DependentUpon>Form_Puntos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rutas\Form_Rutas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rutas\Form_Rutas.Designer.cs">
-      <DependentUpon>Form_Rutas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rutas\Punto.cs" />
     <Compile Include="Rutas\Ruta.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="Viajes\Form_Viajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viajes\Form_Viajes.Designer.cs">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Viajes\Form_Viajes.resx">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
@@ -201,11 +186,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Rutas\Form_Puntos.resx">
-      <DependentUpon>Form_Puntos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rutas\Form_Rutas.resx">
-      <DependentUpon>Form_Rutas.cs</DependentUpon>
+    <EmbeddedResource Include="Viajes\Form_Viajes.resx">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
@@ -285,8 +267,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)/TCS_DB.sql" "$(TargetDir)"
-copy /Y "$(SolutionDir)/TCS_DB.bak" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(SolutionDir)/tcs_db.bak" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
