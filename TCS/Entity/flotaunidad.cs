@@ -12,13 +12,13 @@ namespace TCS.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class rutapunto
+    public partial class flotaunidad
     {
-        public int RutaPuntoID { get; set; }
-        public Nullable<int> RutaID { get; set; }
-        public Nullable<int> PuntoID { get; set; }
+        public int FlotaUnidadID { get; set; }
+        public Nullable<int> FlotaID { get; set; }
+        public Nullable<int> UnidadID { get; set; }
     
-        public virtual punto punto { get; set; }
-        public virtual ruta ruta { get; set; }
+        public virtual flota flota { get; set; }
+        public virtual unidad unidad { get; set; }
     }
 }
