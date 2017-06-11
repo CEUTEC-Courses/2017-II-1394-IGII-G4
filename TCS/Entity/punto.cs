@@ -18,6 +18,8 @@ namespace TCS.Entity
         public punto()
         {
             this.rutapunto = new HashSet<rutapunto>();
+            this.FKRutaDestino = new HashSet<ruta>();
+            this.FKRutaOrigen = new HashSet<ruta>();
         }
     
         public int PuntoID { get; set; }
@@ -25,5 +27,9 @@ namespace TCS.Entity
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rutapunto> rutapunto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ruta> FKRutaDestino { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ruta> FKRutaOrigen { get; set; }
     }
 }

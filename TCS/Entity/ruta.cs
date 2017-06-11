@@ -23,10 +23,14 @@ namespace TCS.Entity
     
         public int RutaID { get; set; }
         public string NombreRuta { get; set; }
+        public Nullable<int> IDPuntoOrigen { get; set; }
+        public Nullable<int> IDPuntoDestino { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rutapunto> rutapunto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<viaje> viaje { get; set; }
+        public virtual punto punto { get; set; }
+        public virtual punto punto1 { get; set; }
     }
 }
