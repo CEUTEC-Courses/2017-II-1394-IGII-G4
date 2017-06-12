@@ -295,5 +295,13 @@ namespace TCS.Rutas
         {
 
         }
+
+        private void btnBorrarRuta_Click(object sender, EventArgs e)
+        {
+            if(listaRutasDisponibles.SelectedItem != null && listaRutasDisponibles.Items.Count > 0)
+            {
+
+            }
+        }
     }
 }

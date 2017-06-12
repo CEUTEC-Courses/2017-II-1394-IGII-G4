@@ -93,6 +93,7 @@
             this.btnBorrarRuta.TabIndex = 9;
             this.btnBorrarRuta.Text = "Borrar";
             this.btnBorrarRuta.UseVisualStyleBackColor = false;
+            this.btnBorrarRuta.Click += new System.EventHandler(this.btnBorrarRuta_Click);
             // 
             // btnAgregarRuta
             // 
