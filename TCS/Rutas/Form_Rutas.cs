@@ -19,23 +19,56 @@ namespace TCS.Rutas
         {
             InitializeComponent();
             this.MaximumSize = this.MinimumSize = this.Size;
+            comboFiltro.SelectedIndex = 0;
             RefreshRutas();
         }
 
         private void RefreshRutas()
         {
-            listaRutasDisponibles.DataSource = null;
-            listaRutasDisponibles.Items.Clear();
-            using (var context = new TCS_Entities())
+            try
             {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                listaRutasDisponibles.DisplayMember = "NombreRuta";
-                listaRutasDisponibles.ValueMember = "NombreRuta";
-                listaRutasDisponibles.DataSource = context.ruta.ToList();             
-            }
+                listaRutasDisponibles.DataSource = null;
+                listaRutasDisponibles.Items.Clear();
+                using (var context = new TCS_Entities())
+                {
+                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                    context.Database.Connection.Open();
+                    listaRutasDisponibles.DisplayMember = "NombreRuta";
+                    listaRutasDisponibles.ValueMember = "NombreRuta";
+                    if (txtBusqueda.TextLength > 0)
+                    {
+                        switch (comboFiltro.SelectedIndex)
+                        {
+                            case 0:
+                                listaRutasDisponibles.DataSource = context.ruta.Where(r => r.NombreRuta.Contains(txtBusqueda.Text)).ToList();
+                                break;
+                            case 1:
+                                var puntoOrigen = context.punto.Where(p => p.NombrePunto.Contains(txtBusqueda.Text)).FirstOrDefault();
+                                if(puntoOrigen != null)
+                                    listaRutasDisponibles.DataSource = context.ruta.Where(r => r.IDPuntoOrigen == puntoOrigen.PuntoID).ToList();
+                                break;
+                            case 2:
+                                var puntoDestino = context.punto.Where(p => p.NombrePunto.Contains(txtBusqueda.Text)).FirstOrDefault();
+                                if(puntoDestino != null)
+                                    listaRutasDisponibles.DataSource = context.ruta.Where(r => r.IDPuntoDestino == puntoDestino.PuntoID).ToList();
+                                break;
+                            default:
+                                listaRutasDisponibles.DataSource = context.ruta.Where(r => r.NombreRuta.Contains(txtBusqueda.Text)).ToList();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        listaRutasDisponibles.DataSource = context.ruta.ToList();
+                    }
+                }
 
-            RefreshPuntosRuta();
+                RefreshPuntosRuta();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al actualizar lista de rutas. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RefreshPuntosRuta()
@@ -52,6 +85,11 @@ namespace TCS.Rutas
                     listaPuntosRuta.ValueMember = "NombrePunto";
                     listaPuntosRuta.DataSource = context.punto.Join(context.rutapunto, p => p.PuntoID, rp => rp.PuntoID, (p, rp) => new { NombrePunto = p.NombrePunto, RutaID = rp.RutaID }).Where(rp => rp.RutaID == ((ruta)listaRutasDisponibles.SelectedItem).RutaID).ToList();
                 }
+            }
+            else
+            {
+                listaPuntosRuta.DataSource = null;
+                listaPuntosRuta.Items.Clear();
             }
         }
 
@@ -163,8 +201,8 @@ namespace TCS.Rutas
                 MessageBox.Show("Debe ingresar un nombre a la ruta nueva.");
             }
         }
-
-        private void btnLimpiarAgregarRuta_Click(object sender, EventArgs e)
+        
+        private void limpiarInfoRuta()
         {
             btnSeleccionarPuntoDestinoRutaNueva.Text = "Seleccionar Punto";
             btnSeleccionarPuntoOrigenNuevaRuta.Text = "Seleccionar Punto";
@@ -174,6 +212,11 @@ namespace TCS.Rutas
             listaPuntosRuta.Items.Clear();
             btnModificarRuta.Enabled = false;
             btnAgregarRuta.Enabled = true;
+        }
+
+        private void btnLimpiarAgregarRuta_Click(object sender, EventArgs e)
+        {
+            limpiarInfoRuta();
         }
 
         private void btnModificarRuta_Click(object sender, EventArgs e)
@@ -256,12 +299,17 @@ namespace TCS.Rutas
             }
         }
 
-        private void btnLimpiarPunto_Click(object sender, EventArgs e)
+        private void limpiarInfoPunto()
         {
             txtNombrePunto.Clear();
             btnModificarPunto.Enabled = false;
             btnAgregarPuntos.Enabled = true;
             listaPuntosRuta.SelectedIndex = -1;
+        }
+
+        private void btnLimpiarPunto_Click(object sender, EventArgs e)
+        {
+            limpiarInfoPunto();
         }
 
         private void btnAgregarPuntoARuta_Click(object sender, EventArgs e)
@@ -298,10 +346,32 @@ namespace TCS.Rutas
 
         private void btnBorrarRuta_Click(object sender, EventArgs e)
         {
-            if(listaRutasDisponibles.SelectedItem != null && listaRutasDisponibles.Items.Count > 0)
+            if (listaRutasDisponibles.SelectedItem != null && listaRutasDisponibles.Items.Count > 0)
             {
-
+                using (var context = new TCS_Entities())
+                {
+                    try
+                    {
+                        context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                        context.Database.Connection.Open();
+                        var ruta = context.ruta.Where(r => r.RutaID == ((ruta)listaRutasDisponibles.SelectedItem).RutaID).First();
+                        context.ruta.Remove(ruta);
+                        context.SaveChanges();
+                        limpiarInfoRuta();
+                        limpiarInfoPunto();
+                        RefreshRutas();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al borrar ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            RefreshRutas();
         }
     }
 }
