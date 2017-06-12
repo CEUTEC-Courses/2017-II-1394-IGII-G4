@@ -32,11 +32,3 @@ BEGIN
 	select @RutaID = RutaID from deleted
 	delete FROM rutapunto WHERE RutaID = @RutaID
 END*/
-
-CREATE TRIGGER ON_RUTAPUNTO_DELETE ON rutapunto INSTEAD OF DELETE
-AS
-BEGIN
-	declare @RutaID int
-	select @RutaID = RutaID from deleted
-	delete FROM rutapunto WHERE RutaID = @RutaID
-END
