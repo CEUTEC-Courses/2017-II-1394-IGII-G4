@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
 using System.Data.SqlClient;
+using TCS.Entity;
 
 namespace TCS.InitialConfiguration
 {
@@ -140,6 +141,12 @@ namespace TCS.InitialConfiguration
                 status = true;
                 sqlconnectionstring = String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database);
                 sqlConnection.Close();
+                using (var context = new TCS_Entities())
+                {
+                    context.Database.Connection.ConnectionString = sqlconnectionstring;
+                    context.Database.Connection.Open();
+                }
+                    
             }
             catch(SqlException myex)
             {

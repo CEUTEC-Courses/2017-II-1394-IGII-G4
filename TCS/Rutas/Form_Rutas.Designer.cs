@@ -40,6 +40,8 @@
             this.btnModificarRuta = new System.Windows.Forms.Button();
             this.btnLimpiarAgregarRuta = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.listaRutasDisponibles = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAgregarPuntoARuta = new System.Windows.Forms.Button();
@@ -52,6 +54,8 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnModificarPunto = new System.Windows.Forms.Button();
             this.btnLimpiarPunto = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboFiltro = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -73,7 +77,7 @@
             this.groupBox1.Controls.Add(this.btnLimpiarAgregarRuta);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(14, 195);
+            this.groupBox1.Location = new System.Drawing.Point(14, 209);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(267, 184);
             this.groupBox1.TabIndex = 0;
@@ -93,6 +97,7 @@
             this.btnBorrarRuta.TabIndex = 9;
             this.btnBorrarRuta.Text = "Borrar";
             this.btnBorrarRuta.UseVisualStyleBackColor = false;
+            this.btnBorrarRuta.Click += new System.EventHandler(this.btnBorrarRuta_Click);
             // 
             // btnAgregarRuta
             // 
@@ -215,15 +220,39 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox3.Controls.Add(this.comboFiltro);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtBusqueda);
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.listaRutasDisponibles);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox3.Location = new System.Drawing.Point(287, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 366);
+            this.groupBox3.Size = new System.Drawing.Size(200, 380);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rutas";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(53, 330);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(141, 20);
+            this.txtBusqueda.TabIndex = 2;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(6, 333);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Buscar : ";
             // 
             // listaRutasDisponibles
             // 
@@ -231,7 +260,7 @@
             this.listaRutasDisponibles.FormattingEnabled = true;
             this.listaRutasDisponibles.Location = new System.Drawing.Point(7, 20);
             this.listaRutasDisponibles.Name = "listaRutasDisponibles";
-            this.listaRutasDisponibles.Size = new System.Drawing.Size(187, 329);
+            this.listaRutasDisponibles.Size = new System.Drawing.Size(187, 303);
             this.listaRutasDisponibles.TabIndex = 0;
             this.listaRutasDisponibles.SelectedIndexChanged += new System.EventHandler(this.listaRutasDisponibles_SelectedIndexChanged);
             // 
@@ -245,7 +274,7 @@
             this.groupBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox4.Location = new System.Drawing.Point(493, 13);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 365);
+            this.groupBox4.Size = new System.Drawing.Size(200, 380);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Puntos en Ruta Seleccionada";
@@ -256,7 +285,7 @@
             this.btnAgregarPuntoARuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPuntoARuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntoARuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregarPuntoARuta.Location = new System.Drawing.Point(28, 334);
+            this.btnAgregarPuntoARuta.Location = new System.Drawing.Point(28, 349);
             this.btnAgregarPuntoARuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPuntoARuta.Name = "btnAgregarPuntoARuta";
             this.btnAgregarPuntoARuta.Size = new System.Drawing.Size(81, 26);
@@ -271,7 +300,7 @@
             this.btnBorrarPuntoDeRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarPuntoDeRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarPuntoDeRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrarPuntoDeRuta.Location = new System.Drawing.Point(113, 334);
+            this.btnBorrarPuntoDeRuta.Location = new System.Drawing.Point(113, 349);
             this.btnBorrarPuntoDeRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarPuntoDeRuta.Name = "btnBorrarPuntoDeRuta";
             this.btnBorrarPuntoDeRuta.Size = new System.Drawing.Size(81, 26);
@@ -389,12 +418,36 @@
             this.btnLimpiarPunto.UseVisualStyleBackColor = false;
             this.btnLimpiarPunto.Click += new System.EventHandler(this.btnLimpiarPunto_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(9, 357);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Filtro : ";
+            // 
+            // comboFiltro
+            // 
+            this.comboFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboFiltro.FormattingEnabled = true;
+            this.comboFiltro.Items.AddRange(new object[] {
+            "Nombre de Ruta",
+            "Origen",
+            "Destino"});
+            this.comboFiltro.Location = new System.Drawing.Point(53, 353);
+            this.comboFiltro.Name = "comboFiltro";
+            this.comboFiltro.Size = new System.Drawing.Size(141, 21);
+            this.comboFiltro.TabIndex = 4;
+            // 
             // Form_Rutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(706, 390);
+            this.ClientSize = new System.Drawing.Size(706, 405);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -407,6 +460,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -440,5 +494,9 @@
         private System.Windows.Forms.Button btnLimpiarPunto;
         private System.Windows.Forms.Button btnAgregarPuntoARuta;
         private System.Windows.Forms.Button btnBorrarPuntoDeRuta;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboFiltro;
+        private System.Windows.Forms.Label label5;
     }
 }
