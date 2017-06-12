@@ -341,7 +341,36 @@ namespace TCS.Rutas
 
         private void btnBorrarPuntoDeRuta_Click(object sender, EventArgs e)
         {
-
+            if (listaPuntosRuta.SelectedItem != null)
+            {
+                using (var context = new TCS_Entities())
+                {
+                    try
+                    {
+                        context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                        context.Database.Connection.Open();
+                        dynamic puntoEnLista = listaPuntosRuta.SelectedItem;
+                        String nombrePunto = puntoEnLista.NombrePunto;
+                        var punto = context.punto.Where(p => p.NombrePunto == nombrePunto).FirstOrDefault();
+                        //Chequear si punto no es Origen o Destino
+                        if(punto.PuntoID != ((ruta)listaRutasDisponibles.SelectedItem).IDPuntoOrigen && punto.PuntoID != ((ruta)listaRutasDisponibles.SelectedItem).IDPuntoDestino)
+                        {
+                            var rutapunto = context.rutapunto.Where(rp => rp.PuntoID == punto.PuntoID).Where(rp => rp.RutaID == ((ruta)listaRutasDisponibles.SelectedItem).RutaID).First();
+                            context.rutapunto.Remove(rutapunto);
+                            context.SaveChanges();
+                            RefreshPuntosRuta();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede borrar un punto que es origen o destino de la ruta.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al borrar punto de ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnBorrarRuta_Click(object sender, EventArgs e)
