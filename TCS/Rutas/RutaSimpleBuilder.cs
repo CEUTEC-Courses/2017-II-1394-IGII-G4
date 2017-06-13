@@ -11,40 +11,36 @@ namespace TCS.Rutas
     public class RutaSimpleBuilder : RutaBuilder
     {
 
-        private Ruta _ruta;
+        private ruta _ruta;
 
-        public override void CrearRuta(string nombre, String origen, String destino)
+        public override bool crearRuta(string nombre, punto origen, punto destino)
         {
             using (var context = new TCS_Entities())
             {
                 context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 context.Database.Connection.Open();
-                var ruta = context.ruta.Add(new ruta { NombreRuta = nombre });
-                var puntoOrigen = context.punto.Add(new punto { NombrePunto = origen });
-                var puntoDestino = context.punto.Add(new punto { NombrePunto = destino });
-                var rutaOrigen = context.rutapunto.Add(new rutapunto { RutaID = ruta.RutaID, PuntoID = puntoOrigen.PuntoID });
-                var rutaDestino = context.rutapunto.Add(new rutapunto { RutaID = ruta.RutaID, PuntoID = puntoDestino.PuntoID });
-
-                _ruta = new Ruta(ruta.NombreRuta, puntoOrigen.NombrePunto, puntoDestino.NombrePunto);
+                var ruta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = origen.PuntoID, IDPuntoDestino = destino.PuntoID });
+                _ruta = ruta;
                 context.SaveChanges();
+                return true;
             }
         }
 
-        public override void AgregarPunto(string nombre)
+        public override bool crearRuta(string nombre, string nombreOrigen, string nombreDestino)
         {
             using (var context = new TCS_Entities())
             {
                 context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 context.Database.Connection.Open();
-                var ruta = context.ruta.Where(r => r.NombreRuta == _ruta.NombreRuta).FirstOrDefault<ruta>();
-                var nuevoPunto = context.punto.Add(new punto { NombrePunto = nombre });
-                var nuevoPuntoRuta = context.rutapunto.Add(new rutapunto { RutaID = ruta.RutaID, PuntoID = nuevoPunto.PuntoID });
-                _ruta.Puntos.Add(new Punto(nuevoPunto.NombrePunto));
+                var puntoOrigen = context.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault<punto>();
+                var PuntoDestino = context.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault<punto>();
+                var nuevaRuta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = PuntoDestino.PuntoID });
                 context.SaveChanges();
+                return true;
             }
         }
 
-        public override Ruta ObtenerRuta()
+        public override ruta obtenerRuta()
         {
             if (_ruta != null)
                 return _ruta;

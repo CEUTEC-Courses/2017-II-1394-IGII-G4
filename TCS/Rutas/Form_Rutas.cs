@@ -97,21 +97,19 @@ namespace TCS.Rutas
         {
             if (txtNombrePunto.Text.Length > 0)
             {
-                using (var context = new TCS_Entities())
+                try
                 {
-                    try
+                    PuntoSimpleBuilder puntoBuilder = new PuntoSimpleBuilder();
+                    if (puntoBuilder.crearPunto(txtNombrePunto.Text))
                     {
-                        context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                        context.Database.Connection.Open();
-                        var nuevoPunto = context.punto.Add(new punto { NombrePunto = txtNombrePunto.Text });
-                        context.SaveChanges();
                         txtNombrePunto.Clear();
                         MessageBox.Show("Punto agregado exitosamente!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtNombrePunto.Focus();
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al crear punto. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al crear punto. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -176,24 +174,19 @@ namespace TCS.Rutas
         {
             if (txtNombreRutaNueva.Text.Length > 0)
             {
-                using (var context = new TCS_Entities())
+                try
                 {
-                    try
+                    RutaSimpleBuilder rutaBuilder = new RutaSimpleBuilder();
+                    if (rutaBuilder.crearRuta(txtNombreRutaNueva.Text, btnSeleccionarPuntoOrigenNuevaRuta.Text, btnSeleccionarPuntoDestinoRutaNueva.Text)) ;
                     {
-                        context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                        context.Database.Connection.Open();
-                        var puntoOrigen = context.punto.Where(p => p.NombrePunto == btnSeleccionarPuntoOrigenNuevaRuta.Text).FirstOrDefault<punto>();
-                        var PuntoDestino = context.punto.Where(p => p.NombrePunto == btnSeleccionarPuntoDestinoRutaNueva.Text).FirstOrDefault<punto>();
-                        var nuevaRuta = context.ruta.Add(new ruta { NombreRuta = txtNombreRutaNueva.Text, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = PuntoDestino.PuntoID });
-                        context.SaveChanges();
                         txtNombreRutaNueva.Clear();
                         RefreshRutas();
                         MessageBox.Show("Ruta agregada exitosamente!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al crear ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al crear ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -320,15 +313,16 @@ namespace TCS.Rutas
             {
                 if (formPuntos.NombreRutaSeleccionada != null)
                 {
+                    RutaPuntoSimpleBuilder rutaPuntoBuilder = new RutaPuntoSimpleBuilder();
+                    
                     using (var context = new TCS_Entities())
                     {
                         try
                         {
                             context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                             context.Database.Connection.Open();
-                            var nuevaRutaPunto = context.rutapunto.Add(new rutapunto { RutaID = ((ruta)listaRutasDisponibles.SelectedItem).RutaID, PuntoID = context.punto.Where(p => p.NombrePunto == formPuntos.NombreRutaSeleccionada).FirstOrDefault().PuntoID });
-                            context.SaveChanges();
-                            RefreshPuntosRuta();
+                            if (rutaPuntoBuilder.crearRutaPunto(((ruta)listaRutasDisponibles.SelectedItem), context.punto.Where(p => p.NombrePunto == formPuntos.NombreRutaSeleccionada).FirstOrDefault()));
+                                RefreshPuntosRuta();
                         }
                         catch (Exception ex)
                         {
