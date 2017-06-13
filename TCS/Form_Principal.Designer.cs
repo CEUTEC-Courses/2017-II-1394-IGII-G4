@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnFlota = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,10 +54,20 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 113);
             this.panel1.TabIndex = 6;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(513, 105);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -65,7 +75,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(210, 113);
             this.pictureBox1.TabIndex = 0;
@@ -77,7 +87,7 @@
             this.btnSalir.BackgroundImage = global::TCS.Properties.Resources.primary_logout;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.Location = new System.Drawing.Point(335, 315);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(98, 98);
             this.btnSalir.TabIndex = 5;
@@ -91,7 +101,7 @@
             this.btnFlota.BackgroundImage = global::TCS.Properties.Resources.frontal_truck_318_61636;
             this.btnFlota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFlota.Location = new System.Drawing.Point(335, 169);
-            this.btnFlota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFlota.Margin = new System.Windows.Forms.Padding(2);
             this.btnFlota.Name = "btnFlota";
             this.btnFlota.Size = new System.Drawing.Size(98, 98);
             this.btnFlota.TabIndex = 4;
@@ -105,7 +115,7 @@
             this.btnMantenimiento.BackgroundImage = global::TCS.Properties.Resources._027_512;
             this.btnMantenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMantenimiento.Location = new System.Drawing.Point(182, 315);
-            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.btnMantenimiento.Name = "btnMantenimiento";
             this.btnMantenimiento.Size = new System.Drawing.Size(98, 98);
             this.btnMantenimiento.TabIndex = 3;
@@ -119,7 +129,7 @@
             this.btnUsuarios.BackgroundImage = global::TCS.Properties.Resources.abstract_user_flat_3;
             this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUsuarios.Location = new System.Drawing.Point(182, 169);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(98, 98);
             this.btnUsuarios.TabIndex = 2;
@@ -133,7 +143,7 @@
             this.btnRutas.BackgroundImage = global::TCS.Properties.Resources.raphael_road_map_flat_rounded_square_white_on_black_512x512;
             this.btnRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRutas.Location = new System.Drawing.Point(32, 315);
-            this.btnRutas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRutas.Margin = new System.Windows.Forms.Padding(2);
             this.btnRutas.Name = "btnRutas";
             this.btnRutas.Size = new System.Drawing.Size(98, 98);
             this.btnRutas.TabIndex = 1;
@@ -147,7 +157,7 @@
             this.btnViajes.BackgroundImage = global::TCS.Properties.Resources.road_ahead_straight_perspective;
             this.btnViajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnViajes.Location = new System.Drawing.Point(32, 169);
-            this.btnViajes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViajes.Margin = new System.Windows.Forms.Padding(2);
             this.btnViajes.Name = "btnViajes";
             this.btnViajes.Size = new System.Drawing.Size(98, 98);
             this.btnViajes.TabIndex = 0;
@@ -214,16 +224,6 @@
             this.label5.Size = new System.Drawing.Size(103, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Mantenimiento";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(513, 105);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form_Principal
             // 

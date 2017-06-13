@@ -28,6 +28,8 @@
         <AssociationConnector Association="TCS_DBModel.FK_rutapunto_ruta" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_ruta" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoOrigen" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -176,6 +176,15 @@
     <Compile Include="Rutas\Ruta.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="UsuarioClases\CRUDPrivilegio.cs" />
+    <Compile Include="UsuarioClases\CRUDUsuario.cs" />
+    <Compile Include="UsuarioClases\UsuarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioClases\UsuarioMenu.Designer.cs">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioClases\UsuarioModelo.cs" />
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rutas\Form_Rutas.resx">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioClases\UsuarioMenu.resx">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
