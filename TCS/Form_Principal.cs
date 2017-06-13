@@ -27,6 +27,8 @@ namespace TCS
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
+            Form_Viajes frmViajes = new Form_Viajes();
+            frmViajes.ShowDialog();
 
         }
 
