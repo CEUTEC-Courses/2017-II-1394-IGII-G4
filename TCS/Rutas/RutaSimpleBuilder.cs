@@ -10,33 +10,29 @@ namespace TCS.Rutas
 {
     public class RutaSimpleBuilder : RutaBuilder
     {
-
         private ruta _ruta;
 
         public override bool crearRuta(string nombre, punto origen, punto destino)
         {
-            using (var context = new TCS_Entities())
-            {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                var ruta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = origen.PuntoID, IDPuntoDestino = destino.PuntoID });
-                _ruta = ruta;
-                context.SaveChanges();
-                return true;
-            }
+            var ruta = AppConfigurationManager.Instance().DbContext.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = origen.PuntoID, IDPuntoDestino = destino.PuntoID });
+            _ruta = ruta;
+            AppConfigurationManager.Instance().DbContext.SaveChanges();
+            return true;
         }
 
         public override bool crearRuta(string nombre, string nombreOrigen, string nombreDestino)
         {
-            using (var context = new TCS_Entities())
+            var puntoOrigen = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault<punto>();
+            var puntoDestino = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault<punto>();
+            if (puntoOrigen != null && puntoDestino != null)
             {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                var puntoOrigen = context.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault<punto>();
-                var PuntoDestino = context.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault<punto>();
-                var nuevaRuta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = PuntoDestino.PuntoID });
-                context.SaveChanges();
+                var nuevaRuta = AppConfigurationManager.Instance().DbContext.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = puntoDestino.PuntoID });
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

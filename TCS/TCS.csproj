@@ -76,8 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
-    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\flota.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -85,6 +83,9 @@
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\persona.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonaHorario.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\personarol.cs">
@@ -111,6 +112,20 @@
     <Compile Include="Entity\sp_helpdiagrams_Result.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\sysdiagrams.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\unidad.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\usuario.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\viaje.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
+    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\TCS_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,15 +140,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TCS_Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\unidad.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\usuario.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\viaje.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
@@ -154,12 +160,15 @@
     <Compile Include="MenuFlota\Form_MenuFlota.Designer.cs">
       <DependentUpon>Form_MenuFlota.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFlota\Unidad\CRUDUnidad.cs" />
     <Compile Include="MenuFlota\Unidad\FormularioUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuFlota\Unidad\FormularioUnidad.Designer.cs">
       <DependentUpon>FormularioUnidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFlota\Unidad\MostrarUnidades.cs" />
+    <Compile Include="MenuFlota\Unidad\UnidadModelo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutas\Form_Puntos.cs">
@@ -176,6 +185,7 @@
     </Compile>
     <Compile Include="Rutas\PuntoBuilder.cs" />
     <Compile Include="Rutas\PuntoSimpleBuilder.cs" />
+    <Compile Include="Rutas\Ruta.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />

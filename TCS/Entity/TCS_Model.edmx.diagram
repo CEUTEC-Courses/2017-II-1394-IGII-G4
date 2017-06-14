@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="TCS_DBModel.privilegio" Width="1.5" PointX="1.5" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.punto" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.rol" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCS_DBModel.ruta" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.rutapunto" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.unidad" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.usuario" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
@@ -24,13 +23,16 @@
         <AssociationConnector Association="TCS_DBModel.FK_viaje_persona" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_personarol_rol" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_usuario_privilegio" ManuallyRouted="false" />
-        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" ManuallyRouted="false" />
-        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoOrigen" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_rutapunto_punto" ManuallyRouted="false" />
-        <AssociationConnector Association="TCS_DBModel.FK_rutapunto_ruta" ManuallyRouted="false" />
-        <AssociationConnector Association="TCS_DBModel.FK_viaje_ruta" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_unidad" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="TCS_DBModel.PersonaHorario" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TCS_DBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TCS_DBModel.ruta" Width="1.5" PointX="3" PointY="4.375" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoOrigen" />
+        <AssociationConnector Association="TCS_DBModel.FK_rutapunto_ruta" />
+        <AssociationConnector Association="TCS_DBModel.FK_viaje_ruta" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
