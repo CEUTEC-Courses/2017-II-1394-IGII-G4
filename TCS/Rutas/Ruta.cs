@@ -15,12 +15,8 @@ namespace TCS.Rutas
 
         public Ruta(int RutaID)
         {
-            using (var context = new TCS_Entities())
-            {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                _ruta = context.ruta.Where(r => r.RutaID == RutaID).FirstOrDefault();
-            }
+            if(AppConfigurationManager.Instance().DbContext != null)
+                _ruta = AppConfigurationManager.Instance().DbContext.ruta.Where(r => r.RutaID == RutaID).FirstOrDefault();  
         }
 
         public Ruta(String nombre, punto origen, punto destino)
@@ -42,15 +38,10 @@ namespace TCS.Rutas
 
         public bool modificarRuta(String nombre)
         {
-            if (_ruta != null)
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
             {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    _ruta.NombreRuta = nombre;
-                    context.SaveChanges();
-                }
+                _ruta.NombreRuta = nombre;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
             }
             else
@@ -60,17 +51,12 @@ namespace TCS.Rutas
 
         public bool modificarRuta(String nombre, punto puntoOrigen, punto puntoDestino)
         {
-            if (_ruta != null)
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
             {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    _ruta.NombreRuta = nombre;
-                    _ruta.IDPuntoDestino = puntoDestino.PuntoID;
-                    _ruta.IDPuntoOrigen = puntoOrigen.PuntoID;
-                    context.SaveChanges();
-                }
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = puntoDestino.PuntoID;
+                _ruta.IDPuntoOrigen = puntoOrigen.PuntoID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
             }
             else
@@ -79,17 +65,12 @@ namespace TCS.Rutas
 
         public bool modificarRuta(String nombre, int origenID, int destinoID)
         {
-            if (_ruta != null)
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
             {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    _ruta.NombreRuta = nombre;
-                    _ruta.IDPuntoDestino = destinoID;
-                    _ruta.IDPuntoOrigen = origenID;
-                    context.SaveChanges();
-                }
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = destinoID;
+                _ruta.IDPuntoOrigen = origenID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
             }
             else
@@ -98,17 +79,12 @@ namespace TCS.Rutas
 
         public bool modificarRuta(String nombre, String nombreOrigen, String nombreDestino)
         {
-            if(_ruta != null)
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
             {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    _ruta.NombreRuta = nombre;
-                    _ruta.IDPuntoDestino = context.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault().PuntoID;
-                    _ruta.IDPuntoOrigen = context.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault().PuntoID;
-                    context.SaveChanges();
-                }
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault().PuntoID;
+                _ruta.IDPuntoOrigen = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault().PuntoID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
             }
             else
