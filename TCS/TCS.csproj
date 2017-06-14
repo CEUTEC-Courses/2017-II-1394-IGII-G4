@@ -291,6 +291,7 @@
       <DependentUpon>TCS_Model.edmx</DependentUpon>
       <LastGenOutput>TCS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\back.png" />
     <Content Include="tcs logo t.png.ico" />
   </ItemGroup>
   <ItemGroup>

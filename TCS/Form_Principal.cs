@@ -14,6 +14,7 @@ namespace TCS
 {
     public partial class Form_Principal : Form
     {
+        UsuarioMenu um = new UsuarioMenu();
         public Form_Principal()
         {
             InitializeComponent();
@@ -38,8 +39,7 @@ namespace TCS
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            UsuarioMenu um = new UsuarioMenu();
-            um.Show();
+            um.ShowDialog();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
