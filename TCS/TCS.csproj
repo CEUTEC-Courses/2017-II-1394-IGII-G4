@@ -85,6 +85,9 @@
     <Compile Include="Entity\persona.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\PersonaHorario.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\personarol.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -101,6 +104,9 @@
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\rutapunto.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TCS_Model.Context.cs">

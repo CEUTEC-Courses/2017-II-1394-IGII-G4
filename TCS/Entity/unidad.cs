@@ -26,7 +26,7 @@ namespace TCS.Entity
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Estado { get; set; }
-        public Nullable<int> Anio { get; set; }
+        public Nullable<System.DateTime> Anio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<flotaunidad> flotaunidad { get; set; }

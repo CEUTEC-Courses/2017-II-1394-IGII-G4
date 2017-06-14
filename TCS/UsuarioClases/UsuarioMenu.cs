@@ -19,6 +19,7 @@ namespace TCS
         {
             InitializeComponent();
             agregarPrivilegioComboBox();
+            agregarUsuario();
         }
 
         private void guardarUsuarioBtn_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace TCS
             agregarU.agregarUsuario(nuevo);
 
             MessageBox.Show("Usuario creado correctamente");
+            mostrarUsuarioLV.Items.Clear();
+            agregarUsuario();
 
         }
 

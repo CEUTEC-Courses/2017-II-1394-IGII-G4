@@ -31,6 +31,14 @@
           <Property Name="Licencia" Type="varchar" MaxLength="20" />
           <Property Name="UsuarioID" Type="int" />
         </EntityType>
+        <EntityType Name="PersonaHorario">
+          <Key>
+            <PropertyRef Name="PersonaHorarioID" />
+          </Key>
+          <Property Name="PersonaHorarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonaID" Type="int" />
+          <Property Name="HorarioID" Type="int" />
+        </EntityType>
         <EntityType Name="personarol">
           <Key>
             <PropertyRef Name="PersonaRol" />
@@ -76,6 +84,16 @@
           <Property Name="RutaPuntoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RutaID" Type="int" />
           <Property Name="PuntoID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="unidad">
           <Key>
@@ -270,12 +288,14 @@
           <EntitySet Name="flota" EntityType="Self.flota" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="flotaunidad" EntityType="Self.flotaunidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonaHorario" EntityType="Self.PersonaHorario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="personarol" EntityType="Self.personarol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="privilegio" EntityType="Self.privilegio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="punto" EntityType="Self.punto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ruta" EntityType="Self.ruta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rutapunto" EntityType="Self.rutapunto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="unidad" EntityType="Self.unidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="viaje" EntityType="Self.viaje" Schema="dbo" store:Type="Tables" />
@@ -354,7 +374,7 @@
           <Property Name="FlotaID" Type="Int32" />
           <Property Name="UnidadID" Type="Int32" />
           <NavigationProperty Name="flota" Relationship="Self.FK_flotaunidad_flota" FromRole="flotaunidad" ToRole="flota" />
-          <NavigationProperty Name="unidad" Relationship="Self.FK_flotaunidad_unidad" FromRole="flotaunidad" ToRole="unidad" />
+          <NavigationProperty Name="unidad" Relationship="TCS_DBModel.FK_flotaunidad_unidad" FromRole="flotaunidad" ToRole="unidad" />
         </EntityType>
         <EntityType Name="persona">
           <Key>
@@ -364,9 +384,9 @@
           <Property Name="NombrePersona" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Licencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UsuarioID" Type="Int32" />
-          <NavigationProperty Name="usuario" Relationship="Self.FK_persona_usuario" FromRole="persona" ToRole="usuario" />
           <NavigationProperty Name="personarol" Relationship="Self.FK_personarol_persona" FromRole="persona" ToRole="personarol" />
           <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_persona" FromRole="persona" ToRole="viaje" />
+          <NavigationProperty Name="usuario" Relationship="TCS_DBModel.FK_persona_usuario" FromRole="persona" ToRole="usuario" />
         </EntityType>
         <EntityType Name="personarol">
           <Key>
@@ -377,14 +397,6 @@
           <Property Name="RolID" Type="Int32" />
           <NavigationProperty Name="persona" Relationship="Self.FK_personarol_persona" FromRole="personarol" ToRole="persona" />
           <NavigationProperty Name="rol" Relationship="Self.FK_personarol_rol" FromRole="personarol" ToRole="rol" />
-        </EntityType>
-        <EntityType Name="privilegio">
-          <Key>
-            <PropertyRef Name="IdPrivilegio" />
-          </Key>
-          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="usuario" Relationship="Self.FK_usuario_privilegio" FromRole="privilegio" ToRole="usuario" />
         </EntityType>
         <EntityType Name="punto">
           <Key>
@@ -427,30 +439,6 @@
           <NavigationProperty Name="punto" Relationship="Self.FK_rutapunto_punto" FromRole="rutapunto" ToRole="punto" />
           <NavigationProperty Name="ruta" Relationship="Self.FK_rutapunto_ruta" FromRole="rutapunto" ToRole="ruta" />
         </EntityType>
-        <EntityType Name="unidad">
-          <Key>
-            <PropertyRef Name="UnidadID" />
-          </Key>
-          <Property Name="UnidadID" Type="Int32" Nullable="false" />
-          <Property Name="Placa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Anio" Type="Int32" />
-          <NavigationProperty Name="flotaunidad" Relationship="Self.FK_flotaunidad_unidad" FromRole="unidad" ToRole="flotaunidad" />
-          <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_unidad" FromRole="unidad" ToRole="viaje" />
-        </EntityType>
-        <EntityType Name="usuario">
-          <Key>
-            <PropertyRef Name="UsuarioID" />
-          </Key>
-          <Property Name="UsuarioID" Type="Int32" Nullable="false" />
-          <Property Name="Usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="persona" Relationship="Self.FK_persona_usuario" FromRole="usuario" ToRole="persona" />
-          <NavigationProperty Name="privilegio" Relationship="Self.FK_usuario_privilegio" FromRole="usuario" ToRole="privilegio" />
-        </EntityType>
         <EntityType Name="viaje">
           <Key>
             <PropertyRef Name="ViajeID" />
@@ -465,7 +453,7 @@
           <Property Name="Orden" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="persona" Relationship="Self.FK_viaje_persona" FromRole="viaje" ToRole="persona" />
           <NavigationProperty Name="ruta" Relationship="Self.FK_viaje_ruta" FromRole="viaje" ToRole="ruta" />
-          <NavigationProperty Name="unidad" Relationship="Self.FK_viaje_unidad" FromRole="viaje" ToRole="unidad" />
+          <NavigationProperty Name="unidad" Relationship="TCS_DBModel.FK_viaje_unidad" FromRole="viaje" ToRole="unidad" />
         </EntityType>
         <Association Name="FK_flotaunidad_flota">
           <End Role="flota" Type="Self.flota" Multiplicity="0..1" />
@@ -476,30 +464,6 @@
             </Principal>
             <Dependent Role="flotaunidad">
               <PropertyRef Name="FlotaID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_flotaunidad_unidad">
-          <End Role="unidad" Type="Self.unidad" Multiplicity="0..1" />
-          <End Role="flotaunidad" Type="Self.flotaunidad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="unidad">
-              <PropertyRef Name="UnidadID" />
-            </Principal>
-            <Dependent Role="flotaunidad">
-              <PropertyRef Name="UnidadID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_persona_usuario">
-          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
-          <End Role="persona" Type="Self.persona" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuario">
-              <PropertyRef Name="UsuarioID" />
-            </Principal>
-            <Dependent Role="persona">
-              <PropertyRef Name="UsuarioID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -539,18 +503,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_usuario_privilegio">
-          <End Role="privilegio" Type="Self.privilegio" Multiplicity="1" />
-          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="privilegio">
-              <PropertyRef Name="IdPrivilegio" />
-            </Principal>
-            <Dependent Role="usuario">
-              <PropertyRef Name="IdPrivilegio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_rutapunto_punto">
           <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
           <End Role="rutapunto" Type="Self.rutapunto" Multiplicity="*" />
@@ -587,42 +539,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_viaje_unidad">
-          <End Role="unidad" Type="Self.unidad" Multiplicity="0..1" />
-          <End Role="viaje" Type="Self.viaje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="unidad">
-              <PropertyRef Name="UnidadID" />
-            </Principal>
-            <Dependent Role="viaje">
-              <PropertyRef Name="UnidadID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TCS_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="flota" EntityType="Self.flota" />
           <EntitySet Name="flotaunidad" EntityType="Self.flotaunidad" />
           <EntitySet Name="persona" EntityType="Self.persona" />
           <EntitySet Name="personarol" EntityType="Self.personarol" />
-          <EntitySet Name="privilegio" EntityType="Self.privilegio" />
           <EntitySet Name="punto" EntityType="Self.punto" />
           <EntitySet Name="rol" EntityType="Self.rol" />
           <EntitySet Name="ruta" EntityType="Self.ruta" />
           <EntitySet Name="rutapunto" EntityType="Self.rutapunto" />
-          <EntitySet Name="unidad" EntityType="Self.unidad" />
-          <EntitySet Name="usuario" EntityType="Self.usuario" />
           <EntitySet Name="viaje" EntityType="Self.viaje" />
           <AssociationSet Name="FK_flotaunidad_flota" Association="Self.FK_flotaunidad_flota">
             <End Role="flota" EntitySet="flota" />
             <End Role="flotaunidad" EntitySet="flotaunidad" />
-          </AssociationSet>
-          <AssociationSet Name="FK_flotaunidad_unidad" Association="Self.FK_flotaunidad_unidad">
-            <End Role="unidad" EntitySet="unidad" />
-            <End Role="flotaunidad" EntitySet="flotaunidad" />
-          </AssociationSet>
-          <AssociationSet Name="FK_persona_usuario" Association="Self.FK_persona_usuario">
-            <End Role="usuario" EntitySet="usuario" />
-            <End Role="persona" EntitySet="persona" />
           </AssociationSet>
           <AssociationSet Name="FK_personarol_persona" Association="Self.FK_personarol_persona">
             <End Role="persona" EntitySet="persona" />
@@ -636,10 +565,6 @@
             <End Role="rol" EntitySet="rol" />
             <End Role="personarol" EntitySet="personarol" />
           </AssociationSet>
-          <AssociationSet Name="FK_usuario_privilegio" Association="Self.FK_usuario_privilegio">
-            <End Role="privilegio" EntitySet="privilegio" />
-            <End Role="usuario" EntitySet="usuario" />
-          </AssociationSet>
           <AssociationSet Name="FK_rutapunto_punto" Association="Self.FK_rutapunto_punto">
             <End Role="punto" EntitySet="punto" />
             <End Role="rutapunto" EntitySet="rutapunto" />
@@ -652,10 +577,6 @@
             <End Role="ruta" EntitySet="ruta" />
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
-          <AssociationSet Name="FK_viaje_unidad" Association="Self.FK_viaje_unidad">
-            <End Role="unidad" EntitySet="unidad" />
-            <End Role="viaje" EntitySet="viaje" />
-          </AssociationSet>
           <AssociationSet Name="FK_ruta_puntoDestino" Association="TCS_DBModel.FK_ruta_puntoDestino">
             <End Role="punto" EntitySet="punto" />
             <End Role="ruta" EntitySet="ruta" />
@@ -663,6 +584,27 @@
           <AssociationSet Name="FK_ruta_puntoOrigen" Association="TCS_DBModel.FK_ruta_puntoOrigen">
             <End Role="punto" EntitySet="punto" />
             <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
+          <EntitySet Name="privilegio" EntityType="TCS_DBModel.privilegio" />
+          <EntitySet Name="usuario" EntityType="TCS_DBModel.usuario" />
+          <AssociationSet Name="FK_persona_usuario" Association="TCS_DBModel.FK_persona_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuario_privilegio" Association="TCS_DBModel.FK_usuario_privilegio">
+            <End Role="privilegio" EntitySet="privilegio" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <EntitySet Name="PersonaHorario" EntityType="TCS_DBModel.PersonaHorario" />
+          <EntitySet Name="sysdiagrams" EntityType="TCS_DBModel.sysdiagrams" />
+          <EntitySet Name="unidad" EntityType="TCS_DBModel.unidad" />
+          <AssociationSet Name="FK_flotaunidad_unidad" Association="TCS_DBModel.FK_flotaunidad_unidad">
+            <End Role="unidad" EntitySet="unidad" />
+            <End Role="flotaunidad" EntitySet="flotaunidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_viaje_unidad" Association="TCS_DBModel.FK_viaje_unidad">
+            <End Role="unidad" EntitySet="unidad" />
+            <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="FK_ruta_puntoDestino">
@@ -686,6 +628,104 @@
             </Principal>
             <Dependent Role="ruta">
               <PropertyRef Name="IDPuntoOrigen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="privilegio">
+          <Key>
+            <PropertyRef Name="IdPrivilegio" />
+          </Key>
+          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="usuario" Relationship="TCS_DBModel.FK_usuario_privilegio" FromRole="privilegio" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="UsuarioID" />
+          </Key>
+          <Property Name="UsuarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="TCS_DBModel.FK_persona_usuario" FromRole="usuario" ToRole="persona" />
+          <NavigationProperty Name="privilegio" Relationship="TCS_DBModel.FK_usuario_privilegio" FromRole="usuario" ToRole="privilegio" />
+        </EntityType>
+        <Association Name="FK_persona_usuario">
+          <End Type="TCS_DBModel.usuario" Role="usuario" Multiplicity="0..1" />
+          <End Type="TCS_DBModel.persona" Role="persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="UsuarioID" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="UsuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuario_privilegio">
+          <End Type="TCS_DBModel.privilegio" Role="privilegio" Multiplicity="1" />
+          <End Type="TCS_DBModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="privilegio">
+              <PropertyRef Name="IdPrivilegio" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="IdPrivilegio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PersonaHorario">
+          <Key>
+            <PropertyRef Name="PersonaHorarioID" />
+          </Key>
+          <Property Name="PersonaHorarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonaID" Type="Int32" />
+          <Property Name="HorarioID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="unidad">
+          <Key>
+            <PropertyRef Name="UnidadID" />
+          </Key>
+          <Property Name="UnidadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Placa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Anio" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="flotaunidad" Relationship="TCS_DBModel.FK_flotaunidad_unidad" FromRole="unidad" ToRole="flotaunidad" />
+          <NavigationProperty Name="viaje" Relationship="TCS_DBModel.FK_viaje_unidad" FromRole="unidad" ToRole="viaje" />
+        </EntityType>
+        <Association Name="FK_flotaunidad_unidad">
+          <End Type="TCS_DBModel.unidad" Role="unidad" Multiplicity="0..1" />
+          <End Type="TCS_DBModel.flotaunidad" Role="flotaunidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidad">
+              <PropertyRef Name="UnidadID" />
+            </Principal>
+            <Dependent Role="flotaunidad">
+              <PropertyRef Name="UnidadID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_viaje_unidad">
+          <End Type="TCS_DBModel.unidad" Role="unidad" Multiplicity="0..1" />
+          <End Type="TCS_DBModel.viaje" Role="viaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidad">
+              <PropertyRef Name="UnidadID" />
+            </Principal>
+            <Dependent Role="viaje">
+              <PropertyRef Name="UnidadID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -733,14 +773,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="privilegio">
-            <EntityTypeMapping TypeName="TCS_DBModel.privilegio">
-              <MappingFragment StoreEntitySet="privilegio">
-                <ScalarProperty Name="IdPrivilegio" ColumnName="IdPrivilegio" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="punto">
             <EntityTypeMapping TypeName="TCS_DBModel.punto">
               <MappingFragment StoreEntitySet="punto">
@@ -776,28 +808,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="unidad">
-            <EntityTypeMapping TypeName="TCS_DBModel.unidad">
-              <MappingFragment StoreEntitySet="unidad">
-                <ScalarProperty Name="UnidadID" ColumnName="UnidadID" />
-                <ScalarProperty Name="Placa" ColumnName="Placa" />
-                <ScalarProperty Name="Marca" ColumnName="Marca" />
-                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Anio" ColumnName="Anio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="usuario">
-            <EntityTypeMapping TypeName="TCS_DBModel.usuario">
-              <MappingFragment StoreEntitySet="usuario">
-                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
-                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
-                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
-                <ScalarProperty Name="IdPrivilegio" ColumnName="IdPrivilegio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="viaje">
             <EntityTypeMapping TypeName="TCS_DBModel.viaje">
               <MappingFragment StoreEntitySet="viaje">
@@ -809,6 +819,56 @@
                 <ScalarProperty Name="FechaRegreso" ColumnName="FechaRegreso" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Orden" ColumnName="Orden" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="privilegio">
+            <EntityTypeMapping TypeName="TCS_DBModel.privilegio">
+              <MappingFragment StoreEntitySet="privilegio">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdPrivilegio" ColumnName="IdPrivilegio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="TCS_DBModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="IdPrivilegio" ColumnName="IdPrivilegio" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonaHorario">
+            <EntityTypeMapping TypeName="TCS_DBModel.PersonaHorario">
+              <MappingFragment StoreEntitySet="PersonaHorario">
+                <ScalarProperty Name="HorarioID" ColumnName="HorarioID" />
+                <ScalarProperty Name="PersonaID" ColumnName="PersonaID" />
+                <ScalarProperty Name="PersonaHorarioID" ColumnName="PersonaHorarioID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TCS_DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unidad">
+            <EntityTypeMapping TypeName="TCS_DBModel.unidad">
+              <MappingFragment StoreEntitySet="unidad">
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="UnidadID" ColumnName="UnidadID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

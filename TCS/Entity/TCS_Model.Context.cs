@@ -29,13 +29,15 @@ namespace TCS.Entity
         public virtual DbSet<flotaunidad> flotaunidad { get; set; }
         public virtual DbSet<persona> persona { get; set; }
         public virtual DbSet<personarol> personarol { get; set; }
-        public virtual DbSet<privilegio> privilegio { get; set; }
         public virtual DbSet<punto> punto { get; set; }
         public virtual DbSet<rol> rol { get; set; }
         public virtual DbSet<ruta> ruta { get; set; }
         public virtual DbSet<rutapunto> rutapunto { get; set; }
-        public virtual DbSet<unidad> unidad { get; set; }
-        public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<viaje> viaje { get; set; }
+        public virtual DbSet<privilegio> privilegio { get; set; }
+        public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<PersonaHorario> PersonaHorario { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<unidad> unidad { get; set; }
     }
 }

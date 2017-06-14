@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.mostrarUsuarioLV = new System.Windows.Forms.ListView();
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,18 +139,30 @@
             // 
             // mostrarUsuarioLV
             // 
+            this.mostrarUsuarioLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.Nombre});
             this.mostrarUsuarioLV.Location = new System.Drawing.Point(258, 12);
             this.mostrarUsuarioLV.Name = "mostrarUsuarioLV";
-            this.mostrarUsuarioLV.Size = new System.Drawing.Size(181, 193);
+            this.mostrarUsuarioLV.Size = new System.Drawing.Size(148, 193);
             this.mostrarUsuarioLV.TabIndex = 2;
             this.mostrarUsuarioLV.UseCompatibleStateImageBehavior = false;
+            this.mostrarUsuarioLV.View = System.Windows.Forms.View.Details;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
             // 
             // UsuarioMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(447, 273);
+            this.ClientSize = new System.Drawing.Size(412, 273);
             this.Controls.Add(this.mostrarUsuarioLV);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -173,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView mostrarUsuarioLV;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Id;
     }
 }
