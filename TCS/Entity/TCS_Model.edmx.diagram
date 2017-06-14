@@ -9,29 +9,29 @@
         <EntityTypeShape EntityType="TCS_DBModel.flotaunidad" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.persona" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.personarol" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCS_DBModel.privilegio" Width="1.5" PointX="1.5" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.punto" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.rol" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.ruta" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.rutapunto" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCS_DBModel.unidad" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCS_DBModel.usuario" Width="1.5" PointX="1.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.viaje" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
         <AssociationConnector Association="TCS_DBModel.FK_flotaunidad_flota" ManuallyRouted="false" />
+        <AssociationConnector Association="TCS_DBModel.FK_flotaunidad_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="TCS_DBModel.FK_persona_usuario" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_personarol_persona" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_persona" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_personarol_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="TCS_DBModel.FK_usuario_privilegio" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_rutapunto_punto" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_rutapunto_ruta" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_ruta" ManuallyRouted="false" />
-        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" />
-        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoOrigen" />
-        <EntityTypeShape EntityType="TCS_DBModel.privilegio" Width="1.5" PointX="0.75" PointY="9" />
-        <EntityTypeShape EntityType="TCS_DBModel.usuario" Width="1.5" PointX="3" PointY="8.75" />
-        <AssociationConnector Association="TCS_DBModel.FK_persona_usuario" />
-        <AssociationConnector Association="TCS_DBModel.FK_usuario_privilegio" />
+        <AssociationConnector Association="TCS_DBModel.FK_viaje_unidad" ManuallyRouted="false" />
         <EntityTypeShape EntityType="TCS_DBModel.PersonaHorario" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="TCS_DBModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="3.75" />
-        <EntityTypeShape EntityType="TCS_DBModel.unidad" Width="1.5" PointX="3.75" PointY="0.75" />
-        <AssociationConnector Association="TCS_DBModel.FK_flotaunidad_unidad" />
-        <AssociationConnector Association="TCS_DBModel.FK_viaje_unidad" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" />
+        <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoOrigen" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

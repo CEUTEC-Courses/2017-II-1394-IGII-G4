@@ -106,6 +106,12 @@
     <Compile Include="Entity\rutapunto.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -138,12 +144,6 @@
     </Compile>
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Viajes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Viajes.Designer.cs">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </Compile>
     <Compile Include="InitialConfiguration\AppConfigurationManager.cs" />
     <Compile Include="InitialConfiguration\DatabaseConfigurationWizard.cs">
@@ -178,24 +178,20 @@
     <Compile Include="Rutas\Form_Rutas.Designer.cs">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rutas\Punto.cs" />
-    <Compile Include="Rutas\Ruta.cs" />
+    <Compile Include="Rutas\PuntoBuilder.cs" />
+    <Compile Include="Rutas\PuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
+    <Compile Include="Rutas\RutaPuntoBuilder.cs" />
+    <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
-    <Compile Include="UsuarioClases\CRUDPrivilegio.cs" />
-    <Compile Include="UsuarioClases\CRUDUsuario.cs" />
-    <Compile Include="UsuarioClases\UsuarioMenu.cs">
+    <Compile Include="Viajes\Form_Viajes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuarioClases\UsuarioMenu.Designer.cs">
-      <DependentUpon>UsuarioMenu.cs</DependentUpon>
+    <Compile Include="Viajes\Form_Viajes.Designer.cs">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioClases\UsuarioModelo.cs" />
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Viajes.resx">
-      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
@@ -222,8 +218,8 @@
     <EmbeddedResource Include="Rutas\Form_Rutas.resx">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioClases\UsuarioMenu.resx">
-      <DependentUpon>UsuarioMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Viajes\Form_Viajes.resx">
+      <DependentUpon>Form_Viajes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
@@ -303,8 +299,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)/TCS_DB.sql" "$(TargetDir)"
-copy /Y "$(SolutionDir)/TCS_DB.bak" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(SolutionDir)/tcs_db.bak" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
