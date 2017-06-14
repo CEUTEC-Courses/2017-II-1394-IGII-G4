@@ -40,7 +40,8 @@ namespace TCS
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-
+            UsuarioMenu um = new UsuarioMenu();
+            um.Show();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)

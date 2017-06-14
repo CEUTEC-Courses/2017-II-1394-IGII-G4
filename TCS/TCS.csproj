@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
+    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\flota.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -172,10 +174,19 @@
     <Compile Include="Rutas\Form_Rutas.Designer.cs">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rutas\Punto.cs" />
-    <Compile Include="Rutas\Ruta.cs" />
+    <Compile Include="Rutas\PuntoBuilder.cs" />
+    <Compile Include="Rutas\PuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
+    <Compile Include="Rutas\RutaPuntoBuilder.cs" />
+    <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="UsuariosClases\UsuarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosClases\UsuarioMenu.Designer.cs">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosClases\UsuarioModelo.cs" />
     <Compile Include="Viajes\Form_Viajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rutas\Form_Rutas.resx">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosClases\UsuarioMenu.resx">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viajes\Form_Viajes.resx">
       <DependentUpon>Form_Viajes.cs</DependentUpon>

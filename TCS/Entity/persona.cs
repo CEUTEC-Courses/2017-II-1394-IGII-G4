@@ -26,10 +26,10 @@ namespace TCS.Entity
         public string Licencia { get; set; }
         public Nullable<int> UsuarioID { get; set; }
     
-        public virtual usuario usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<personarol> personarol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<viaje> viaje { get; set; }
+        public virtual usuario usuario { get; set; }
     }
 }
