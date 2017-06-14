@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TCS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TCS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="flota">
           <Key>
             <PropertyRef Name="FlotaID" />
@@ -371,8 +371,7 @@
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TCS_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -435,6 +434,8 @@
           <NavigationProperty Name="ruta" Relationship="Self.FK_ruta_puntoDestino" FromRole="punto" ToRole="ruta" />
           <NavigationProperty Name="ruta1" Relationship="Self.FK_ruta_puntoOrigen" FromRole="punto" ToRole="ruta" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_punto" FromRole="punto" ToRole="rutapunto" />
+          <NavigationProperty Name="ruta" Relationship="TCS_DBModel.FK_ruta_puntoDestino" FromRole="punto" ToRole="ruta" />
+          <NavigationProperty Name="ruta1" Relationship="TCS_DBModel.FK_ruta_puntoOrigen" FromRole="punto" ToRole="ruta" />
         </EntityType>
         <EntityType Name="rol">
           <Key>
@@ -456,6 +457,10 @@
           <NavigationProperty Name="punto1" Relationship="Self.FK_ruta_puntoOrigen" FromRole="ruta" ToRole="punto" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_ruta" FromRole="ruta" ToRole="rutapunto" />
           <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_ruta" FromRole="ruta" ToRole="viaje" />
+          <Property Name="IDPuntoOrigen" Type="Int32" />
+          <Property Name="IDPuntoDestino" Type="Int32" />
+          <NavigationProperty Name="punto" Relationship="TCS_DBModel.FK_ruta_puntoDestino" FromRole="ruta" ToRole="punto" />
+          <NavigationProperty Name="punto1" Relationship="TCS_DBModel.FK_ruta_puntoOrigen" FromRole="ruta" ToRole="punto" />
         </EntityType>
         <EntityType Name="rutapunto">
           <Key>
@@ -849,6 +854,8 @@
           <EntitySetMapping Name="ruta">
             <EntityTypeMapping TypeName="TCS_DBModel.ruta">
               <MappingFragment StoreEntitySet="ruta">
+                <ScalarProperty Name="IDPuntoDestino" ColumnName="IDPuntoDestino" />
+                <ScalarProperty Name="IDPuntoOrigen" ColumnName="IDPuntoOrigen" />
                 <ScalarProperty Name="RutaID" ColumnName="RutaID" />
                 <ScalarProperty Name="NombreRuta" ColumnName="NombreRuta" />
                 <ScalarProperty Name="IDPuntoOrigen" ColumnName="IDPuntoOrigen" />

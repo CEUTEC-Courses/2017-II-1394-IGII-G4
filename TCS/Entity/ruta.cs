@@ -32,5 +32,7 @@ namespace TCS.Entity
         public virtual ICollection<rutapunto> rutapunto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<viaje> viaje { get; set; }
+        public virtual punto punto { get; set; }
+        public virtual punto punto1 { get; set; }
     }
 }
