@@ -54,11 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
+    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\flota.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -83,9 +85,6 @@
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\persona.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\PersonaHorario.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\personarol.cs">
@@ -110,9 +109,6 @@
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\sp_helpdiagrams_Result.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TCS_Model.Context.cs">
@@ -185,6 +181,13 @@
     <Compile Include="Rutas\RutaPuntoBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="UsuariosClases\UsuarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosClases\UsuarioMenu.Designer.cs">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosClases\UsuarioModelo.cs" />
     <Compile Include="Viajes\Form_Viajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rutas\Form_Rutas.resx">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosClases\UsuarioMenu.resx">
+      <DependentUpon>UsuarioMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viajes\Form_Viajes.resx">
       <DependentUpon>Form_Viajes.cs</DependentUpon>

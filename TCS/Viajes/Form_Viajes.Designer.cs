@@ -41,16 +41,22 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.gbViajes = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpFiltroAl = new System.Windows.Forms.DateTimePicker();
+            this.dtpFiltroDel = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.lbBusqueda = new System.Windows.Forms.ListBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.gbViajes.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +147,7 @@
             this.dtpFechaPartida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaPartida.Location = new System.Drawing.Point(151, 219);
             this.dtpFechaPartida.Name = "dtpFechaPartida";
-            this.dtpFechaPartida.Size = new System.Drawing.Size(150, 24);
+            this.dtpFechaPartida.Size = new System.Drawing.Size(135, 24);
             this.dtpFechaPartida.TabIndex = 10;
             // 
             // dtpFechaRegreso
@@ -151,7 +157,7 @@
             this.dtpFechaRegreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRegreso.Location = new System.Drawing.Point(151, 263);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
-            this.dtpFechaRegreso.Size = new System.Drawing.Size(150, 24);
+            this.dtpFechaRegreso.Size = new System.Drawing.Size(135, 24);
             this.dtpFechaRegreso.TabIndex = 12;
             // 
             // label7
@@ -192,6 +198,7 @@
             // 
             this.gbViajes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbViajes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbViajes.Controls.Add(this.btnLimpiar);
             this.gbViajes.Controls.Add(this.btnNuevo);
             this.gbViajes.Controls.Add(this.btnGuardar);
             this.gbViajes.Controls.Add(this.txtNumero);
@@ -213,10 +220,36 @@
             this.gbViajes.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.gbViajes.Location = new System.Drawing.Point(12, 12);
             this.gbViajes.Name = "gbViajes";
-            this.gbViajes.Size = new System.Drawing.Size(457, 424);
+            this.gbViajes.Size = new System.Drawing.Size(445, 424);
             this.gbViajes.TabIndex = 15;
             this.gbViajes.TabStop = false;
             this.gbViajes.Text = "Viajes";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Coral;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLimpiar.Location = new System.Drawing.Point(220, 381);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(101, 37);
+            this.btnLimpiar.TabIndex = 22;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNuevo.Location = new System.Drawing.Point(113, 381);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(101, 37);
+            this.btnNuevo.TabIndex = 18;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -237,7 +270,7 @@
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.Location = new System.Drawing.Point(151, 37);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(150, 24);
+            this.txtNumero.Size = new System.Drawing.Size(98, 24);
             this.txtNumero.TabIndex = 16;
             // 
             // label9
@@ -256,6 +289,11 @@
             // 
             this.gbBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbBusqueda.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbBusqueda.Controls.Add(this.label10);
+            this.gbBusqueda.Controls.Add(this.dtpFiltroAl);
+            this.gbBusqueda.Controls.Add(this.dtpFiltroDel);
+            this.gbBusqueda.Controls.Add(this.label2);
+            this.gbBusqueda.Controls.Add(this.button1);
             this.gbBusqueda.Controls.Add(this.btnEliminar);
             this.gbBusqueda.Controls.Add(this.lbBusqueda);
             this.gbBusqueda.Controls.Add(this.btnEditar);
@@ -264,21 +302,93 @@
             this.gbBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBusqueda.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbBusqueda.Location = new System.Drawing.Point(482, 12);
+            this.gbBusqueda.Location = new System.Drawing.Point(473, 12);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(310, 424);
+            this.gbBusqueda.Size = new System.Drawing.Size(365, 424);
             this.gbBusqueda.TabIndex = 18;
             this.gbBusqueda.TabStop = false;
-            this.gbBusqueda.Text = "Busqueda";
+            this.gbBusqueda.Text = "Busqueda Rápida";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(12, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 18);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Al:";
+            // 
+            // dtpFiltroAl
+            // 
+            this.dtpFiltroAl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFiltroAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFiltroAl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroAl.Location = new System.Drawing.Point(15, 161);
+            this.dtpFiltroAl.Name = "dtpFiltroAl";
+            this.dtpFiltroAl.Size = new System.Drawing.Size(135, 24);
+            this.dtpFiltroAl.TabIndex = 23;
+            this.dtpFiltroAl.ValueChanged += new System.EventHandler(this.dtpFiltroAl_ValueChanged);
+            // 
+            // dtpFiltroDel
+            // 
+            this.dtpFiltroDel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFiltroDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFiltroDel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroDel.Location = new System.Drawing.Point(15, 102);
+            this.dtpFiltroDel.Name = "dtpFiltroDel";
+            this.dtpFiltroDel.Size = new System.Drawing.Size(135, 24);
+            this.dtpFiltroDel.TabIndex = 23;
+            this.dtpFiltroDel.ValueChanged += new System.EventHandler(this.dtpFiltroDel_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(12, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 18);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Del:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(220, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 37);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Mostrar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminar.Location = new System.Drawing.Point(113, 381);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(101, 37);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // lbBusqueda
             // 
             this.lbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBusqueda.FormattingEnabled = true;
             this.lbBusqueda.ItemHeight = 18;
-            this.lbBusqueda.Location = new System.Drawing.Point(102, 68);
+            this.lbBusqueda.Location = new System.Drawing.Point(166, 81);
             this.lbBusqueda.Name = "lbBusqueda";
-            this.lbBusqueda.Size = new System.Drawing.Size(176, 202);
+            this.lbBusqueda.Size = new System.Drawing.Size(176, 274);
             this.lbBusqueda.TabIndex = 18;
             // 
             // btnEditar
@@ -298,7 +408,7 @@
             // 
             this.txtBusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(102, 37);
+            this.txtBusqueda.Location = new System.Drawing.Point(166, 40);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(176, 24);
             this.txtBusqueda.TabIndex = 16;
@@ -309,49 +419,24 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(6, 40);
+            this.label1.Location = new System.Drawing.Point(72, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 18);
             this.label1.TabIndex = 15;
             this.label1.Text = "Busqueda:";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevo.Location = new System.Drawing.Point(113, 381);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(101, 37);
-            this.btnNuevo.TabIndex = 18;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Coral;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(113, 381);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(101, 37);
-            this.btnEliminar.TabIndex = 19;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // Form_Viajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(804, 448);
+            this.ClientSize = new System.Drawing.Size(850, 448);
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.gbViajes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form_Viajes";
             this.Text = "Viajes";
+            this.Load += new System.EventHandler(this.Form_Viajes_Load);
             this.gbViajes.ResumeLayout(false);
             this.gbViajes.PerformLayout();
             this.gbBusqueda.ResumeLayout(false);
@@ -384,5 +469,11 @@
         private System.Windows.Forms.ListBox lbBusqueda;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpFiltroAl;
+        private System.Windows.Forms.DateTimePicker dtpFiltroDel;
     }
 }

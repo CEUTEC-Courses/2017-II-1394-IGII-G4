@@ -27,6 +27,8 @@ namespace TCS
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
+            Form_Viajes frmViajes = new Form_Viajes();
+            frmViajes.ShowDialog();
 
         }
 
@@ -38,7 +40,8 @@ namespace TCS
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-
+            UsuarioMenu um = new UsuarioMenu();
+            um.Show();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
