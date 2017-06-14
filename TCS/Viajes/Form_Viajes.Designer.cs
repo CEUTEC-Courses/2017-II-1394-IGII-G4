@@ -47,6 +47,9 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpFiltroAl = new System.Windows.Forms.DateTimePicker();
+            this.dtpFiltroDel = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -54,9 +57,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFiltroDel = new System.Windows.Forms.DateTimePicker();
-            this.dtpFiltroAl = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbViajes.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -309,6 +309,40 @@
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda Rápida";
             // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(12, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 18);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Al:";
+            // 
+            // dtpFiltroAl
+            // 
+            this.dtpFiltroAl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFiltroAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFiltroAl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroAl.Location = new System.Drawing.Point(15, 161);
+            this.dtpFiltroAl.Name = "dtpFiltroAl";
+            this.dtpFiltroAl.Size = new System.Drawing.Size(135, 24);
+            this.dtpFiltroAl.TabIndex = 23;
+            this.dtpFiltroAl.ValueChanged += new System.EventHandler(this.dtpFiltroAl_ValueChanged);
+            // 
+            // dtpFiltroDel
+            // 
+            this.dtpFiltroDel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFiltroDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFiltroDel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroDel.Location = new System.Drawing.Point(15, 102);
+            this.dtpFiltroDel.Name = "dtpFiltroDel";
+            this.dtpFiltroDel.Size = new System.Drawing.Size(135, 24);
+            this.dtpFiltroDel.TabIndex = 23;
+            this.dtpFiltroDel.ValueChanged += new System.EventHandler(this.dtpFiltroDel_ValueChanged);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -390,38 +424,6 @@
             this.label1.Size = new System.Drawing.Size(78, 18);
             this.label1.TabIndex = 15;
             this.label1.Text = "Busqueda:";
-            // 
-            // dtpFiltroDel
-            // 
-            this.dtpFiltroDel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFiltroDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFiltroDel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFiltroDel.Location = new System.Drawing.Point(15, 102);
-            this.dtpFiltroDel.Name = "dtpFiltroDel";
-            this.dtpFiltroDel.Size = new System.Drawing.Size(135, 24);
-            this.dtpFiltroDel.TabIndex = 23;
-            // 
-            // dtpFiltroAl
-            // 
-            this.dtpFiltroAl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFiltroAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFiltroAl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFiltroAl.Location = new System.Drawing.Point(15, 161);
-            this.dtpFiltroAl.Name = "dtpFiltroAl";
-            this.dtpFiltroAl.Size = new System.Drawing.Size(135, 24);
-            this.dtpFiltroAl.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(12, 140);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 18);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Al:";
             // 
             // Form_Viajes
             // 
