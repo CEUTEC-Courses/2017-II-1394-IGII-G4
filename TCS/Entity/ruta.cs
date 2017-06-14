@@ -26,6 +26,8 @@ namespace TCS.Entity
         public Nullable<int> IDPuntoOrigen { get; set; }
         public Nullable<int> IDPuntoDestino { get; set; }
     
+        public virtual punto punto { get; set; }
+        public virtual punto punto1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rutapunto> rutapunto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

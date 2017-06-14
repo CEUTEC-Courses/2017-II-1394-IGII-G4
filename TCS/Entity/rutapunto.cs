@@ -15,8 +15,8 @@ namespace TCS.Entity
     public partial class rutapunto
     {
         public int RutaPuntoID { get; set; }
-        public Nullable<int> RutaID { get; set; }
-        public Nullable<int> PuntoID { get; set; }
+        public int RutaID { get; set; }
+        public int PuntoID { get; set; }
     
         public virtual punto punto { get; set; }
         public virtual ruta ruta { get; set; }

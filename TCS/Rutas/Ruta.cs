@@ -3,137 +3,96 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TCS.Entity;
+using TCS.InitialConfiguration;
 
 namespace TCS.Rutas
 {
-    public class Ruta
+    public class Ruta : RutaSimpleBuilder
     {
 
-        private int rutaId = -1;
-        private String nombreRuta;
-        private List<Punto> puntos;
-        private String origen;
-        private String destino;
-        private Punto puntoOrigen;
-        private Punto puntoDestino;
+        private ruta _ruta;
 
-        public Punto PuntoOrigen
+        public Ruta(int RutaID)
         {
-            get
+            if(AppConfigurationManager.Instance().DbContext != null)
+                _ruta = AppConfigurationManager.Instance().DbContext.ruta.Where(r => r.RutaID == RutaID).FirstOrDefault();  
+        }
+
+        public Ruta(String nombre, punto origen, punto destino)
+        {
+            if (!crearRuta(nombre, origen, destino))
+                throw new Exception("Origen o Destino no existen!");
+        }
+
+        public Ruta(String nombre, String origen, String destino)
+        {
+            if (!crearRuta(nombre, origen, destino))
+                throw new Exception("Origen o Destino no existen!");
+        }
+
+        public Ruta(ruta ruta)
+        {
+            _ruta = ruta;
+        }
+
+        public bool modificarRuta(String nombre)
+        {
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
             {
-                if (puntos != null)
-                    return puntos[0];
-                else
-                    return null;
+                _ruta.NombreRuta = nombre;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+        public bool modificarRuta(String nombre, punto puntoOrigen, punto puntoDestino)
+        {
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
+            {
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = puntoDestino.PuntoID;
+                _ruta.IDPuntoOrigen = puntoOrigen.PuntoID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool modificarRuta(String nombre, int origenID, int destinoID)
+        {
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
+            {
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = destinoID;
+                _ruta.IDPuntoOrigen = origenID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool modificarRuta(String nombre, String nombreOrigen, String nombreDestino)
+        {
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
+            {
+                _ruta.NombreRuta = nombre;
+                _ruta.IDPuntoDestino = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault().PuntoID;
+                _ruta.IDPuntoOrigen = AppConfigurationManager.Instance().DbContext.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault().PuntoID;
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        public Punto PuntoDestino
-        {
-            get
-            {
-                if (puntos != null && puntos.Count >= 2)
-                    return puntos[puntos.Count - 1];
-                else
-                    return null;
-            }
-        }
-
-        public String Origen
-        {
-            get
-            {
-                return origen;
-            }
-            set
-            {
-                origen = value;
-            }
-        }
-
-        public String Destino
-        {
-            get
-            {
-                return destino;
-            }
-            set
-            {
-                destino = value;
-            }
-        }
-
-        public int RutaID
-        {
-            get
-            {
-                return rutaId;
-            }
-            set
-            {
-                rutaId = value;
-            }
-        }
-
-        public String NombreRuta
-        {
-            get
-            {
-                return nombreRuta;
-            }
-            set
-            {
-                nombreRuta = value;
-            }
-        }
-
-        public List<Punto> Puntos
-        {
-            get
-            {
-                return puntos;
-            }
-            set
-            {
-                puntos = value;
-            }
-        }
-
-        public Ruta()
-        {
-            RutaID = -1;
-            NombreRuta = "";
-        }
-
-        public Ruta(String nombre, String orig, String dest)
-        {
-            NombreRuta = nombre;
-            Origen = orig;
-            Destino = dest;
-            puntos = new List<Punto>();
-            puntos.Insert(0, new Punto(orig));
-            puntos.Insert(1, new Punto(dest));
-        }
-
-        public Ruta(int id, String nombre, String orig, String dest)
-        {
-            RutaID = id;
-            NombreRuta = nombre;
-            Origen = orig;
-            Destino = dest;
-            puntos = new List<Punto>();
-            puntos.Insert(0, new Punto(orig));
-            puntos.Insert(1, new Punto(dest));
-        }
-
-        public Ruta(int id, String nombre, String orig, String dest, List<Punto> listaPuntos)
-        {
-            RutaID = id;
-            NombreRuta = nombre;
-            Origen = orig;
-            Destino = dest;
-            Puntos = listaPuntos;
-        }
 
     }
 }

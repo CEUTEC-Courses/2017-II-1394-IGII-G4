@@ -17,6 +17,8 @@ namespace TCS.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public punto()
         {
+            this.ruta = new HashSet<ruta>();
+            this.ruta1 = new HashSet<ruta>();
             this.rutapunto = new HashSet<rutapunto>();
             this.ruta = new HashSet<ruta>();
             this.ruta1 = new HashSet<ruta>();
@@ -25,6 +27,10 @@ namespace TCS.Entity
         public int PuntoID { get; set; }
         public string NombrePunto { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ruta> ruta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ruta> ruta1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rutapunto> rutapunto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

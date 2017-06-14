@@ -74,8 +74,8 @@
             <PropertyRef Name="RutaPuntoID" />
           </Key>
           <Property Name="RutaPuntoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RutaID" Type="int" />
-          <Property Name="PuntoID" Type="int" />
+          <Property Name="RutaID" Type="int" Nullable="false" />
+          <Property Name="PuntoID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="unidad">
           <Key>
@@ -195,7 +195,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_rutapunto_punto">
-          <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
+          <End Role="punto" Type="Self.punto" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="rutapunto" Type="Self.rutapunto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="punto">
@@ -207,7 +209,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_rutapunto_ruta">
-          <End Role="ruta" Type="Self.ruta" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="rutapunto" Type="Self.rutapunto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ruta">
@@ -266,6 +270,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FiltroFechasViajes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DelD" Type="date" Mode="In" />
+          <Parameter Name="AlD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="TCS_DBModelStoreContainer">
           <EntitySet Name="flota" EntityType="Self.flota" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="flotaunidad" EntityType="Self.flotaunidad" Schema="dbo" store:Type="Tables" />
@@ -340,7 +379,7 @@
           <Key>
             <PropertyRef Name="FlotaID" />
           </Key>
-          <Property Name="FlotaID" Type="Int32" Nullable="false" />
+          <Property Name="FlotaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Empresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Dueno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -350,7 +389,7 @@
           <Key>
             <PropertyRef Name="FlotaUnidadID" />
           </Key>
-          <Property Name="FlotaUnidadID" Type="Int32" Nullable="false" />
+          <Property Name="FlotaUnidadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FlotaID" Type="Int32" />
           <Property Name="UnidadID" Type="Int32" />
           <NavigationProperty Name="flota" Relationship="Self.FK_flotaunidad_flota" FromRole="flotaunidad" ToRole="flota" />
@@ -360,7 +399,7 @@
           <Key>
             <PropertyRef Name="PersonaID" />
           </Key>
-          <Property Name="PersonaID" Type="Int32" Nullable="false" />
+          <Property Name="PersonaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombrePersona" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Licencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UsuarioID" Type="Int32" />
@@ -372,7 +411,7 @@
           <Key>
             <PropertyRef Name="PersonaRol1" />
           </Key>
-          <Property Name="PersonaRol1" Type="Int32" Nullable="false" />
+          <Property Name="PersonaRol1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PersonaID" Type="Int32" />
           <Property Name="RolID" Type="Int32" />
           <NavigationProperty Name="persona" Relationship="Self.FK_personarol_persona" FromRole="personarol" ToRole="persona" />
@@ -382,7 +421,7 @@
           <Key>
             <PropertyRef Name="IdPrivilegio" />
           </Key>
-          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" />
+          <Property Name="IdPrivilegio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_usuario_privilegio" FromRole="privilegio" ToRole="usuario" />
         </EntityType>
@@ -390,8 +429,10 @@
           <Key>
             <PropertyRef Name="PuntoID" />
           </Key>
-          <Property Name="PuntoID" Type="Int32" Nullable="false" />
+          <Property Name="PuntoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombrePunto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ruta" Relationship="Self.FK_ruta_puntoDestino" FromRole="punto" ToRole="ruta" />
+          <NavigationProperty Name="ruta1" Relationship="Self.FK_ruta_puntoOrigen" FromRole="punto" ToRole="ruta" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_punto" FromRole="punto" ToRole="rutapunto" />
           <NavigationProperty Name="ruta" Relationship="TCS_DBModel.FK_ruta_puntoDestino" FromRole="punto" ToRole="ruta" />
           <NavigationProperty Name="ruta1" Relationship="TCS_DBModel.FK_ruta_puntoOrigen" FromRole="punto" ToRole="ruta" />
@@ -400,7 +441,7 @@
           <Key>
             <PropertyRef Name="RolId" />
           </Key>
-          <Property Name="RolId" Type="Int32" Nullable="false" />
+          <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreRol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="personarol" Relationship="Self.FK_personarol_rol" FromRole="rol" ToRole="personarol" />
         </EntityType>
@@ -408,8 +449,12 @@
           <Key>
             <PropertyRef Name="RutaID" />
           </Key>
-          <Property Name="RutaID" Type="Int32" Nullable="false" />
+          <Property Name="RutaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreRuta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDPuntoOrigen" Type="Int32" />
+          <Property Name="IDPuntoDestino" Type="Int32" />
+          <NavigationProperty Name="punto" Relationship="Self.FK_ruta_puntoDestino" FromRole="ruta" ToRole="punto" />
+          <NavigationProperty Name="punto1" Relationship="Self.FK_ruta_puntoOrigen" FromRole="ruta" ToRole="punto" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_ruta" FromRole="ruta" ToRole="rutapunto" />
           <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_ruta" FromRole="ruta" ToRole="viaje" />
           <Property Name="IDPuntoOrigen" Type="Int32" />
@@ -421,9 +466,9 @@
           <Key>
             <PropertyRef Name="RutaPuntoID" />
           </Key>
-          <Property Name="RutaPuntoID" Type="Int32" Nullable="false" />
-          <Property Name="RutaID" Type="Int32" />
-          <Property Name="PuntoID" Type="Int32" />
+          <Property Name="RutaPuntoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RutaID" Type="Int32" Nullable="false" />
+          <Property Name="PuntoID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="punto" Relationship="Self.FK_rutapunto_punto" FromRole="rutapunto" ToRole="punto" />
           <NavigationProperty Name="ruta" Relationship="Self.FK_rutapunto_ruta" FromRole="rutapunto" ToRole="ruta" />
         </EntityType>
@@ -431,7 +476,7 @@
           <Key>
             <PropertyRef Name="UnidadID" />
           </Key>
-          <Property Name="UnidadID" Type="Int32" Nullable="false" />
+          <Property Name="UnidadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Placa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -444,7 +489,7 @@
           <Key>
             <PropertyRef Name="UsuarioID" />
           </Key>
-          <Property Name="UsuarioID" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IdPrivilegio" Type="Int32" Nullable="false" />
@@ -455,7 +500,7 @@
           <Key>
             <PropertyRef Name="ViajeID" />
           </Key>
-          <Property Name="ViajeID" Type="Int32" Nullable="false" />
+          <Property Name="ViajeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UnidadID" Type="Int32" />
           <Property Name="RutaID" Type="Int32" />
           <Property Name="PersonaID" Type="Int32" />
@@ -551,8 +596,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_rutapunto_punto">
+        <Association Name="FK_ruta_puntoDestino">
           <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoDestino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ruta_puntoOrigen">
+          <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoOrigen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rutapunto_punto">
+          <End Role="punto" Type="Self.punto" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="rutapunto" Type="Self.rutapunto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="punto">
@@ -564,7 +635,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_rutapunto_ruta">
-          <End Role="ruta" Type="Self.ruta" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="rutapunto" Type="Self.rutapunto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ruta">
@@ -640,6 +713,14 @@
             <End Role="privilegio" EntitySet="privilegio" />
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoDestino" Association="Self.FK_ruta_puntoDestino">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoOrigen" Association="Self.FK_ruta_puntoOrigen">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
           <AssociationSet Name="FK_rutapunto_punto" Association="Self.FK_rutapunto_punto">
             <End Role="punto" EntitySet="punto" />
             <End Role="rutapunto" EntitySet="rutapunto" />
@@ -656,39 +737,52 @@
             <End Role="unidad" EntitySet="unidad" />
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
-          <AssociationSet Name="FK_ruta_puntoDestino" Association="TCS_DBModel.FK_ruta_puntoDestino">
-            <End Role="punto" EntitySet="punto" />
-            <End Role="ruta" EntitySet="ruta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ruta_puntoOrigen" Association="TCS_DBModel.FK_ruta_puntoOrigen">
-            <End Role="punto" EntitySet="punto" />
-            <End Role="ruta" EntitySet="ruta" />
-          </AssociationSet>
+          <FunctionImport Name="FiltroFechasViajes" ReturnType="Collection(Int32)">
+            <Parameter Name="DelD" Mode="In" Type="DateTime" />
+            <Parameter Name="AlD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TCS_DBModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TCS_DBModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <Association Name="FK_ruta_puntoDestino">
-          <End Type="TCS_DBModel.punto" Role="punto" Multiplicity="0..1" />
-          <End Type="TCS_DBModel.ruta" Role="ruta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="punto">
-              <PropertyRef Name="PuntoID" />
-            </Principal>
-            <Dependent Role="ruta">
-              <PropertyRef Name="IDPuntoDestino" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ruta_puntoOrigen">
-          <End Type="TCS_DBModel.punto" Role="punto" Multiplicity="0..1" />
-          <End Type="TCS_DBModel.ruta" Role="ruta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="punto">
-              <PropertyRef Name="PuntoID" />
-            </Principal>
-            <Dependent Role="ruta">
-              <PropertyRef Name="IDPuntoOrigen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -764,6 +858,8 @@
                 <ScalarProperty Name="IDPuntoOrigen" ColumnName="IDPuntoOrigen" />
                 <ScalarProperty Name="RutaID" ColumnName="RutaID" />
                 <ScalarProperty Name="NombreRuta" ColumnName="NombreRuta" />
+                <ScalarProperty Name="IDPuntoOrigen" ColumnName="IDPuntoOrigen" />
+                <ScalarProperty Name="IDPuntoDestino" ColumnName="IDPuntoDestino" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -812,6 +908,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FiltroFechasViajes" FunctionName="TCS_DBModel.Store.FiltroFechasViajes" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TCS_DBModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TCS_DBModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TCS_DBModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TCS_DBModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TCS_DBModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TCS_DBModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TCS_DBModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TCS_DBModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TCS_DBModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

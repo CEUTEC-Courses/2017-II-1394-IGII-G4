@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
 using System.Data.SqlClient;
+using TCS.Entity;
 
 namespace TCS.InitialConfiguration
 {
@@ -17,6 +18,16 @@ namespace TCS.InitialConfiguration
         private String username;
         private String password;
         private SqlConnection sqlConnection;
+        private String sqlconnectionstring;
+        private TCS_Entities dbContext;
+
+        public String SQLConnectionString
+        {
+            get
+            {
+                return sqlconnectionstring;
+            }
+        }
         public String Host
         {
             get
@@ -62,6 +73,20 @@ namespace TCS.InitialConfiguration
                 password = value;
             }
         }
+
+        public TCS_Entities DbContext
+        {
+            get
+            {
+                if(dbContext.Database.Connection.State != System.Data.ConnectionState.Open)
+                {
+                    dbContext.Database.Connection.Open();
+                }
+
+                return dbContext;
+            }
+        }
+
         private static AppConfigurationManager _instancia;
 
         private AppConfigurationManager()
@@ -129,7 +154,14 @@ namespace TCS.InitialConfiguration
             { 
                 sqlConnection.Open();
                 status = true;
+                sqlconnectionstring = String.Format("Data Source={0};user id={1};password={2};Initial Catalog={3}", Host, Username, Password, Database);
                 sqlConnection.Close();
+                dbContext = new TCS_Entities();
+                dbContext.Database.Connection.ConnectionString = sqlconnectionstring;
+                dbContext.Database.Connection.Open();
+                if (dbContext.Database.Connection.State != System.Data.ConnectionState.Open)
+                    throw new Exception("No se pudo abrir la conexion a la base de datos");
+                    
             }
             catch(SqlException myex)
             {
