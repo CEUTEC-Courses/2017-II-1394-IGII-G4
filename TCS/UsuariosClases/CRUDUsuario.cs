@@ -61,7 +61,5 @@ namespace TCS.UsuarioClases
                 return queryConsultarUsuario;
             }
         }
-
-
     }
 }

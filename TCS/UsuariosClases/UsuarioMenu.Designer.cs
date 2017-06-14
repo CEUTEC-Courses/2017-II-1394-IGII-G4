@@ -42,6 +42,7 @@
             this.borrarUsuariosBtn = new System.Windows.Forms.Button();
             this.modificarUsuariosBtn = new System.Windows.Forms.Button();
             this.privilegiosBtn = new System.Windows.Forms.Button();
+            this.regresarBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,6 +171,7 @@
             this.borrarUsuariosBtn.TabIndex = 3;
             this.borrarUsuariosBtn.Text = "Borrar";
             this.borrarUsuariosBtn.UseVisualStyleBackColor = false;
+            this.borrarUsuariosBtn.Click += new System.EventHandler(this.borrarUsuariosBtn_Click);
             // 
             // modificarUsuariosBtn
             // 
@@ -200,12 +202,29 @@
             this.privilegiosBtn.Text = "Privilegios";
             this.privilegiosBtn.UseVisualStyleBackColor = false;
             // 
+            // regresarBtn
+            // 
+            this.regresarBtn.BackColor = System.Drawing.Color.Goldenrod;
+            this.regresarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.regresarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.regresarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regresarBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.regresarBtn.Location = new System.Drawing.Point(424, 193);
+            this.regresarBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.regresarBtn.Name = "regresarBtn";
+            this.regresarBtn.Size = new System.Drawing.Size(88, 26);
+            this.regresarBtn.TabIndex = 13;
+            this.regresarBtn.Text = "Regresar";
+            this.regresarBtn.UseVisualStyleBackColor = false;
+            this.regresarBtn.Click += new System.EventHandler(this.regresarBtn_Click);
+            // 
             // UsuarioMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(525, 236);
+            this.Controls.Add(this.regresarBtn);
             this.Controls.Add(this.privilegiosBtn);
             this.Controls.Add(this.modificarUsuariosBtn);
             this.Controls.Add(this.borrarUsuariosBtn);
@@ -237,5 +256,6 @@
         private System.Windows.Forms.Button borrarUsuariosBtn;
         private System.Windows.Forms.Button modificarUsuariosBtn;
         private System.Windows.Forms.Button privilegiosBtn;
+        private System.Windows.Forms.Button regresarBtn;
     }
 }

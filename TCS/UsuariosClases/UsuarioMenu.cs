@@ -73,5 +73,15 @@ namespace TCS
         {
             
         }
+
+        private void regresarBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void borrarUsuariosBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
