@@ -48,7 +48,6 @@ namespace TCS
         {
             Form_MenuFlota AbrirFormuarioMenuFlota = new Form_MenuFlota();
             AbrirFormuarioMenuFlota.Show();
-            //Form_Principal ocultarFormularioPrincipal = new Form_Principal();
             this.Hide();
         }
 

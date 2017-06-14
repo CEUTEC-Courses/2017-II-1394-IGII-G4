@@ -30,5 +30,13 @@ namespace TCS.MenuFlota
            
             this.Hide();
         }
-    }
+
+        private void ButtonMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            Form_Principal FormularioPrincipal = new Form_Principal();
+            FormularioPrincipal.Show();
+            this.Close();
+        }
+
+        }
 }

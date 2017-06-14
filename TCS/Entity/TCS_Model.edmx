@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TCS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TCS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="flota">
           <Key>
             <PropertyRef Name="FlotaID" />
           </Key>
-          <Property Name="FlotaID" Type="int" Nullable="false" />
+          <Property Name="FlotaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empresa" Type="varchar" MaxLength="100" />
           <Property Name="Dueno" Type="varchar" MaxLength="100" />
           <Property Name="Codigo" Type="varchar" MaxLength="30" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="FlotaUnidadID" />
           </Key>
-          <Property Name="FlotaUnidadID" Type="int" Nullable="false" />
+          <Property Name="FlotaUnidadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FlotaID" Type="int" />
           <Property Name="UnidadID" Type="int" />
         </EntityType>
@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="PersonaID" />
           </Key>
-          <Property Name="PersonaID" Type="int" Nullable="false" />
+          <Property Name="PersonaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombrePersona" Type="varchar" MaxLength="100" />
           <Property Name="Licencia" Type="varchar" MaxLength="20" />
           <Property Name="UsuarioID" Type="int" />
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="PersonaRol" />
           </Key>
-          <Property Name="PersonaRol" Type="int" Nullable="false" />
+          <Property Name="PersonaRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PersonaID" Type="int" />
           <Property Name="RolID" Type="int" />
         </EntityType>
@@ -43,35 +43,37 @@
           <Key>
             <PropertyRef Name="IdPrivilegio" />
           </Key>
-          <Property Name="IdPrivilegio" Type="int" Nullable="false" />
+          <Property Name="IdPrivilegio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="punto">
           <Key>
             <PropertyRef Name="PuntoID" />
           </Key>
-          <Property Name="PuntoID" Type="int" Nullable="false" />
+          <Property Name="PuntoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombrePunto" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="rol">
           <Key>
             <PropertyRef Name="RolId" />
           </Key>
-          <Property Name="RolId" Type="int" Nullable="false" />
+          <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreRol" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="ruta">
           <Key>
             <PropertyRef Name="RutaID" />
           </Key>
-          <Property Name="RutaID" Type="int" Nullable="false" />
+          <Property Name="RutaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreRuta" Type="varchar" MaxLength="100" />
+          <Property Name="IDPuntoOrigen" Type="int" />
+          <Property Name="IDPuntoDestino" Type="int" />
         </EntityType>
         <EntityType Name="rutapunto">
           <Key>
             <PropertyRef Name="RutaPuntoID" />
           </Key>
-          <Property Name="RutaPuntoID" Type="int" Nullable="false" />
+          <Property Name="RutaPuntoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RutaID" Type="int" />
           <Property Name="PuntoID" Type="int" />
         </EntityType>
@@ -79,18 +81,18 @@
           <Key>
             <PropertyRef Name="UnidadID" />
           </Key>
-          <Property Name="UnidadID" Type="int" Nullable="false" />
+          <Property Name="UnidadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Placa" Type="varchar" MaxLength="20" />
           <Property Name="Marca" Type="varchar" MaxLength="30" />
           <Property Name="Modelo" Type="varchar" MaxLength="30" />
           <Property Name="Estado" Type="varchar" MaxLength="30" />
-          <Property Name="Anio" Type="int" />
+          <Property Name="Anio" Type="datetime" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
             <PropertyRef Name="UsuarioID" />
           </Key>
-          <Property Name="UsuarioID" Type="int" Nullable="false" />
+          <Property Name="UsuarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Usuario" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Contrasena" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="IdPrivilegio" Type="int" Nullable="false" />
@@ -99,7 +101,7 @@
           <Key>
             <PropertyRef Name="ViajeID" />
           </Key>
-          <Property Name="ViajeID" Type="int" Nullable="false" />
+          <Property Name="ViajeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UnidadID" Type="int" />
           <Property Name="RutaID" Type="int" />
           <Property Name="PersonaID" Type="int" />
@@ -165,6 +167,30 @@
             </Principal>
             <Dependent Role="personarol">
               <PropertyRef Name="RolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ruta_puntoDestino">
+          <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoDestino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ruta_puntoOrigen">
+          <End Role="punto" Type="Self.punto" Multiplicity="0..1" />
+          <End Role="ruta" Type="Self.ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoOrigen" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -273,6 +299,14 @@
             <End Role="rol" EntitySet="rol" />
             <End Role="personarol" EntitySet="personarol" />
           </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoDestino" Association="Self.FK_ruta_puntoDestino">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoOrigen" Association="Self.FK_ruta_puntoOrigen">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
           <AssociationSet Name="FK_rutapunto_punto" Association="Self.FK_rutapunto_punto">
             <End Role="punto" EntitySet="punto" />
             <End Role="rutapunto" EntitySet="rutapunto" />
@@ -298,8 +332,7 @@
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TCS_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -360,6 +393,8 @@
           <Property Name="PuntoID" Type="Int32" Nullable="false" />
           <Property Name="NombrePunto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_punto" FromRole="punto" ToRole="rutapunto" />
+          <NavigationProperty Name="ruta" Relationship="TCS_DBModel.FK_ruta_puntoDestino" FromRole="punto" ToRole="ruta" />
+          <NavigationProperty Name="ruta1" Relationship="TCS_DBModel.FK_ruta_puntoOrigen" FromRole="punto" ToRole="ruta" />
         </EntityType>
         <EntityType Name="rol">
           <Key>
@@ -377,6 +412,10 @@
           <Property Name="NombreRuta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="rutapunto" Relationship="Self.FK_rutapunto_ruta" FromRole="ruta" ToRole="rutapunto" />
           <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_ruta" FromRole="ruta" ToRole="viaje" />
+          <Property Name="IDPuntoOrigen" Type="Int32" />
+          <Property Name="IDPuntoDestino" Type="Int32" />
+          <NavigationProperty Name="punto" Relationship="TCS_DBModel.FK_ruta_puntoDestino" FromRole="ruta" ToRole="punto" />
+          <NavigationProperty Name="punto1" Relationship="TCS_DBModel.FK_ruta_puntoOrigen" FromRole="ruta" ToRole="punto" />
         </EntityType>
         <EntityType Name="rutapunto">
           <Key>
@@ -397,7 +436,7 @@
           <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Anio" Type="Int32" />
+          <Property Name="Anio" Type="DateTime" Precision="3" />
           <NavigationProperty Name="flotaunidad" Relationship="Self.FK_flotaunidad_unidad" FromRole="unidad" ToRole="flotaunidad" />
           <NavigationProperty Name="viaje" Relationship="Self.FK_viaje_unidad" FromRole="unidad" ToRole="viaje" />
         </EntityType>
@@ -617,7 +656,39 @@
             <End Role="unidad" EntitySet="unidad" />
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoDestino" Association="TCS_DBModel.FK_ruta_puntoDestino">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ruta_puntoOrigen" Association="TCS_DBModel.FK_ruta_puntoOrigen">
+            <End Role="punto" EntitySet="punto" />
+            <End Role="ruta" EntitySet="ruta" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ruta_puntoDestino">
+          <End Type="TCS_DBModel.punto" Role="punto" Multiplicity="0..1" />
+          <End Type="TCS_DBModel.ruta" Role="ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoDestino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ruta_puntoOrigen">
+          <End Type="TCS_DBModel.punto" Role="punto" Multiplicity="0..1" />
+          <End Type="TCS_DBModel.ruta" Role="ruta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="punto">
+              <PropertyRef Name="PuntoID" />
+            </Principal>
+            <Dependent Role="ruta">
+              <PropertyRef Name="IDPuntoOrigen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -689,6 +760,8 @@
           <EntitySetMapping Name="ruta">
             <EntityTypeMapping TypeName="TCS_DBModel.ruta">
               <MappingFragment StoreEntitySet="ruta">
+                <ScalarProperty Name="IDPuntoDestino" ColumnName="IDPuntoDestino" />
+                <ScalarProperty Name="IDPuntoOrigen" ColumnName="IDPuntoOrigen" />
                 <ScalarProperty Name="RutaID" ColumnName="RutaID" />
                 <ScalarProperty Name="NombreRuta" ColumnName="NombreRuta" />
               </MappingFragment>
