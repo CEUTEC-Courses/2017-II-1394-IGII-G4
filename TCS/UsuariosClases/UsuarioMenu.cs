@@ -30,9 +30,17 @@ namespace TCS
             nuevo.IdPrivilegio = privilegioCmb.SelectedIndex + 1;
 
             CRUDUsuario agregarU = new CRUDUsuario();
-            agregarU.agregarUsuario(nuevo);
+            
 
-            MessageBox.Show("Usuario creado correctamente");
+            if(cu.usuarioExiste(userTxt.Text))
+            {
+                MessageBox.Show("El usuario ya existe");
+            }
+            else
+            {
+                agregarU.agregarUsuario(nuevo);
+                MessageBox.Show("Usuario creado correctamente");
+            }
             mostrarUsuarioLV.Items.Clear();
             agregarUsuario();
 
