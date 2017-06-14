@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="Rutas\PuntoBuilder.cs" />
     <Compile Include="Rutas\PuntoSimpleBuilder.cs" />
+    <Compile Include="Rutas\Ruta.cs" />
     <Compile Include="Rutas\RutaBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />

@@ -15,15 +15,11 @@ namespace TCS.Rutas
 
         public override bool crearRutaPunto(ruta ruta, punto punto)
         {
-            using (var context = new TCS_Entities())
-            {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                var rutapunto = context.rutapunto.Add(new rutapunto { RutaID = ruta.RutaID, PuntoID = punto.PuntoID });
-                _rutapunto = rutapunto;
-                context.SaveChanges();
-                return true;
-            }
+            var rutapunto = AppConfigurationManager.Instance().DbContext.rutapunto.Add(new rutapunto { RutaID = ruta.RutaID, PuntoID = punto.PuntoID });
+            _rutapunto = rutapunto;
+            AppConfigurationManager.Instance().DbContext.SaveChanges();
+            return true;
+
         }
 
         public override rutapunto obtenerRutaPunto()

@@ -480,7 +480,6 @@
             this.MinimizeBox = false;
             this.Name = "Form_Rutas";
             this.Text = "Rutas";
-            this.Load += new System.EventHandler(this.Form_Rutas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

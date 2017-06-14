@@ -9,7 +9,7 @@ namespace TCS.Rutas
 {
     public abstract class RutaBuilder
     {
-
+        TCS_Entities context;
         public abstract bool crearRuta(String nombre, punto origen, punto destino);
         public abstract bool crearRuta(String nombre, String nombreOrigen, String nombreDestino);
         public abstract ruta obtenerRuta();
