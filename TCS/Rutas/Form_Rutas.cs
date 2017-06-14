@@ -177,7 +177,7 @@ namespace TCS.Rutas
                 try
                 {
                     RutaSimpleBuilder rutaBuilder = new RutaSimpleBuilder();
-                    if (rutaBuilder.crearRuta(txtNombreRutaNueva.Text, btnSeleccionarPuntoOrigenNuevaRuta.Text, btnSeleccionarPuntoDestinoRutaNueva.Text)) ;
+                    if (rutaBuilder.crearRuta(txtNombreRutaNueva.Text, btnSeleccionarPuntoOrigenNuevaRuta.Text, btnSeleccionarPuntoDestinoRutaNueva.Text))
                     {
                         txtNombreRutaNueva.Clear();
                         RefreshRutas();
@@ -214,23 +214,15 @@ namespace TCS.Rutas
 
         private void btnModificarRuta_Click(object sender, EventArgs e)
         {
-            using (var context = new TCS_Entities())
+            try
             {
-                try
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    var ruta = context.ruta.Where(r => r.RutaID == ((ruta)listaRutasDisponibles.SelectedItem).RutaID).FirstOrDefault();
-                    ruta.NombreRuta = txtNombreRutaNueva.Text;
-                    ruta.IDPuntoDestino = context.punto.Where(p => p.NombrePunto == btnSeleccionarPuntoDestinoRutaNueva.Text).FirstOrDefault().PuntoID;
-                    ruta.IDPuntoOrigen = context.punto.Where(p => p.NombrePunto == btnSeleccionarPuntoOrigenNuevaRuta.Text).FirstOrDefault().PuntoID;
-                    context.SaveChanges();
+                Ruta ruta = new Ruta(((ruta)listaRutasDisponibles.SelectedItem).RutaID);
+                if (ruta.modificarRuta(txtNombreRutaNueva.Text, btnSeleccionarPuntoOrigenNuevaRuta.Text, btnSeleccionarPuntoDestinoRutaNueva.Text))
                     RefreshRutas();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al guardar informacion de ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar informacion de ruta. Mensaje : " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -321,7 +313,7 @@ namespace TCS.Rutas
                         {
                             context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                             context.Database.Connection.Open();
-                            if (rutaPuntoBuilder.crearRutaPunto(((ruta)listaRutasDisponibles.SelectedItem), context.punto.Where(p => p.NombrePunto == formPuntos.NombreRutaSeleccionada).FirstOrDefault()));
+                            if (rutaPuntoBuilder.crearRutaPunto(((ruta)listaRutasDisponibles.SelectedItem), context.punto.Where(p => p.NombrePunto == formPuntos.NombreRutaSeleccionada).FirstOrDefault()))
                                 RefreshPuntosRuta();
                         }
                         catch (Exception ex)

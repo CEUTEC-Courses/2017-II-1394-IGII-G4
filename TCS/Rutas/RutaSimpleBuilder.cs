@@ -33,10 +33,17 @@ namespace TCS.Rutas
                 context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 context.Database.Connection.Open();
                 var puntoOrigen = context.punto.Where(p => p.NombrePunto == nombreOrigen).FirstOrDefault<punto>();
-                var PuntoDestino = context.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault<punto>();
-                var nuevaRuta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = PuntoDestino.PuntoID });
-                context.SaveChanges();
-                return true;
+                var puntoDestino = context.punto.Where(p => p.NombrePunto == nombreDestino).FirstOrDefault<punto>();
+                if (puntoOrigen != null && puntoDestino != null)
+                {
+                    var nuevaRuta = context.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = puntoDestino.PuntoID });
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
