@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCS.InitialConfiguration;
 
 namespace TCS.MenuFlota.Unidad
 {
@@ -14,6 +15,8 @@ namespace TCS.MenuFlota.Unidad
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
                 var nuevaunidad = new unidad()
                 {
                     Placa = unidad.Placa,
@@ -33,6 +36,8 @@ namespace TCS.MenuFlota.Unidad
             listaDeUnidades.Items.Clear();
             using (TCS_Entities conexion = new TCS_Entities())
             {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
                 var queryListaUnidades = from unidad in conexion.unidad
                                          select new
                                          {
@@ -61,6 +66,8 @@ namespace TCS.MenuFlota.Unidad
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
 
                 var unidadActualizada = (from Unidad in conexion.unidad
                                          where Unidad.UnidadID == unidad.UnidadID
@@ -77,6 +84,8 @@ namespace TCS.MenuFlota.Unidad
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
                 var UnidadAEliminar = (from unidad in conexion.unidad
                                        where unidad.UnidadID == id
                                        select unidad).FirstOrDefault();

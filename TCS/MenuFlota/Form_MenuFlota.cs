@@ -26,17 +26,16 @@ namespace TCS.MenuFlota
         private void AbrirFormularioUnidad_Click(object sender, EventArgs e)
         {
             FormularioUnidad abrirFromularioUnidad = new FormularioUnidad();
-            abrirFromularioUnidad.Show();
-           
-            this.Hide();
+            abrirFromularioUnidad.ShowDialog();
+
         }
 
-        private void ButtonMenuPrincipal_Click(object sender, EventArgs e)
-        {
-            Form_Principal FormularioPrincipal = new Form_Principal();
-            FormularioPrincipal.Show();
-            this.Close();
-        }
+        //private void ButtonMenuPrincipal_Click(object sender, EventArgs e)
+        //{
+        //    Form_Principal FormularioPrincipal = new Form_Principal();
+        //    FormularioPrincipal.Show();
+        //    this.Close();
+        //}
 
         }
 }

@@ -352,5 +352,9 @@ namespace TCS.Rutas
             RefreshRutas();
         }
 
+        private void Form_Rutas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

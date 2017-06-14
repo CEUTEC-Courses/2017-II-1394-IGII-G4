@@ -77,11 +77,9 @@
             this.groupBox1.Controls.Add(this.btnLimpiarAgregarRuta);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(19, 257);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(14, 209);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(356, 226);
+            this.groupBox1.Size = new System.Drawing.Size(267, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rutas";
@@ -92,10 +90,10 @@
             this.btnBorrarRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrarRuta.Location = new System.Drawing.Point(237, 188);
-            this.btnBorrarRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrarRuta.Location = new System.Drawing.Point(178, 153);
+            this.btnBorrarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrarRuta.Name = "btnBorrarRuta";
-            this.btnBorrarRuta.Size = new System.Drawing.Size(108, 32);
+            this.btnBorrarRuta.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarRuta.TabIndex = 9;
             this.btnBorrarRuta.Text = "Borrar";
             this.btnBorrarRuta.UseVisualStyleBackColor = false;
@@ -107,10 +105,10 @@
             this.btnAgregarRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregarRuta.Location = new System.Drawing.Point(7, 151);
-            this.btnAgregarRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarRuta.Location = new System.Drawing.Point(5, 123);
+            this.btnAgregarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarRuta.Name = "btnAgregarRuta";
-            this.btnAgregarRuta.Size = new System.Drawing.Size(109, 32);
+            this.btnAgregarRuta.Size = new System.Drawing.Size(82, 26);
             this.btnAgregarRuta.TabIndex = 7;
             this.btnAgregarRuta.Text = "Agregar";
             this.btnAgregarRuta.UseVisualStyleBackColor = false;
@@ -122,10 +120,10 @@
             this.btnSeleccionarPuntoDestinoRutaNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarPuntoDestinoRutaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarPuntoDestinoRutaNueva.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSeleccionarPuntoDestinoRutaNueva.Location = new System.Drawing.Point(120, 84);
-            this.btnSeleccionarPuntoDestinoRutaNueva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSeleccionarPuntoDestinoRutaNueva.Location = new System.Drawing.Point(90, 68);
+            this.btnSeleccionarPuntoDestinoRutaNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeleccionarPuntoDestinoRutaNueva.Name = "btnSeleccionarPuntoDestinoRutaNueva";
-            this.btnSeleccionarPuntoDestinoRutaNueva.Size = new System.Drawing.Size(228, 32);
+            this.btnSeleccionarPuntoDestinoRutaNueva.Size = new System.Drawing.Size(171, 26);
             this.btnSeleccionarPuntoDestinoRutaNueva.TabIndex = 6;
             this.btnSeleccionarPuntoDestinoRutaNueva.Text = "Seleccionar Punto";
             this.btnSeleccionarPuntoDestinoRutaNueva.UseVisualStyleBackColor = false;
@@ -137,10 +135,10 @@
             this.btnSeleccionarPuntoOrigenNuevaRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarPuntoOrigenNuevaRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarPuntoOrigenNuevaRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSeleccionarPuntoOrigenNuevaRuta.Location = new System.Drawing.Point(120, 50);
-            this.btnSeleccionarPuntoOrigenNuevaRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSeleccionarPuntoOrigenNuevaRuta.Location = new System.Drawing.Point(90, 41);
+            this.btnSeleccionarPuntoOrigenNuevaRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeleccionarPuntoOrigenNuevaRuta.Name = "btnSeleccionarPuntoOrigenNuevaRuta";
-            this.btnSeleccionarPuntoOrigenNuevaRuta.Size = new System.Drawing.Size(228, 32);
+            this.btnSeleccionarPuntoOrigenNuevaRuta.Size = new System.Drawing.Size(171, 26);
             this.btnSeleccionarPuntoOrigenNuevaRuta.TabIndex = 5;
             this.btnSeleccionarPuntoOrigenNuevaRuta.Text = "Seleccionar Punto";
             this.btnSeleccionarPuntoOrigenNuevaRuta.UseVisualStyleBackColor = false;
@@ -150,10 +148,9 @@
             // 
             this.txtNombreRutaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreRutaNueva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtNombreRutaNueva.Location = new System.Drawing.Point(121, 21);
-            this.txtNombreRutaNueva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreRutaNueva.Location = new System.Drawing.Point(91, 17);
             this.txtNombreRutaNueva.Name = "txtNombreRutaNueva";
-            this.txtNombreRutaNueva.Size = new System.Drawing.Size(225, 23);
+            this.txtNombreRutaNueva.Size = new System.Drawing.Size(170, 20);
             this.txtNombreRutaNueva.TabIndex = 4;
             // 
             // label3
@@ -161,10 +158,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(5, 90);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(4, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Punto Destino :";
             // 
@@ -173,10 +169,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(8, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Punto Origen : ";
             // 
@@ -185,10 +180,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(8, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre Ruta : ";
             // 
@@ -199,10 +193,10 @@
             this.btnModificarRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarRuta.Location = new System.Drawing.Point(121, 151);
-            this.btnModificarRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarRuta.Location = new System.Drawing.Point(91, 123);
+            this.btnModificarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarRuta.Name = "btnModificarRuta";
-            this.btnModificarRuta.Size = new System.Drawing.Size(111, 32);
+            this.btnModificarRuta.Size = new System.Drawing.Size(83, 26);
             this.btnModificarRuta.TabIndex = 8;
             this.btnModificarRuta.Text = "Modificar";
             this.btnModificarRuta.UseVisualStyleBackColor = false;
@@ -214,10 +208,10 @@
             this.btnLimpiarAgregarRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarAgregarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarAgregarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpiarAgregarRuta.Location = new System.Drawing.Point(237, 151);
-            this.btnLimpiarAgregarRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiarAgregarRuta.Location = new System.Drawing.Point(178, 123);
+            this.btnLimpiarAgregarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpiarAgregarRuta.Name = "btnLimpiarAgregarRuta";
-            this.btnLimpiarAgregarRuta.Size = new System.Drawing.Size(109, 32);
+            this.btnLimpiarAgregarRuta.Size = new System.Drawing.Size(82, 26);
             this.btnLimpiarAgregarRuta.TabIndex = 0;
             this.btnLimpiarAgregarRuta.Text = "Limpiar";
             this.btnLimpiarAgregarRuta.UseVisualStyleBackColor = false;
@@ -233,11 +227,9 @@
             this.groupBox3.Controls.Add(this.listaRutasDisponibles);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox3.Location = new System.Drawing.Point(383, 16);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(287, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(267, 468);
+            this.groupBox3.Size = new System.Drawing.Size(200, 380);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rutas";
@@ -250,10 +242,9 @@
             "Nombre de Ruta",
             "Origen",
             "Destino"});
-            this.comboFiltro.Location = new System.Drawing.Point(71, 434);
-            this.comboFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFiltro.Location = new System.Drawing.Point(53, 353);
             this.comboFiltro.Name = "comboFiltro";
-            this.comboFiltro.Size = new System.Drawing.Size(187, 25);
+            this.comboFiltro.Size = new System.Drawing.Size(141, 21);
             this.comboFiltro.TabIndex = 4;
             // 
             // label5
@@ -261,20 +252,18 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(12, 439);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(9, 357);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Filtro : ";
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(71, 406);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBusqueda.Location = new System.Drawing.Point(53, 330);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(187, 23);
+            this.txtBusqueda.Size = new System.Drawing.Size(141, 20);
             this.txtBusqueda.TabIndex = 2;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
@@ -283,10 +272,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(8, 410);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 333);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Buscar : ";
             // 
@@ -294,11 +282,9 @@
             // 
             this.listaRutasDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaRutasDisponibles.FormattingEnabled = true;
-            this.listaRutasDisponibles.ItemHeight = 17;
-            this.listaRutasDisponibles.Location = new System.Drawing.Point(9, 25);
-            this.listaRutasDisponibles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listaRutasDisponibles.Location = new System.Drawing.Point(7, 20);
             this.listaRutasDisponibles.Name = "listaRutasDisponibles";
-            this.listaRutasDisponibles.Size = new System.Drawing.Size(248, 361);
+            this.listaRutasDisponibles.Size = new System.Drawing.Size(187, 290);
             this.listaRutasDisponibles.TabIndex = 0;
             this.listaRutasDisponibles.SelectedIndexChanged += new System.EventHandler(this.listaRutasDisponibles_SelectedIndexChanged);
             // 
@@ -310,11 +296,9 @@
             this.groupBox4.Controls.Add(this.listaPuntosRuta);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox4.Location = new System.Drawing.Point(657, 16);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(493, 13);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(267, 468);
+            this.groupBox4.Size = new System.Drawing.Size(200, 380);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Puntos en Ruta Seleccionada";
@@ -325,10 +309,10 @@
             this.btnAgregarPuntoARuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPuntoARuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntoARuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregarPuntoARuta.Location = new System.Drawing.Point(37, 430);
-            this.btnAgregarPuntoARuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarPuntoARuta.Location = new System.Drawing.Point(28, 349);
+            this.btnAgregarPuntoARuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarPuntoARuta.Name = "btnAgregarPuntoARuta";
-            this.btnAgregarPuntoARuta.Size = new System.Drawing.Size(108, 32);
+            this.btnAgregarPuntoARuta.Size = new System.Drawing.Size(81, 26);
             this.btnAgregarPuntoARuta.TabIndex = 3;
             this.btnAgregarPuntoARuta.Text = "Agregar";
             this.btnAgregarPuntoARuta.UseVisualStyleBackColor = false;
@@ -340,10 +324,10 @@
             this.btnBorrarPuntoDeRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarPuntoDeRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarPuntoDeRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrarPuntoDeRuta.Location = new System.Drawing.Point(151, 430);
-            this.btnBorrarPuntoDeRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrarPuntoDeRuta.Location = new System.Drawing.Point(113, 349);
+            this.btnBorrarPuntoDeRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrarPuntoDeRuta.Name = "btnBorrarPuntoDeRuta";
-            this.btnBorrarPuntoDeRuta.Size = new System.Drawing.Size(108, 32);
+            this.btnBorrarPuntoDeRuta.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarPuntoDeRuta.TabIndex = 2;
             this.btnBorrarPuntoDeRuta.Text = "Borrar";
             this.btnBorrarPuntoDeRuta.UseVisualStyleBackColor = false;
@@ -353,11 +337,9 @@
             // 
             this.listaPuntosRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaPuntosRuta.FormattingEnabled = true;
-            this.listaPuntosRuta.ItemHeight = 17;
-            this.listaPuntosRuta.Location = new System.Drawing.Point(9, 25);
-            this.listaPuntosRuta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listaPuntosRuta.Location = new System.Drawing.Point(7, 20);
             this.listaPuntosRuta.Name = "listaPuntosRuta";
-            this.listaPuntosRuta.Size = new System.Drawing.Size(248, 361);
+            this.listaPuntosRuta.Size = new System.Drawing.Size(187, 290);
             this.listaPuntosRuta.TabIndex = 0;
             this.listaPuntosRuta.SelectedIndexChanged += new System.EventHandler(this.listaPuntosRuta_SelectedIndexChanged);
             // 
@@ -367,10 +349,10 @@
             this.btnAgregarPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregarPuntos.Location = new System.Drawing.Point(9, 63);
-            this.btnAgregarPuntos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarPuntos.Location = new System.Drawing.Point(7, 51);
+            this.btnAgregarPuntos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarPuntos.Name = "btnAgregarPuntos";
-            this.btnAgregarPuntos.Size = new System.Drawing.Size(108, 32);
+            this.btnAgregarPuntos.Size = new System.Drawing.Size(81, 26);
             this.btnAgregarPuntos.TabIndex = 0;
             this.btnAgregarPuntos.Text = "Agregar";
             this.btnAgregarPuntos.UseVisualStyleBackColor = false;
@@ -382,10 +364,10 @@
             this.btnBorrarPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarPuntos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrarPuntos.Location = new System.Drawing.Point(237, 100);
-            this.btnBorrarPuntos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrarPuntos.Location = new System.Drawing.Point(178, 81);
+            this.btnBorrarPuntos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrarPuntos.Name = "btnBorrarPuntos";
-            this.btnBorrarPuntos.Size = new System.Drawing.Size(108, 32);
+            this.btnBorrarPuntos.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarPuntos.TabIndex = 1;
             this.btnBorrarPuntos.Text = "Borrar";
             this.btnBorrarPuntos.UseVisualStyleBackColor = false;
@@ -396,10 +378,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(8, 41);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(6, 33);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 2;
             this.label7.Text = "Nombre : ";
             // 
@@ -407,10 +388,9 @@
             // 
             this.txtNombrePunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombrePunto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtNombrePunto.Location = new System.Drawing.Point(120, 32);
-            this.txtNombrePunto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombrePunto.Location = new System.Drawing.Point(90, 26);
             this.txtNombrePunto.Name = "txtNombrePunto";
-            this.txtNombrePunto.Size = new System.Drawing.Size(219, 23);
+            this.txtNombrePunto.Size = new System.Drawing.Size(165, 20);
             this.txtNombrePunto.TabIndex = 3;
             // 
             // groupBox5
@@ -424,11 +404,9 @@
             this.groupBox5.Controls.Add(this.btnAgregarPuntos);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox5.Location = new System.Drawing.Point(19, 15);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Location = new System.Drawing.Point(14, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox5.Size = new System.Drawing.Size(356, 218);
+            this.groupBox5.Size = new System.Drawing.Size(267, 177);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Puntos";
@@ -440,10 +418,10 @@
             this.btnModificarPunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarPunto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarPunto.Location = new System.Drawing.Point(121, 63);
-            this.btnModificarPunto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarPunto.Location = new System.Drawing.Point(91, 51);
+            this.btnModificarPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarPunto.Name = "btnModificarPunto";
-            this.btnModificarPunto.Size = new System.Drawing.Size(111, 32);
+            this.btnModificarPunto.Size = new System.Drawing.Size(83, 26);
             this.btnModificarPunto.TabIndex = 10;
             this.btnModificarPunto.Text = "Modificar";
             this.btnModificarPunto.UseVisualStyleBackColor = false;
@@ -455,10 +433,10 @@
             this.btnLimpiarPunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarPunto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpiarPunto.Location = new System.Drawing.Point(236, 63);
-            this.btnLimpiarPunto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiarPunto.Location = new System.Drawing.Point(177, 51);
+            this.btnLimpiarPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpiarPunto.Name = "btnLimpiarPunto";
-            this.btnLimpiarPunto.Size = new System.Drawing.Size(109, 32);
+            this.btnLimpiarPunto.Size = new System.Drawing.Size(82, 26);
             this.btnLimpiarPunto.TabIndex = 9;
             this.btnLimpiarPunto.Text = "Limpiar";
             this.btnLimpiarPunto.UseVisualStyleBackColor = false;
@@ -466,20 +444,20 @@
             // 
             // Form_Rutas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(941, 498);
+            this.ClientSize = new System.Drawing.Size(706, 405);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Rutas";
             this.Text = "Rutas";
+            this.Load += new System.EventHandler(this.Form_Rutas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
