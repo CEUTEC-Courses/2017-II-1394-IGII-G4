@@ -54,11 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -87,9 +87,6 @@
     <Compile Include="Entity\persona.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\PersonaHorario.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entity\personarol.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
@@ -112,9 +109,6 @@
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\sp_helpdiagrams_Result.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TCS_Model.Context.cs">
