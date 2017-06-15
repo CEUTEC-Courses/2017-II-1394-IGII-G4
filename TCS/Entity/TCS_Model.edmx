@@ -288,6 +288,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FiltroFechasViajes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DelD" Type="date" Mode="In" />
+          <Parameter Name="AlD" Type="date" Mode="In" />
+        </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -720,6 +724,10 @@
             <End Role="ruta" EntitySet="ruta" />
             <End Role="viaje" EntitySet="viaje" />
           </AssociationSet>
+          <FunctionImport Name="FiltroFechasViajes1" ReturnType="Collection(Int32)">
+            <Parameter Name="DelD" Mode="In" Type="DateTime" />
+            <Parameter Name="AlD" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -980,6 +988,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FiltroFechasViajes1" FunctionName="TCS_DBModel.Store.FiltroFechasViajes" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

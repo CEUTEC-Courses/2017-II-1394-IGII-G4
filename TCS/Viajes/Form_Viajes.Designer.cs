@@ -47,13 +47,14 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.lvBusqueda = new System.Windows.Forms.ListView();
+            this.No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label10 = new System.Windows.Forms.Label();
             this.dtpFiltroAl = new System.Windows.Forms.DateTimePicker();
             this.dtpFiltroDel = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.lbBusqueda = new System.Windows.Forms.ListBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -289,13 +290,13 @@
             // 
             this.gbBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbBusqueda.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbBusqueda.Controls.Add(this.lvBusqueda);
             this.gbBusqueda.Controls.Add(this.label10);
             this.gbBusqueda.Controls.Add(this.dtpFiltroAl);
             this.gbBusqueda.Controls.Add(this.dtpFiltroDel);
             this.gbBusqueda.Controls.Add(this.label2);
             this.gbBusqueda.Controls.Add(this.button1);
             this.gbBusqueda.Controls.Add(this.btnEliminar);
-            this.gbBusqueda.Controls.Add(this.lbBusqueda);
             this.gbBusqueda.Controls.Add(this.btnEditar);
             this.gbBusqueda.Controls.Add(this.txtBusqueda);
             this.gbBusqueda.Controls.Add(this.label1);
@@ -308,6 +309,24 @@
             this.gbBusqueda.TabIndex = 18;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda Rápida";
+            // 
+            // lvBusqueda
+            // 
+            this.lvBusqueda.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.No});
+            this.lvBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvBusqueda.Location = new System.Drawing.Point(166, 102);
+            this.lvBusqueda.Name = "lvBusqueda";
+            this.lvBusqueda.Size = new System.Drawing.Size(176, 259);
+            this.lvBusqueda.TabIndex = 25;
+            this.lvBusqueda.UseCompatibleStateImageBehavior = false;
+            this.lvBusqueda.View = System.Windows.Forms.View.Details;
+            // 
+            // No
+            // 
+            this.No.Tag = "No. de Viaje";
+            this.No.Text = "No.";
+            this.No.Width = 90;
             // 
             // label10
             // 
@@ -381,16 +400,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // lbBusqueda
-            // 
-            this.lbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBusqueda.FormattingEnabled = true;
-            this.lbBusqueda.ItemHeight = 18;
-            this.lbBusqueda.Location = new System.Drawing.Point(166, 81);
-            this.lbBusqueda.Name = "lbBusqueda";
-            this.lbBusqueda.Size = new System.Drawing.Size(176, 274);
-            this.lbBusqueda.TabIndex = 18;
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -412,6 +421,7 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(176, 24);
             this.txtBusqueda.TabIndex = 16;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // label1
             // 
@@ -466,7 +476,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbBusqueda;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
@@ -475,5 +484,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFiltroAl;
         private System.Windows.Forms.DateTimePicker dtpFiltroDel;
+        private System.Windows.Forms.ListView lvBusqueda;
+        private System.Windows.Forms.ColumnHeader No;
     }
 }
