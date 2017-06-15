@@ -58,5 +58,15 @@ namespace TCS.UsuariosClases
             mostrarPrivilegiosLV.Items.Clear();
             agregarPrivilegio();
         }
+
+        private void borrarPrivilegiosBtn_Click(object sender, EventArgs e)
+        {
+            ListViewItem listItem = mostrarPrivilegiosLV.SelectedItems[0];
+            string privilegioAEliminar = listItem.Text;
+            cp.eliminar(privilegioAEliminar);
+            MessageBox.Show("Privilegio Eliminado");
+            mostrarPrivilegiosLV.Items.Clear();
+            agregarPrivilegio();
+        }
     }
 }

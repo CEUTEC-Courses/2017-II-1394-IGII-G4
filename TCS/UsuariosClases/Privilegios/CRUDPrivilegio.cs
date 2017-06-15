@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TCS.Entity;
 using TCS.InitialConfiguration;
 using TCS.UsuariosClases.Privilegios;
+using TCS.UsuariosClases;
 
 
 namespace TCS.UsuariosClases
@@ -59,6 +60,21 @@ namespace TCS.UsuariosClases
                 }
             }
             return r;
+        }
+
+        public void eliminar(string nombreP)
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+
+                privilegio queryEliminarPrivilegio = (from eliminar in conexion.privilegio where eliminar.Nombre == nombreP
+                                                select eliminar).FirstOrDefault();
+
+                conexion.privilegio.Remove(queryEliminarPrivilegio);
+                conexion.SaveChanges();
+            }
         }
     }
 }

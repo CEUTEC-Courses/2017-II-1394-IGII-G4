@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.regresarBtn = new System.Windows.Forms.Button();
-            this.modificarPrivilegiosBtn = new System.Windows.Forms.Button();
             this.borrarPrivilegiosBtn = new System.Windows.Forms.Button();
             this.mostrarPrivilegiosLV = new System.Windows.Forms.ListView();
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,7 +47,7 @@
             this.regresarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regresarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresarBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.regresarBtn.Location = new System.Drawing.Point(420, 77);
+            this.regresarBtn.Location = new System.Drawing.Point(420, 51);
             this.regresarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.regresarBtn.Name = "regresarBtn";
             this.regresarBtn.Size = new System.Drawing.Size(88, 26);
@@ -56,34 +55,20 @@
             this.regresarBtn.Text = "Regresar";
             this.regresarBtn.UseVisualStyleBackColor = false;
             // 
-            // modificarPrivilegiosBtn
-            // 
-            this.modificarPrivilegiosBtn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.modificarPrivilegiosBtn.Enabled = false;
-            this.modificarPrivilegiosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificarPrivilegiosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarPrivilegiosBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.modificarPrivilegiosBtn.Location = new System.Drawing.Point(419, 17);
-            this.modificarPrivilegiosBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.modificarPrivilegiosBtn.Name = "modificarPrivilegiosBtn";
-            this.modificarPrivilegiosBtn.Size = new System.Drawing.Size(89, 26);
-            this.modificarPrivilegiosBtn.TabIndex = 17;
-            this.modificarPrivilegiosBtn.Text = "Modificar";
-            this.modificarPrivilegiosBtn.UseVisualStyleBackColor = false;
-            // 
             // borrarPrivilegiosBtn
             // 
             this.borrarPrivilegiosBtn.BackColor = System.Drawing.Color.Firebrick;
             this.borrarPrivilegiosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarPrivilegiosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarPrivilegiosBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borrarPrivilegiosBtn.Location = new System.Drawing.Point(419, 47);
+            this.borrarPrivilegiosBtn.Location = new System.Drawing.Point(419, 20);
             this.borrarPrivilegiosBtn.Margin = new System.Windows.Forms.Padding(2);
             this.borrarPrivilegiosBtn.Name = "borrarPrivilegiosBtn";
             this.borrarPrivilegiosBtn.Size = new System.Drawing.Size(89, 26);
             this.borrarPrivilegiosBtn.TabIndex = 16;
             this.borrarPrivilegiosBtn.Text = "Borrar";
             this.borrarPrivilegiosBtn.UseVisualStyleBackColor = false;
+            this.borrarPrivilegiosBtn.Click += new System.EventHandler(this.borrarPrivilegiosBtn_Click);
             // 
             // mostrarPrivilegiosLV
             // 
@@ -163,7 +148,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(519, 156);
             this.Controls.Add(this.regresarBtn);
-            this.Controls.Add(this.modificarPrivilegiosBtn);
             this.Controls.Add(this.borrarPrivilegiosBtn);
             this.Controls.Add(this.mostrarPrivilegiosLV);
             this.Controls.Add(this.panel1);
@@ -180,7 +164,6 @@
         #endregion
 
         private System.Windows.Forms.Button regresarBtn;
-        private System.Windows.Forms.Button modificarPrivilegiosBtn;
         private System.Windows.Forms.Button borrarPrivilegiosBtn;
         private System.Windows.Forms.ListView mostrarPrivilegiosLV;
         private System.Windows.Forms.ColumnHeader Nombre;
