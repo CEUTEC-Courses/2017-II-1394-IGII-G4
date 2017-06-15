@@ -24,47 +24,45 @@ namespace TCS
 
         }
 
-        private void CargarViajes ()
+        public List<int> ListarViajesPorNumero()
         {
-            try
+            lvBusqueda.Items.Clear();
+            using (var context = new TCS_Entities())
             {
-                lbBusqueda.DataSource = null;
-                lbBusqueda.Items.Clear();
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    lbBusqueda.DisplayMember = "No. Viaje";
-                    lbBusqueda.ValueMember = "ViajeID";
-                    //lbBusqueda.DataSource = context.viaje.
-                    //{
-
-                    //}
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
+                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                context.Database.Connection.Open();
+                var busqueda = (from cons in context.viaje select cons.ViajeID).ToList();
+                MostrarBusquedaT(busqueda);
+                return busqueda;
             }
         }
 
-        private void ListarViajes()
+        public List<int?> ListarViajesPorFecha()
         {
-            try
+            lvBusqueda.Items.Clear();
+            using (var context = new TCS_Entities())
             {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    lbBusqueda.DisplayMember = "No.";
-                    lbBusqueda.ValueMember = "ViajeID";
-                    var busqueda = context.FiltroFechasViajes(dtpFiltroDel.Value, dtpFiltroAl.Value);
-                    lbBusqueda.DataSource = busqueda;
-                }
-            }    
-            catch(Exception e)
-            {
+                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                context.Database.Connection.Open();
+                var busqueda = context.FiltroFechasViajes(dtpFiltroDel.Value, dtpFiltroAl.Value).ToList();
+                MostrarBusquedaF(busqueda);
+                return busqueda;
+            }
+        }
 
+        public void MostrarBusquedaF(List<int?> l)
+        {
+            foreach (var i in l)
+            {
+                lvBusqueda.Items.Add(i.ToString());
+            }
+        }
+
+        public void MostrarBusquedaT(List<int> l)
+        {
+            foreach (var i in l)
+            {
+                lvBusqueda.Items.Add(i.ToString());
             }
         }
 
@@ -75,12 +73,19 @@ namespace TCS
 
         private void dtpFiltroDel_ValueChanged(object sender, EventArgs e)
         {
-            ListarViajes();
+            txtBusqueda.Text = "";
+            ListarViajesPorFecha();
         }
 
         private void dtpFiltroAl_ValueChanged(object sender, EventArgs e)
         {
-            ListarViajes();
+            txtBusqueda.Text = "";
+            ListarViajesPorFecha();
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            ListarViajesPorNumero();
         }
     }
 }
