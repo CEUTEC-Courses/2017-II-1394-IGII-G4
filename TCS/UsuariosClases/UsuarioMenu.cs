@@ -82,7 +82,7 @@ namespace TCS
 
         private void regresarBtn_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
 
         private void borrarUsuariosBtn_Click(object sender, EventArgs e)

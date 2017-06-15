@@ -54,6 +54,7 @@
             this.regresarBtn.TabIndex = 19;
             this.regresarBtn.Text = "Regresar";
             this.regresarBtn.UseVisualStyleBackColor = false;
+            this.regresarBtn.Click += new System.EventHandler(this.regresarBtn_Click);
             // 
             // borrarPrivilegiosBtn
             // 

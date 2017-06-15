@@ -68,5 +68,10 @@ namespace TCS.UsuariosClases
             mostrarPrivilegiosLV.Items.Clear();
             agregarPrivilegio();
         }
+
+        private void regresarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
