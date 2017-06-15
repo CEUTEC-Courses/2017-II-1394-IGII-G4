@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioUnidad));
             this.panelCrearUnidad = new System.Windows.Forms.Panel();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.buttonActualizar = new System.Windows.Forms.Button();
             this.buttonGuardarUnidad = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.añoUnidad = new System.Windows.Forms.DateTimePicker();
@@ -55,8 +57,6 @@
             this.contextMenuUnidad = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonActualizar = new System.Windows.Forms.Button();
-            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.panelCrearUnidad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMenuFlota)).BeginInit();
             this.groupBoxListaUnidades.SuspendLayout();
@@ -85,9 +85,38 @@
             this.panelCrearUnidad.Size = new System.Drawing.Size(311, 329);
             this.panelCrearUnidad.TabIndex = 1;
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonLimpiar.Location = new System.Drawing.Point(209, 280);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(88, 26);
+            this.buttonLimpiar.TabIndex = 14;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = false;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
+            // buttonActualizar
+            // 
+            this.buttonActualizar.BackColor = System.Drawing.Color.Green;
+            this.buttonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonActualizar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonActualizar.Location = new System.Drawing.Point(113, 280);
+            this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonActualizar.Name = "buttonActualizar";
+            this.buttonActualizar.Size = new System.Drawing.Size(88, 26);
+            this.buttonActualizar.TabIndex = 13;
+            this.buttonActualizar.Text = "Actualizar";
+            this.buttonActualizar.UseVisualStyleBackColor = false;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            // 
             // buttonGuardarUnidad
             // 
-            this.buttonGuardarUnidad.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonGuardarUnidad.BackColor = System.Drawing.Color.Navy;
+            this.buttonGuardarUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardarUnidad.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonGuardarUnidad.Location = new System.Drawing.Point(17, 280);
             this.buttonGuardarUnidad.Margin = new System.Windows.Forms.Padding(4);
@@ -300,37 +329,11 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // buttonActualizar
-            // 
-            this.buttonActualizar.BackColor = System.Drawing.Color.Green;
-            this.buttonActualizar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonActualizar.Location = new System.Drawing.Point(113, 280);
-            this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonActualizar.Name = "buttonActualizar";
-            this.buttonActualizar.Size = new System.Drawing.Size(88, 26);
-            this.buttonActualizar.TabIndex = 13;
-            this.buttonActualizar.Text = "Actualizar";
-            this.buttonActualizar.UseVisualStyleBackColor = false;
-            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
-            // 
-            // buttonLimpiar
-            // 
-            this.buttonLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonLimpiar.Location = new System.Drawing.Point(209, 280);
-            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(88, 26);
-            this.buttonLimpiar.TabIndex = 14;
-            this.buttonLimpiar.Text = "Limpiar";
-            this.buttonLimpiar.UseVisualStyleBackColor = false;
-            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
-            // 
             // FormularioUnidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(909, 388);
             this.Controls.Add(this.groupBoxListaUnidades);
             this.Controls.Add(this.ButtonMenuFlota);

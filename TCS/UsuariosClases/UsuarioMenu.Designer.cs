@@ -175,7 +175,7 @@
             // 
             // modificarUsuariosBtn
             // 
-            this.modificarUsuariosBtn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.modificarUsuariosBtn.BackColor = System.Drawing.Color.Navy;
             this.modificarUsuariosBtn.Enabled = false;
             this.modificarUsuariosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarUsuariosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(525, 236);
             this.Controls.Add(this.regresarBtn);
             this.Controls.Add(this.privilegiosBtn);
