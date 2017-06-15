@@ -15,6 +15,7 @@ namespace TCS
     {
         CRUDPrivilegio c = new CRUDPrivilegio();
         CRUDUsuario cu = new CRUDUsuario();
+
         public UsuarioMenu()
         {
             InitializeComponent();
@@ -36,14 +37,19 @@ namespace TCS
             {
                 MessageBox.Show("El usuario ya existe");
             }
+            else if(userTxt.Text==""||contrasenaTxt.Text==""||privilegioCmb.Text=="")
+            {
+                MessageBox.Show("Llene todos los campos");
+            }
             else
             {
                 agregarU.agregarUsuario(nuevo);
                 MessageBox.Show("Usuario creado correctamente");
+                userTxt.Text = "";
+                contrasenaTxt.Text = "";
             }
             mostrarUsuarioLV.Items.Clear();
             agregarUsuario();
-
         }
 
         private void privilegioCmb_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +87,13 @@ namespace TCS
 
         private void borrarUsuariosBtn_Click(object sender, EventArgs e)
         {
-           
+            ListViewItem listItem = mostrarUsuarioLV.SelectedItems[0];
+            string usuarioAEliminar=listItem.Text;
+            cu.eliminar(usuarioAEliminar);
+            MessageBox.Show("Usuario Eliminado");
+            mostrarUsuarioLV.Items.Clear();
+            agregarUsuario();
         }
+
     }
 }

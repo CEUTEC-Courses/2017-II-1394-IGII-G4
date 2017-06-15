@@ -61,5 +61,22 @@ namespace TCS.UsuarioClases
                 return queryConsultarUsuario;
             }
         }
+
+        public void eliminar(string nombre)
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+
+                usuario queryEliminarUsuario = (from eliminar in conexion.usuario
+                                                where eliminar.Usuario1 == nombre
+                                                select eliminar).FirstOrDefault();
+
+                conexion.usuario.Remove(queryEliminarUsuario);
+                conexion.SaveChanges();
+            }
+        }
+
     }
 }
