@@ -190,6 +190,7 @@
     <Compile Include="Rutas\RutaPuntoBuilder.cs" />
     <Compile Include="Rutas\RutaPuntoSimpleBuilder.cs" />
     <Compile Include="Rutas\RutaSimpleBuilder.cs" />
+    <Compile Include="UsuariosClases\Privilegios\PrivilegioModelo.cs" />
     <Compile Include="UsuariosClases\Privilegios\PrivilegiosForm.cs">
       <SubType>Form</SubType>
     </Compile>

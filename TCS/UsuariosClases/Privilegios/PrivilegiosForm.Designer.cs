@@ -120,12 +120,13 @@
             this.guardarUsuarioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.guardarUsuarioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarUsuarioBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guardarUsuarioBtn.Location = new System.Drawing.Point(72, 84);
+            this.guardarUsuarioBtn.Location = new System.Drawing.Point(84, 75);
             this.guardarUsuarioBtn.Name = "guardarUsuarioBtn";
             this.guardarUsuarioBtn.Size = new System.Drawing.Size(77, 29);
             this.guardarUsuarioBtn.TabIndex = 2;
             this.guardarUsuarioBtn.Text = "Agregar";
             this.guardarUsuarioBtn.UseVisualStyleBackColor = false;
+            this.guardarUsuarioBtn.Click += new System.EventHandler(this.guardarUsuarioBtn_Click);
             // 
             // privilegioTxt
             // 

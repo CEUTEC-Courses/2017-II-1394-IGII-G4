@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCS.UsuariosClases;
+using TCS.UsuariosClases.Privilegios;
 
 namespace TCS.UsuariosClases
 {
@@ -32,6 +33,30 @@ namespace TCS.UsuariosClases
         private void PrivilegiosForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guardarUsuarioBtn_Click(object sender, EventArgs e)
+        {
+            PrivilegioModelo nuevo = new PrivilegioModelo();
+            nuevo.nombrePrivilegio = privilegioTxt.Text;
+            
+            if (cp.privilegioExiste(privilegioTxt.Text))
+            {
+                MessageBox.Show("El privilegio ya existe");
+            }
+            else if (privilegioTxt.Text == "")
+            {
+                MessageBox.Show("Llene todos los campos");
+            }
+            else
+            {
+                cp.agregarPrivilegio(nuevo);
+                MessageBox.Show("Privilegio creado correctamente");
+                privilegioTxt.Text = "";
+               
+            }
+            mostrarPrivilegiosLV.Items.Clear();
+            agregarPrivilegio();
         }
     }
 }
