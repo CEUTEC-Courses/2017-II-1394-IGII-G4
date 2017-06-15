@@ -115,17 +115,6 @@
     <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\unidad.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\usuario.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\viaje.cs">
-      <DependentUpon>TCS_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
-    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\TCS_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +130,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TCS_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\unidad.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\usuario.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\viaje.cs">
+      <DependentUpon>TCS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosClases\CRUDPrivilegio.cs" />
+    <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>

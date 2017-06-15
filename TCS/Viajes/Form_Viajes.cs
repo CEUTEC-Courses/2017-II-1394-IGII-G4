@@ -24,6 +24,44 @@ namespace TCS
 
         }
 
+        public void CrearViaje()
+        {
+            try
+            {
+                //CAMBIAR UNIDAD
+                string unidad = cmbUnidad.Text.ToString();
+                DateTime fechapartida = dtpFechaPartida.Value;
+                DateTime fecharegreso = dtpFechaRegreso.Value;
+                string descripcion = rtxtDescripcion.Text;
+
+                using (TCS_Entities Conexion = new TCS_Entities())
+                {
+                    Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                    Conexion.Database.Connection.Open();
+
+                    var obtenerUnidad = (from cons in Conexion.unidad where cons.Placa == unidad select cons.UnidadID).ToList();
+
+                    int unidadid = Convert.ToInt32(obtenerUnidad.ElementAt(0));
+                    MessageBox.Show(unidadid.ToString());
+
+                    var viajeN = new viaje()
+                    {
+                        UnidadID = unidadid,
+                        FechaPartida = fechapartida,
+                        FechaRegreso = fecharegreso,
+                        Descripcion = descripcion
+                    };
+
+                    Conexion.viaje.Add(viajeN);
+                    Conexion.SaveChanges();
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
         public List<int> ListarViajesPorNumero(string buscar)
         {
             List<int> l = new List<int>();
@@ -69,6 +107,20 @@ namespace TCS
             return l;
         }
 
+        public string ObtenerDato(string tabla, string campo, string parametro)
+        {
+            string dato = "";
+
+            using (TCS_Entities Conexion = new TCS_Entities())
+            {
+                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                Conexion.Database.Connection.Open();
+
+
+                return dato;
+            }
+        }
+
         public void MostrarBusquedaF(List<int?> l)
         {
             foreach (var i in l)
@@ -112,6 +164,11 @@ namespace TCS
             {
                 lvBusqueda.Items.Clear();
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            CrearViaje();
         }
     }
 }
