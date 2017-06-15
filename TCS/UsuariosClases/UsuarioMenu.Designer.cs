@@ -201,6 +201,7 @@
             this.privilegiosBtn.TabIndex = 12;
             this.privilegiosBtn.Text = "Privilegios";
             this.privilegiosBtn.UseVisualStyleBackColor = false;
+            this.privilegiosBtn.Click += new System.EventHandler(this.privilegiosBtn_Click);
             // 
             // regresarBtn
             // 
