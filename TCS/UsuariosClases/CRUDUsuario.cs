@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TCS.Entity;
 using TCS.InitialConfiguration;
 
-namespace TCS.UsuarioClases
+namespace TCS.UsuariosClases
 {
     public class CRUDUsuario
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TCS.UsuarioClases;
+using TCS.UsuariosClases;
 
 namespace TCS
 {
@@ -54,7 +54,7 @@ namespace TCS
 
         private void privilegioCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            PrivilegiosForm pf = new PrivilegiosForm();
         }
 
         public void agregarPrivilegioComboBox()
@@ -95,5 +95,10 @@ namespace TCS
             agregarUsuario();
         }
 
+        private void privilegiosBtn_Click(object sender, EventArgs e)
+        {
+            PrivilegiosForm pf = new PrivilegiosForm();
+            pf.ShowDialog();
+        }
     }
 }

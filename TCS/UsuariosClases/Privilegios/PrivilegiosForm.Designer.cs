@@ -169,6 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "PrivilegiosForm";
             this.Text = "PrivilegiosForm";
+            this.Load += new System.EventHandler(this.PrivilegiosForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
