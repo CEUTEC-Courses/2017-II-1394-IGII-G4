@@ -65,7 +65,7 @@
             this.ButtonMenuPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ButtonMenuPrincipal.TabIndex = 2;
             this.ButtonMenuPrincipal.TabStop = false;
-            this.ButtonMenuPrincipal.Click += new System.EventHandler(this.ButtonMenuPrincipal_Click);
+            //this.ButtonMenuPrincipal.Click += new System.EventHandler(this.ButtonMenuPrincipal_Click);
             // 
             // Form_MenuFlota
             // 

@@ -24,30 +24,49 @@ namespace TCS
 
         }
 
-        public List<int> ListarViajesPorNumero()
+        public List<int> ListarViajesPorNumero(string buscar)
         {
+            List<int> l = new List<int>();
             lvBusqueda.Items.Clear();
-            using (var context = new TCS_Entities())
+            try
             {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                var busqueda = (from cons in context.viaje select cons.ViajeID).ToList();
-                MostrarBusquedaT(busqueda);
-                return busqueda;
+                using (var context = new TCS_Entities())
+                {
+                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                    context.Database.Connection.Open();
+                    int b = Convert.ToInt16(buscar);
+                    var busqueda = (from cons in context.viaje where cons.ViajeID == b select cons.ViajeID).ToList();
+                    l = busqueda;
+                    MostrarBusquedaT(l);
+                }
             }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return l;
         }
 
         public List<int?> ListarViajesPorFecha()
         {
+            List<int?> l = new List<int?>();
             lvBusqueda.Items.Clear();
-            using (var context = new TCS_Entities())
+            try
             {
-                context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                context.Database.Connection.Open();
-                var busqueda = context.FiltroFechasViajes(dtpFiltroDel.Value, dtpFiltroAl.Value).ToList();
-                MostrarBusquedaF(busqueda);
-                return busqueda;
+                using (var context = new TCS_Entities())
+                {
+                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                    context.Database.Connection.Open();
+                    var busqueda = context.FiltroFechasViajes(dtpFiltroDel.Value, dtpFiltroAl.Value).ToList();
+                    l = busqueda;
+                    MostrarBusquedaF(l);
+                }
             }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return l;
         }
 
         public void MostrarBusquedaF(List<int?> l)
@@ -85,7 +104,14 @@ namespace TCS
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            ListarViajesPorNumero();
+            if (txtBusqueda.Text.Length > 0)
+            {
+                ListarViajesPorNumero(txtBusqueda.Text);
+            }
+            else
+            {
+                lvBusqueda.Items.Clear();
+            }
         }
     }
 }
