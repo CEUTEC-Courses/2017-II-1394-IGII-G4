@@ -96,5 +96,10 @@ namespace TCS.MenuFlota.Unidad
             _crudUnidad.MostrarListaUnidades(ref listViewUnidades);
 
         }
+
+        private void listViewUnidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCS.Entity;
 using TCS.InitialConfiguration;
+using TCS.Viajes;
 
 namespace TCS
 {
@@ -24,88 +25,11 @@ namespace TCS
 
         }
 
-        public void CrearViaje()
-        {
-            try
-            {
-                //CAMBIAR UNIDAD
-                string unidad = cmbUnidad.Text.ToString();
-                DateTime fechapartida = dtpFechaPartida.Value;
-                DateTime fecharegreso = dtpFechaRegreso.Value;
-                string descripcion = rtxtDescripcion.Text;
+        CRUD_Viaje cViaje = new CRUD_Viaje();
 
-                using (TCS_Entities Conexion = new TCS_Entities())
-                {
-                    Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    Conexion.Database.Connection.Open();
+        
 
-                    var obtenerUnidad = (from cons in Conexion.unidad where cons.Placa == unidad select cons.UnidadID).ToList();
-
-                    int unidadid = Convert.ToInt32(obtenerUnidad.ElementAt(0));
-                    MessageBox.Show(unidadid.ToString());
-
-                    var viajeN = new viaje()
-                    {
-                        UnidadID = unidadid,
-                        FechaPartida = fechapartida,
-                        FechaRegreso = fecharegreso,
-                        Descripcion = descripcion
-                    };
-
-                    Conexion.viaje.Add(viajeN);
-                    Conexion.SaveChanges();
-                }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-        }
-
-        public List<int> ListarViajesPorNumero(string buscar)
-        {
-            List<int> l = new List<int>();
-            lvBusqueda.Items.Clear();
-            try
-            {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    int b = Convert.ToInt16(buscar);
-                    var busqueda = (from cons in context.viaje where cons.ViajeID == b select cons.ViajeID).ToList();
-                    l = busqueda;
-                    MostrarBusquedaT(l);
-                }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return l;
-        }
-
-        public List<int?> ListarViajesPorFecha()
-        {
-            List<int?> l = new List<int?>();
-            lvBusqueda.Items.Clear();
-            try
-            {
-                using (var context = new TCS_Entities())
-                {
-                    context.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    context.Database.Connection.Open();
-                    var busqueda = context.FiltroFechasViajes(dtpFiltroDel.Value, dtpFiltroAl.Value).ToList();
-                    l = busqueda;
-                    MostrarBusquedaF(l);
-                }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return l;
-        }
+        
 
         public string ObtenerDato(string tabla, string campo, string parametro)
         {
@@ -123,6 +47,8 @@ namespace TCS
 
         public void MostrarBusquedaF(List<int?> l)
         {
+            l = cViaje.ListarViajesPorFecha(dtpFechaPartida.Value, dtpFechaRegreso.Value);
+
             foreach (var i in l)
             {
                 lvBusqueda.Items.Add(i.ToString());
@@ -131,6 +57,8 @@ namespace TCS
 
         public void MostrarBusquedaT(List<int> l)
         {
+            l = cViaje.ListarViajesPorNumero(txtBusqueda.Text);
+
             foreach (var i in l)
             {
                 lvBusqueda.Items.Add(i.ToString());
@@ -145,20 +73,20 @@ namespace TCS
         private void dtpFiltroDel_ValueChanged(object sender, EventArgs e)
         {
             txtBusqueda.Text = "";
-            ListarViajesPorFecha();
+            cViaje.ListarViajesPorFecha(dtpFechaPartida.Value, dtpFechaRegreso.Value);
         }
 
         private void dtpFiltroAl_ValueChanged(object sender, EventArgs e)
         {
             txtBusqueda.Text = "";
-            ListarViajesPorFecha();
+            cViaje.ListarViajesPorFecha(dtpFechaPartida.Value, dtpFechaRegreso.Value);
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             if (txtBusqueda.Text.Length > 0)
             {
-                ListarViajesPorNumero(txtBusqueda.Text);
+                cViaje.ListarViajesPorNumero(txtBusqueda.Text);
             }
             else
             {
@@ -168,7 +96,7 @@ namespace TCS
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            CrearViaje();
+            cViaje.CrearViaje(cmbUnidad.Text, dtpFechaPartida.Value, dtpFechaRegreso.Value, rtxtDescripcion.Text);
         }
     }
 }
