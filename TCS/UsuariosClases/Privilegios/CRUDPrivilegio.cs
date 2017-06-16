@@ -5,31 +5,43 @@ using System.Text;
 using System.Threading.Tasks;
 using TCS.Entity;
 using TCS.InitialConfiguration;
+using TCS.UsuariosClases.Privilegios;
+using TCS.UsuariosClases;
+
 
 namespace TCS.UsuariosClases
 {
-    public class CRUDUsuario
+    public class CRUDPrivilegio
     {
-        public void agregarUsuario(UsuarioModelo user)
+        public List<string> consultar()
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+                var queryObtenerPrivilegio = (from priv in conexion.privilegio select priv.Nombre).ToList();
+                return queryObtenerPrivilegio;
+            }
+        }
+
+        public void agregarPrivilegio(PrivilegioModelo privilegiomodel)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-                var nuevoUsuario = new usuario()
+                var nuevoPrivilegio = new privilegio()
                 {
-                    Usuario1 = user.Usuario,
-                    Contrasena = user.password,
-                    IdPrivilegio = user.IdPrivilegio
+                    Nombre = privilegiomodel.nombrePrivilegio
                 };
 
-                conexion.usuario.Add(nuevoUsuario);
+                conexion.privilegio.Add(nuevoPrivilegio);
                 conexion.SaveChanges();
             }
         }
 
-        public bool usuarioExiste(string nombre)
+        public bool privilegioExiste(string nombre)
         {
             bool r = false;
             using (TCS_Entities conexion = new TCS_Entities())
@@ -37,46 +49,32 @@ namespace TCS.UsuariosClases
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-               var query = from consulta in conexion.usuario select consulta.Usuario1;
-               
-                foreach(var i in query)
+                var query = from consulta in conexion.privilegio select consulta.Nombre;
+
+                foreach (var i in query)
                 {
                     if (i.ToString() == nombre)
                     {
                         r = true;
                     }
-                }             
+                }
             }
-            return r;    
+            return r;
         }
 
-        public List<string> consultarUsuarios()
+        public void eliminar(string nombreP)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-                var queryConsultarUsuario = (from consulta in conexion.usuario select consulta.Usuario1).ToList();
-                return queryConsultarUsuario;
-            }
-        }
-
-        public void eliminar(string nombre)
-        {
-            using (TCS_Entities conexion = new TCS_Entities())
-            {
-                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                conexion.Database.Connection.Open();
-
-                usuario queryEliminarUsuario = (from eliminar in conexion.usuario
-                                                where eliminar.Usuario1 == nombre
+                privilegio queryEliminarPrivilegio = (from eliminar in conexion.privilegio where eliminar.Nombre == nombreP
                                                 select eliminar).FirstOrDefault();
 
-                conexion.usuario.Remove(queryEliminarUsuario);
+                conexion.privilegio.Remove(queryEliminarPrivilegio);
                 conexion.SaveChanges();
             }
         }
-
     }
 }

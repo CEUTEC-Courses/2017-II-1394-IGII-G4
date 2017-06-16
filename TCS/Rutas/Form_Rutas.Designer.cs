@@ -91,7 +91,7 @@
             this.btnBorrarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBorrarRuta.Location = new System.Drawing.Point(178, 153);
-            this.btnBorrarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrarRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarRuta.Name = "btnBorrarRuta";
             this.btnBorrarRuta.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarRuta.TabIndex = 9;
@@ -106,7 +106,7 @@
             this.btnAgregarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregarRuta.Location = new System.Drawing.Point(5, 123);
-            this.btnAgregarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarRuta.Name = "btnAgregarRuta";
             this.btnAgregarRuta.Size = new System.Drawing.Size(82, 26);
             this.btnAgregarRuta.TabIndex = 7;
@@ -121,7 +121,7 @@
             this.btnSeleccionarPuntoDestinoRutaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarPuntoDestinoRutaNueva.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSeleccionarPuntoDestinoRutaNueva.Location = new System.Drawing.Point(90, 68);
-            this.btnSeleccionarPuntoDestinoRutaNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionarPuntoDestinoRutaNueva.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionarPuntoDestinoRutaNueva.Name = "btnSeleccionarPuntoDestinoRutaNueva";
             this.btnSeleccionarPuntoDestinoRutaNueva.Size = new System.Drawing.Size(171, 26);
             this.btnSeleccionarPuntoDestinoRutaNueva.TabIndex = 6;
@@ -136,7 +136,7 @@
             this.btnSeleccionarPuntoOrigenNuevaRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarPuntoOrigenNuevaRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSeleccionarPuntoOrigenNuevaRuta.Location = new System.Drawing.Point(90, 41);
-            this.btnSeleccionarPuntoOrigenNuevaRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionarPuntoOrigenNuevaRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionarPuntoOrigenNuevaRuta.Name = "btnSeleccionarPuntoOrigenNuevaRuta";
             this.btnSeleccionarPuntoOrigenNuevaRuta.Size = new System.Drawing.Size(171, 26);
             this.btnSeleccionarPuntoOrigenNuevaRuta.TabIndex = 5;
@@ -188,13 +188,13 @@
             // 
             // btnModificarRuta
             // 
-            this.btnModificarRuta.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnModificarRuta.BackColor = System.Drawing.Color.Navy;
             this.btnModificarRuta.Enabled = false;
             this.btnModificarRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificarRuta.Location = new System.Drawing.Point(91, 123);
-            this.btnModificarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarRuta.Name = "btnModificarRuta";
             this.btnModificarRuta.Size = new System.Drawing.Size(83, 26);
             this.btnModificarRuta.TabIndex = 8;
@@ -209,7 +209,7 @@
             this.btnLimpiarAgregarRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarAgregarRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimpiarAgregarRuta.Location = new System.Drawing.Point(178, 123);
-            this.btnLimpiarAgregarRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarAgregarRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarAgregarRuta.Name = "btnLimpiarAgregarRuta";
             this.btnLimpiarAgregarRuta.Size = new System.Drawing.Size(82, 26);
             this.btnLimpiarAgregarRuta.TabIndex = 0;
@@ -310,7 +310,7 @@
             this.btnAgregarPuntoARuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntoARuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregarPuntoARuta.Location = new System.Drawing.Point(28, 349);
-            this.btnAgregarPuntoARuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPuntoARuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPuntoARuta.Name = "btnAgregarPuntoARuta";
             this.btnAgregarPuntoARuta.Size = new System.Drawing.Size(81, 26);
             this.btnAgregarPuntoARuta.TabIndex = 3;
@@ -325,7 +325,7 @@
             this.btnBorrarPuntoDeRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarPuntoDeRuta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBorrarPuntoDeRuta.Location = new System.Drawing.Point(113, 349);
-            this.btnBorrarPuntoDeRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrarPuntoDeRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarPuntoDeRuta.Name = "btnBorrarPuntoDeRuta";
             this.btnBorrarPuntoDeRuta.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarPuntoDeRuta.TabIndex = 2;
@@ -350,7 +350,7 @@
             this.btnAgregarPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregarPuntos.Location = new System.Drawing.Point(7, 51);
-            this.btnAgregarPuntos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPuntos.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPuntos.Name = "btnAgregarPuntos";
             this.btnAgregarPuntos.Size = new System.Drawing.Size(81, 26);
             this.btnAgregarPuntos.TabIndex = 0;
@@ -365,7 +365,7 @@
             this.btnBorrarPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarPuntos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBorrarPuntos.Location = new System.Drawing.Point(178, 81);
-            this.btnBorrarPuntos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrarPuntos.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarPuntos.Name = "btnBorrarPuntos";
             this.btnBorrarPuntos.Size = new System.Drawing.Size(81, 26);
             this.btnBorrarPuntos.TabIndex = 1;
@@ -413,13 +413,13 @@
             // 
             // btnModificarPunto
             // 
-            this.btnModificarPunto.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnModificarPunto.BackColor = System.Drawing.Color.Navy;
             this.btnModificarPunto.Enabled = false;
             this.btnModificarPunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarPunto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificarPunto.Location = new System.Drawing.Point(91, 51);
-            this.btnModificarPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarPunto.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarPunto.Name = "btnModificarPunto";
             this.btnModificarPunto.Size = new System.Drawing.Size(83, 26);
             this.btnModificarPunto.TabIndex = 10;
@@ -434,7 +434,7 @@
             this.btnLimpiarPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarPunto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimpiarPunto.Location = new System.Drawing.Point(177, 51);
-            this.btnLimpiarPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarPunto.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarPunto.Name = "btnLimpiarPunto";
             this.btnLimpiarPunto.Size = new System.Drawing.Size(82, 26);
             this.btnLimpiarPunto.TabIndex = 9;
@@ -446,7 +446,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(706, 405);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
