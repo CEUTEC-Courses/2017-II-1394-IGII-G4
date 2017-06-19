@@ -37,6 +37,7 @@ namespace TCS.Viajes
             {
                 Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 Conexion.Database.Connection.Open();
+
                 int b = Convert.ToInt16(buscar);
                 var busqueda = (from cons in Conexion.viaje where cons.ViajeID == b select cons.ViajeID).ToList();
                 l = busqueda;
@@ -52,6 +53,7 @@ namespace TCS.Viajes
             {
                 Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 Conexion.Database.Connection.Open();
+
                 var busqueda = Conexion.FiltroFechasViajes(dtDel, dtAl).ToList();
                 l = busqueda;
                 return l;
