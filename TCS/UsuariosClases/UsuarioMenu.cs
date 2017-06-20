@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TCS.UsuarioClases;
+using TCS.UsuariosClases;
 
 namespace TCS
 {
@@ -15,6 +15,7 @@ namespace TCS
     {
         CRUDPrivilegio c = new CRUDPrivilegio();
         CRUDUsuario cu = new CRUDUsuario();
+
         public UsuarioMenu()
         {
             InitializeComponent();
@@ -30,17 +31,30 @@ namespace TCS
             nuevo.IdPrivilegio = privilegioCmb.SelectedIndex + 1;
 
             CRUDUsuario agregarU = new CRUDUsuario();
-            agregarU.agregarUsuario(nuevo);
+            
 
-            MessageBox.Show("Usuario creado correctamente");
+            if(cu.usuarioExiste(userTxt.Text))
+            {
+                MessageBox.Show("El usuario ya existe");
+            }
+            else if(userTxt.Text==""||contrasenaTxt.Text==""||privilegioCmb.Text=="")
+            {
+                MessageBox.Show("Llene todos los campos");
+            }
+            else
+            {
+                agregarU.agregarUsuario(nuevo);
+                MessageBox.Show("Usuario creado correctamente");
+                userTxt.Text = "";
+                contrasenaTxt.Text = "";
+            }
             mostrarUsuarioLV.Items.Clear();
             agregarUsuario();
-
         }
 
         private void privilegioCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            PrivilegiosForm pf = new PrivilegiosForm();
         }
 
         public void agregarPrivilegioComboBox()
@@ -64,6 +78,27 @@ namespace TCS
         private void UsuarioMenu_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void regresarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void borrarUsuariosBtn_Click(object sender, EventArgs e)
+        {
+            ListViewItem listItem = mostrarUsuarioLV.SelectedItems[0];
+            string usuarioAEliminar=listItem.Text;
+            cu.eliminar(usuarioAEliminar);
+            MessageBox.Show("Usuario Eliminado");
+            mostrarUsuarioLV.Items.Clear();
+            agregarUsuario();
+        }
+
+        private void privilegiosBtn_Click(object sender, EventArgs e)
+        {
+            PrivilegiosForm pf = new PrivilegiosForm();
+            pf.ShowDialog();
         }
     }
 }

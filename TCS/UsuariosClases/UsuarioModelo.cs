@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCS.UsuarioClases
+namespace TCS.UsuariosClases
 {
     public class UsuarioModelo
     {

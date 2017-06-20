@@ -65,13 +65,12 @@
             this.ButtonMenuPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ButtonMenuPrincipal.TabIndex = 2;
             this.ButtonMenuPrincipal.TabStop = false;
-            this.ButtonMenuPrincipal.Click += new System.EventHandler(this.ButtonMenuPrincipal_Click);
             // 
             // Form_MenuFlota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(276, 204);
             this.Controls.Add(this.ButtonMenuPrincipal);
             this.Controls.Add(this.AbrirFormularioUnidad);

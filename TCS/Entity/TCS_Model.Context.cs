@@ -157,5 +157,18 @@ namespace TCS.Entity
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<Nullable<int>> FiltroFechasViajes1(Nullable<System.DateTime> delD, Nullable<System.DateTime> alD)
+        {
+            var delDParameter = delD.HasValue ?
+                new ObjectParameter("DelD", delD) :
+                new ObjectParameter("DelD", typeof(System.DateTime));
+    
+            var alDParameter = alD.HasValue ?
+                new ObjectParameter("AlD", alD) :
+                new ObjectParameter("AlD", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("FiltroFechasViajes1", delDParameter, alDParameter);
+        }
     }
 }

@@ -32,15 +32,8 @@ namespace TCS.MenuFlota
 
         private void ButtonMenuPrincipal_Click(object sender, EventArgs e)
         {
-
+            
         }
-
-        //private void ButtonMenuPrincipal_Click(object sender, EventArgs e)
-        //{
-        //    Form_Principal FormularioPrincipal = new Form_Principal();
-        //    FormularioPrincipal.Show();
-        //    this.Close();
-        //}
 
     }
 }
