@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioUnidad));
             this.panelCrearUnidad = new System.Windows.Forms.Panel();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonActualizar = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             this.textBoxMarcaUnidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPlacaUnidad = new System.Windows.Forms.TextBox();
-            this.ButtonMenuFlota = new System.Windows.Forms.PictureBox();
             this.groupBoxListaUnidades = new System.Windows.Forms.GroupBox();
             this.listViewUnidades = new System.Windows.Forms.ListView();
             this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,7 +56,6 @@
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCrearUnidad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonMenuFlota)).BeginInit();
             this.groupBoxListaUnidades.SuspendLayout();
             this.contextMenuUnidad.SuspendLayout();
             this.SuspendLayout();
@@ -230,18 +227,6 @@
             this.textBoxPlacaUnidad.Size = new System.Drawing.Size(140, 21);
             this.textBoxPlacaUnidad.TabIndex = 0;
             // 
-            // ButtonMenuFlota
-            // 
-            this.ButtonMenuFlota.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMenuFlota.Image")));
-            this.ButtonMenuFlota.Location = new System.Drawing.Point(809, 310);
-            this.ButtonMenuFlota.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonMenuFlota.Name = "ButtonMenuFlota";
-            this.ButtonMenuFlota.Size = new System.Drawing.Size(99, 79);
-            this.ButtonMenuFlota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ButtonMenuFlota.TabIndex = 3;
-            this.ButtonMenuFlota.TabStop = false;
-            this.ButtonMenuFlota.Click += new System.EventHandler(this.ButtonMenuFlota_Click);
-            // 
             // groupBoxListaUnidades
             // 
             this.groupBoxListaUnidades.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -334,9 +319,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(909, 388);
+            this.ClientSize = new System.Drawing.Size(827, 388);
             this.Controls.Add(this.groupBoxListaUnidades);
-            this.Controls.Add(this.ButtonMenuFlota);
             this.Controls.Add(this.panelCrearUnidad);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -344,11 +328,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioUnidad";
-            this.Text = "FormularioUnidad";
+            this.Text = "Unidad";
             this.Load += new System.EventHandler(this.FormularioUnidad_Load);
             this.panelCrearUnidad.ResumeLayout(false);
             this.panelCrearUnidad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonMenuFlota)).EndInit();
             this.groupBoxListaUnidades.ResumeLayout(false);
             this.contextMenuUnidad.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -370,7 +353,6 @@
         private System.Windows.Forms.TextBox textBoxMarcaUnidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPlacaUnidad;
-        private System.Windows.Forms.PictureBox ButtonMenuFlota;
         private System.Windows.Forms.GroupBox groupBoxListaUnidades;
         private System.Windows.Forms.ListView listViewUnidades;
         private System.Windows.Forms.ColumnHeader columnID;
