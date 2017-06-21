@@ -44,6 +44,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonGuardarFlota = new System.Windows.Forms.Button();
             this.ButtonAgregarUnidadEnFlota = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             this.textBoxEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmpresa.Location = new System.Drawing.Point(155, 36);
-            this.textBoxEmpresa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmpresa.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmpresa.Name = "textBoxEmpresa";
             this.textBoxEmpresa.Size = new System.Drawing.Size(163, 22);
             this.textBoxEmpresa.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             this.textBoxDueño.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDueño.Location = new System.Drawing.Point(138, 68);
-            this.textBoxDueño.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxDueño.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxDueño.Name = "textBoxDueño";
             this.textBoxDueño.Size = new System.Drawing.Size(163, 22);
             this.textBoxDueño.TabIndex = 4;
@@ -105,7 +106,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(73, 100);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(163, 22);
             this.textBox1.TabIndex = 6;
@@ -115,7 +116,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(11, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(682, 250);
+            this.groupBox1.Size = new System.Drawing.Size(655, 250);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unidades";
@@ -124,7 +125,7 @@
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -181,6 +182,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonGuardarFlota);
             this.groupBox2.Controls.Add(this.ButtonAgregarUnidadEnFlota);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -192,10 +194,23 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(725, 429);
+            this.groupBox2.Size = new System.Drawing.Size(677, 454);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Flota";
+            // 
+            // buttonGuardarFlota
+            // 
+            this.buttonGuardarFlota.BackColor = System.Drawing.Color.Navy;
+            this.buttonGuardarFlota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuardarFlota.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonGuardarFlota.Location = new System.Drawing.Point(36, 406);
+            this.buttonGuardarFlota.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonGuardarFlota.Name = "buttonGuardarFlota";
+            this.buttonGuardarFlota.Size = new System.Drawing.Size(88, 41);
+            this.buttonGuardarFlota.TabIndex = 13;
+            this.buttonGuardarFlota.Text = "Guardar";
+            this.buttonGuardarFlota.UseVisualStyleBackColor = false;
             // 
             // ButtonAgregarUnidadEnFlota
             // 
@@ -206,7 +221,7 @@
             this.ButtonAgregarUnidadEnFlota.Location = new System.Drawing.Point(286, 100);
             this.ButtonAgregarUnidadEnFlota.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonAgregarUnidadEnFlota.Name = "ButtonAgregarUnidadEnFlota";
-            this.ButtonAgregarUnidadEnFlota.Size = new System.Drawing.Size(171, 26);
+            this.ButtonAgregarUnidadEnFlota.Size = new System.Drawing.Size(171, 32);
             this.ButtonAgregarUnidadEnFlota.TabIndex = 9;
             this.ButtonAgregarUnidadEnFlota.Text = "Agregar Unidad";
             this.ButtonAgregarUnidadEnFlota.UseVisualStyleBackColor = false;
@@ -250,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button ButtonAgregarUnidadEnFlota;
+        private System.Windows.Forms.Button buttonGuardarFlota;
     }
 }
