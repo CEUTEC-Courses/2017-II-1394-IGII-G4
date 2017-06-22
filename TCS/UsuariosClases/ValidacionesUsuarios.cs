@@ -42,7 +42,7 @@ namespace TCS.UsuariosClases
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-                var query = from consulta in conexion.usuario select consulta.UsuarioID;
+                var query = (from consulta in conexion.usuario select consulta.UsuarioID).ToList();
 
                 foreach (var i in query)
                 {
@@ -58,6 +58,7 @@ namespace TCS.UsuariosClases
         public string validaciones(TextBox nombre, TextBox contraseña, ComboBox id)
         {
             string mensaje=" ";
+            int idDevuelto;
 
             var camposVacios = nombre.Text == "" || contraseña.Text == "" || id.Text == "";
             if(camposVacios)
@@ -69,7 +70,8 @@ namespace TCS.UsuariosClases
 
             if (existe)
             {
-                crud_Usuario.modificarUsuario(nombre.Text, contraseña.Text, crud_Privilegio.devolverIdPrivilegio(nombre.Text));
+                idDevuelto = crud_Privilegio.devolverIdPrivilegio(id.Text);
+                crud_Usuario.modificarUsuario(nombre.Text, contraseña.Text,idDevuelto);
                 return mensaje = "Usuario Modificado";
             }
 

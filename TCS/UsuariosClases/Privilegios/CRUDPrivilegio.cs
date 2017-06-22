@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TCS.Entity;
 using TCS.InitialConfiguration;
-//using TCS.UsuariosClases.Privilegios;
 using TCS.UsuariosClases;
-
 
 namespace TCS.UsuariosClases
 {
     public class CRUDPrivilegio
     {
-        public List<string> consultar()
+        public List<string> consultarPrivilegios()
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
@@ -34,6 +32,19 @@ namespace TCS.UsuariosClases
                                       where obtenerId.Nombre == nombreP
                                       select obtenerId.IdPrivilegio).FirstOrDefault();
                 return queryObtenerId;
+            }
+        }
+
+        public string devolverNombrePrivilegio(int id)
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+                var queryObtenerNombre = (from obtenerNombre in conexion.privilegio
+                                      where obtenerNombre.IdPrivilegio == id
+                                      select obtenerNombre.Nombre).FirstOrDefault();
+                return queryObtenerNombre;
             }
         }
 
@@ -63,7 +74,7 @@ namespace TCS.UsuariosClases
             return r;
         }
 
-        public void eliminar(int id)
+        public void eliminarPrivilegio(int id)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {

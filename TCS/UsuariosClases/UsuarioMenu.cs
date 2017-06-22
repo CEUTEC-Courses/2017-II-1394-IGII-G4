@@ -17,6 +17,7 @@ namespace TCS
         CRUDUsuario crud_usuarios = new CRUDUsuario();
         ValidacionesUsuarios validacionesUsuariosExistentes = new ValidacionesUsuarios();
 
+
         public int usuarioSeleccionado
         {
             get;
@@ -25,29 +26,10 @@ namespace TCS
        public UsuarioMenu()
         {
             InitializeComponent();
-            agregarPrivilegioComboBox();
             crud_usuarios.consultarUsuarios(ref mostrarUsuarioLV);
         }
 
-        private void guardarUsuarioBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(validacionesUsuariosExistentes.validaciones(userTxt, contrasenaTxt, privilegioCmb));
-
-            userTxt.Text = "";
-            contrasenaTxt.Text = "";
-            privilegioCmb.Text = "";
-            mostrarUsuarioLV.Items.Clear();
-            crud_usuarios.consultarUsuarios(ref mostrarUsuarioLV);
-        }
-
-        public void agregarPrivilegioComboBox()
-        {
-            foreach (var i in crud_privilegios.consultar())
-            {
-                privilegioCmb.Items.Add(i.ToString());
-            }
-        }
-
+       
         private void regresarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,7 +38,7 @@ namespace TCS
         private void borrarUsuariosBtn_Click(object sender, EventArgs e)
         {
                 var idUsuarioAEliminar = Convert.ToInt32(mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[0].Text);
-                crud_usuarios.eliminar(idUsuarioAEliminar);
+                crud_usuarios.eliminarUsuarios(idUsuarioAEliminar);
                 MessageBox.Show("Usuario Eliminado");
                 mostrarUsuarioLV.Items.Clear();
                 crud_usuarios.consultarUsuarios(ref mostrarUsuarioLV);
@@ -65,16 +47,20 @@ namespace TCS
 
         private void privilegiosBtn_Click(object sender, EventArgs e)
         {
-            PrivilegiosForm pf = new PrivilegiosForm();
-            pf.ShowDialog();
+            Form miform;
+            FormsFactory formularios=new FormsFactory();
+            miform = formularios.getForms("PrivilegiosForm");
+            miform.ShowDialog();
         }
 
         private void modificarUsuariosBtn_Click(object sender, EventArgs e)
         {
-            userTxt.Enabled = true;
-            contrasenaTxt.Enabled = true;
-            privilegioCmb.Enabled = true;
-
+            NuevoUsuarioForm nu = new NuevoUsuarioForm();
+    
+            nu.userTxt.Text= mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[1].Text;
+            nu.contrasenaTxt.Text = mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[2].Text;
+            nu.privilegioCmb.Text = crud_privilegios.devolverNombrePrivilegio(Convert.ToInt32(mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[3].Text));
+            nu.ShowDialog();
             mostrarUsuarioLV.Items.Clear();
             crud_usuarios.consultarUsuarios(ref mostrarUsuarioLV);
         }
@@ -82,23 +68,15 @@ namespace TCS
         private void mostrarUsuarioLV_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             usuarioSeleccionado = e.ItemIndex;
-
-            userTxt.Text= mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[1].Text;
-            contrasenaTxt.Text = mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[2].Text;
-            privilegioCmb.Text = mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[3].Text;
         }
 
-        private void refrescarBtn_Click(object sender, EventArgs e)
-        {
-            privilegioCmb.Items.Clear();
-            agregarPrivilegioComboBox();
-        }
 
         private void nuevoUsuarioBtn_Click(object sender, EventArgs e)
         {
-            userTxt.Enabled = true;
-            contrasenaTxt.Enabled = true;
-            privilegioCmb.Enabled = true;
+            Form miform;
+            FormsFactory formularios = new FormsFactory();
+            miform = formularios.getForms("NuevoUsuarioForm");
+            miform.ShowDialog();
         }
     }
 }

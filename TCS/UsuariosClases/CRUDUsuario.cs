@@ -46,7 +46,7 @@ namespace TCS.UsuariosClases
             }
         }
 
-        public void eliminar(int id)
+        public void eliminarUsuarios(int id)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
