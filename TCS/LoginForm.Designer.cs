@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.contrasenaLoginTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.contraLogin = new System.Windows.Forms.TextBox();
             this.EntrarLoginBtn = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -42,10 +44,22 @@
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(247, 66);
             this.panel1.TabIndex = 0;
+//            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(27, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(195, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Trucking Control System";
             // 
             // panel3
             // 
@@ -101,7 +115,7 @@
             this.EntrarLoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EntrarLoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntrarLoginBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EntrarLoginBtn.Location = new System.Drawing.Point(82, 194);
+            this.EntrarLoginBtn.Location = new System.Drawing.Point(91, 197);
             this.EntrarLoginBtn.Name = "EntrarLoginBtn";
             this.EntrarLoginBtn.Size = new System.Drawing.Size(74, 34);
             this.EntrarLoginBtn.TabIndex = 8;
@@ -125,6 +139,8 @@
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +155,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox contraLogin;
         private System.Windows.Forms.Button EntrarLoginBtn;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -19,23 +19,37 @@ namespace TCS.UsuariosClases
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
+
                 var queryObtenerPrivilegio = (from priv in conexion.privilegio select priv.Nombre).ToList();
                 return queryObtenerPrivilegio;
             }
         }
 
-        public void agregarPrivilegio(PrivilegioModelo privilegiomodel)
+        public int devolverIdPrivilegio(string nombreP)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-                var nuevoPrivilegio = new privilegio()
-                {
-                    Nombre = privilegiomodel.nombrePrivilegio
-                };
+                var queryObtenerId = (from obtenerId in conexion.privilegio
+                                      where obtenerId.Nombre == nombreP
+                                      select obtenerId.IdPrivilegio).FirstOrDefault();
 
+                return queryObtenerId;
+
+            }
+
+        }
+
+        public void agregarPrivilegio(string nombre)
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+
+                var nuevoPrivilegio = AppConfigurationManager.Instance().DbContext.privilegio.Add(new privilegio { Nombre=nombre });
                 conexion.privilegio.Add(nuevoPrivilegio);
                 conexion.SaveChanges();
             }

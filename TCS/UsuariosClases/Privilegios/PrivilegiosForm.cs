@@ -36,10 +36,7 @@ namespace TCS.UsuariosClases
         }
 
         private void guardarUsuarioBtn_Click(object sender, EventArgs e)
-        {
-            PrivilegioModelo nuevo = new PrivilegioModelo();
-            nuevo.nombrePrivilegio = privilegioTxt.Text;
-            
+        {   
             if (cp.privilegioExiste(privilegioTxt.Text))
             {
                 MessageBox.Show("El privilegio ya existe");
@@ -50,7 +47,7 @@ namespace TCS.UsuariosClases
             }
             else
             {
-                cp.agregarPrivilegio(nuevo);
+                cp.agregarPrivilegio(privilegioTxt.Text);
                 MessageBox.Show("Privilegio creado correctamente");
                 privilegioTxt.Text = "";
                

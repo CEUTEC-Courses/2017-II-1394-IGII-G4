@@ -16,11 +16,16 @@ namespace TCS
         CRUDPrivilegio c = new CRUDPrivilegio();
         CRUDUsuario cu = new CRUDUsuario();
 
-        public UsuarioMenu()
+        public int usuarioSeleccionado
+        {
+            get;
+            set;
+        }
+       public UsuarioMenu()
         {
             InitializeComponent();
             agregarPrivilegioComboBox();
-            agregarUsuario();
+            cu.consultarUsuarios(ref mostrarUsuarioLV);
         }
 
         private void guardarUsuarioBtn_Click(object sender, EventArgs e)
@@ -28,11 +33,10 @@ namespace TCS
             UsuarioModelo nuevo = new UsuarioModelo();
             nuevo.Usuario = userTxt.Text;
             nuevo.password = contrasenaTxt.Text;
-            nuevo.IdPrivilegio = privilegioCmb.SelectedIndex + 1;
+            nuevo.IdPrivilegio = c.devolverIdPrivilegio(privilegioCmb.Text);
 
             CRUDUsuario agregarU = new CRUDUsuario();
-            
-
+           
             if(cu.usuarioExiste(userTxt.Text))
             {
                 MessageBox.Show("El usuario ya existe");
@@ -47,9 +51,10 @@ namespace TCS
                 MessageBox.Show("Usuario creado correctamente");
                 userTxt.Text = "";
                 contrasenaTxt.Text = "";
+                privilegioCmb.Text = "";
             }
             mostrarUsuarioLV.Items.Clear();
-            agregarUsuario();
+            cu.consultarUsuarios(ref mostrarUsuarioLV);
         }
 
         private void privilegioCmb_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,14 +72,6 @@ namespace TCS
             }
         }
 
-        public void agregarUsuario()
-        {
-            foreach (var i in cu.consultarUsuarios())
-            {
-                mostrarUsuarioLV.Items.Add(i.ToString());
-            }
-        }
-
         private void UsuarioMenu_Load(object sender, EventArgs e)
         {
             
@@ -87,18 +84,48 @@ namespace TCS
 
         private void borrarUsuariosBtn_Click(object sender, EventArgs e)
         {
-            ListViewItem listItem = mostrarUsuarioLV.SelectedItems[0];
-            string usuarioAEliminar=listItem.Text;
-            cu.eliminar(usuarioAEliminar);
-            MessageBox.Show("Usuario Eliminado");
+                var idUsuarioAEliminar = Convert.ToInt32(mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[0].Text);
+                cu.eliminar(idUsuarioAEliminar);
+                MessageBox.Show("Usuario Eliminado");
             mostrarUsuarioLV.Items.Clear();
-            agregarUsuario();
+            cu.consultarUsuarios(ref mostrarUsuarioLV);
+                        
         }
 
         private void privilegiosBtn_Click(object sender, EventArgs e)
         {
             PrivilegiosForm pf = new PrivilegiosForm();
             pf.ShowDialog();
+        }
+
+        private void modificarUsuariosBtn_Click(object sender, EventArgs e)
+        {
+            UsuarioModelo us = new UsuarioModelo();
+            var idUsuario = Convert.ToInt32(mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[0].Text);
+            us.Usuario = userTxt.Text;
+            us.password = contrasenaTxt.Text;
+            us.IdPrivilegio = c.devolverIdPrivilegio(privilegioCmb.Text);
+
+            cu.modificarUsuario(us);
+            mostrarUsuarioLV.Items.Clear();
+            cu.consultarUsuarios(ref mostrarUsuarioLV);
+
+            modificarUsuariosBtn.Enabled=false;
+        }
+
+        private void mostrarUsuarioLV_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            usuarioSeleccionado = e.ItemIndex;
+
+            userTxt.Text= mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[1].Text;
+            contrasenaTxt.Text = mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[2].Text;
+            privilegioCmb.Text = mostrarUsuarioLV.Items[usuarioSeleccionado].SubItems[3].Text;
+        }
+
+        private void refrescarBtn_Click(object sender, EventArgs e)
+        {
+            privilegioCmb.Items.Clear();
+            agregarPrivilegioComboBox();
         }
     }
 }

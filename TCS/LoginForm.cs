@@ -36,5 +36,6 @@ namespace TCS.Login
             contraLogin.TextAlign = HorizontalAlignment.Center;
         }
 
+       
     }
 }

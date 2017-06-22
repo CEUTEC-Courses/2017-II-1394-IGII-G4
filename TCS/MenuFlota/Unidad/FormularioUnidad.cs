@@ -26,7 +26,7 @@ namespace TCS.MenuFlota.Unidad
         private void ButtonMenuFlota_Click(object sender, EventArgs e)
         {
             Form_MenuFlota formularioMenuFlota = new Form_MenuFlota();
-            formularioMenuFlota.Show();
+           formularioMenuFlota.Show();
             this.Hide();
         }
 
@@ -94,6 +94,11 @@ namespace TCS.MenuFlota.Unidad
             unidad.Anio = new DateTime(Convert.ToInt32(añoUnidad.Value.Year), 1, 1);
             _crudUnidad.ActualizarUnidad(unidad);
             _crudUnidad.MostrarListaUnidades(ref listViewUnidades);
+
+        }
+
+        private void listViewUnidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
