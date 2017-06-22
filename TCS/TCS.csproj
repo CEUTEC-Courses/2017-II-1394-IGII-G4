@@ -128,12 +128,13 @@
     <Compile Include="Entity\viaje.cs">
       <DependentUpon>TCS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\LoginSingleton.cs" />
     <Compile Include="UsuariosClases\FormsFactory.cs" />
     <Compile Include="UsuariosClases\NuevoUsuarioForm.cs">
       <SubType>Form</SubType>
@@ -233,7 +234,7 @@
     <EmbeddedResource Include="InitialConfiguration\DatabaseConfigurationWizard.resx">
       <DependentUpon>DatabaseConfigurationWizard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFlota\Form_MenuFlota.resx">
