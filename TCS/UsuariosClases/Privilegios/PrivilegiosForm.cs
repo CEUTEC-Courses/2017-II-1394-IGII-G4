@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using TCS.UsuariosClases;
 using TCS.UsuariosClases.Privilegios;
 
+
 namespace TCS.UsuariosClases
 {
     public partial class PrivilegiosForm : Form
     {
-        CRUDPrivilegio cp = new CRUDPrivilegio();
+        CRUDPrivilegio crud_privilegios = new CRUDPrivilegio();
+        UsuarioMenu usuarioMenuForm = new UsuarioMenu();
+        ValidacionesPrivilegios validaciones = new ValidacionesPrivilegios();
+       
         public PrivilegiosForm()
         {
             InitializeComponent();
@@ -23,7 +27,7 @@ namespace TCS.UsuariosClases
 
         public void agregarPrivilegio()
         {
-            var Lista = cp.consultar();
+            var Lista = crud_privilegios.consultar();
 
             foreach (var i in Lista)
             {
@@ -36,34 +40,31 @@ namespace TCS.UsuariosClases
         }
 
         private void guardarUsuarioBtn_Click(object sender, EventArgs e)
-        {   
-            if (cp.privilegioExiste(privilegioTxt.Text))
-            {
-                MessageBox.Show("El privilegio ya existe");
-            }
-            else if (privilegioTxt.Text == "")
-            {
-                MessageBox.Show("Llene todos los campos");
-            }
-            else
-            {
-                cp.agregarPrivilegio(privilegioTxt.Text);
-                MessageBox.Show("Privilegio creado correctamente");
-                privilegioTxt.Text = "";
-               
-            }
+        {
+            MessageBox.Show(validaciones.validacionesPr(privilegioTxt));
+
+            privilegioTxt.Text = "";
+            usuarioMenuForm.agregarPrivilegioComboBox();
             mostrarPrivilegiosLV.Items.Clear();
-            agregarPrivilegio();
+            agregarPrivilegio();       
         }
 
         private void borrarPrivilegiosBtn_Click(object sender, EventArgs e)
         {
-            ListViewItem listItem = mostrarPrivilegiosLV.SelectedItems[0];
-            string privilegioAEliminar = listItem.Text;
-            cp.eliminar(privilegioAEliminar);
-            MessageBox.Show("Privilegio Eliminado");
-            mostrarPrivilegiosLV.Items.Clear();
-            agregarPrivilegio();
+            try
+            {
+                ListViewItem listItem = mostrarPrivilegiosLV.SelectedItems[0];
+                string privilegioAEliminar = listItem.Text;
+                crud_privilegios.eliminar(crud_privilegios.devolverIdPrivilegio(privilegioAEliminar));
+                MessageBox.Show("Privilegio Eliminado");
+                mostrarPrivilegiosLV.Items.Clear();
+                agregarPrivilegio();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione un privilegio");
+            }
+            
         }
 
         private void regresarBtn_Click(object sender, EventArgs e)

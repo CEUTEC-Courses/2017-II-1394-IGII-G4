@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TCS.Entity;
 using TCS.InitialConfiguration;
-using TCS.UsuariosClases.Privilegios;
+//using TCS.UsuariosClases.Privilegios;
 using TCS.UsuariosClases;
 
 
@@ -19,7 +19,6 @@ namespace TCS.UsuariosClases
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
-
                 var queryObtenerPrivilegio = (from priv in conexion.privilegio select priv.Nombre).ToList();
                 return queryObtenerPrivilegio;
             }
@@ -31,28 +30,17 @@ namespace TCS.UsuariosClases
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
-
                 var queryObtenerId = (from obtenerId in conexion.privilegio
                                       where obtenerId.Nombre == nombreP
                                       select obtenerId.IdPrivilegio).FirstOrDefault();
-
                 return queryObtenerId;
-
             }
-
         }
 
         public void agregarPrivilegio(string nombre)
-        {
-            using (TCS_Entities conexion = new TCS_Entities())
-            {
-                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                conexion.Database.Connection.Open();
-
+        {         
                 var nuevoPrivilegio = AppConfigurationManager.Instance().DbContext.privilegio.Add(new privilegio { Nombre=nombre });
-                conexion.privilegio.Add(nuevoPrivilegio);
-                conexion.SaveChanges();
-            }
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
         }
 
         public bool privilegioExiste(string nombre)
@@ -62,7 +50,6 @@ namespace TCS.UsuariosClases
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
-
                 var query = from consulta in conexion.privilegio select consulta.Nombre;
 
                 foreach (var i in query)
@@ -76,14 +63,14 @@ namespace TCS.UsuariosClases
             return r;
         }
 
-        public void eliminar(string nombreP)
+        public void eliminar(int id)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
-                privilegio queryEliminarPrivilegio = (from eliminar in conexion.privilegio where eliminar.Nombre == nombreP
+                var queryEliminarPrivilegio = (from eliminar in conexion.privilegio where eliminar.IdPrivilegio == id
                                                 select eliminar).FirstOrDefault();
 
                 conexion.privilegio.Remove(queryEliminarPrivilegio);

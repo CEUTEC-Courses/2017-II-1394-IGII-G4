@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.refrescarBtn = new System.Windows.Forms.Button();
             this.guardarUsuarioBtn = new System.Windows.Forms.Button();
             this.contrasenaTxt = new System.Windows.Forms.TextBox();
             this.userTxt = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.modificarUsuariosBtn = new System.Windows.Forms.Button();
             this.privilegiosBtn = new System.Windows.Forms.Button();
             this.regresarBtn = new System.Windows.Forms.Button();
-            this.refrescarBtn = new System.Windows.Forms.Button();
+            this.nuevoUsuarioBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.nuevoUsuarioBtn);
             this.panel1.Controls.Add(this.refrescarBtn);
             this.panel1.Controls.Add(this.guardarUsuarioBtn);
             this.panel1.Controls.Add(this.contrasenaTxt);
@@ -75,8 +77,22 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(229, 208);
+            this.panel1.Size = new System.Drawing.Size(249, 208);
             this.panel1.TabIndex = 1;
+            // 
+            // refrescarBtn
+            // 
+            this.refrescarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.refrescarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refrescarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refrescarBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.refrescarBtn.Location = new System.Drawing.Point(209, 96);
+            this.refrescarBtn.Name = "refrescarBtn";
+            this.refrescarBtn.Size = new System.Drawing.Size(33, 29);
+            this.refrescarBtn.TabIndex = 6;
+            this.refrescarBtn.Text = "Refrescar";
+            this.refrescarBtn.UseVisualStyleBackColor = false;
+            this.refrescarBtn.Click += new System.EventHandler(this.refrescarBtn_Click);
             // 
             // guardarUsuarioBtn
             // 
@@ -84,11 +100,11 @@
             this.guardarUsuarioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.guardarUsuarioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarUsuarioBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guardarUsuarioBtn.Location = new System.Drawing.Point(30, 137);
+            this.guardarUsuarioBtn.Location = new System.Drawing.Point(135, 143);
             this.guardarUsuarioBtn.Name = "guardarUsuarioBtn";
-            this.guardarUsuarioBtn.Size = new System.Drawing.Size(77, 29);
+            this.guardarUsuarioBtn.Size = new System.Drawing.Size(86, 28);
             this.guardarUsuarioBtn.TabIndex = 2;
-            this.guardarUsuarioBtn.Text = "Agregar";
+            this.guardarUsuarioBtn.Text = "Guardar";
             this.guardarUsuarioBtn.UseVisualStyleBackColor = false;
             this.guardarUsuarioBtn.Click += new System.EventHandler(this.guardarUsuarioBtn_Click);
             // 
@@ -125,7 +141,6 @@
             this.privilegioCmb.Name = "privilegioCmb";
             this.privilegioCmb.Size = new System.Drawing.Size(121, 21);
             this.privilegioCmb.TabIndex = 2;
-            this.privilegioCmb.SelectedIndexChanged += new System.EventHandler(this.privilegioCmb_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -155,7 +170,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.mostrarUsuarioLV.LabelWrap = false;
-            this.mostrarUsuarioLV.Location = new System.Drawing.Point(248, 12);
+            this.mostrarUsuarioLV.Location = new System.Drawing.Point(267, 12);
             this.mostrarUsuarioLV.Name = "mostrarUsuarioLV";
             this.mostrarUsuarioLV.Size = new System.Drawing.Size(288, 208);
             this.mostrarUsuarioLV.TabIndex = 2;
@@ -186,7 +201,7 @@
             this.borrarUsuariosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarUsuariosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarUsuariosBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borrarUsuariosBtn.Location = new System.Drawing.Point(541, 44);
+            this.borrarUsuariosBtn.Location = new System.Drawing.Point(558, 42);
             this.borrarUsuariosBtn.Margin = new System.Windows.Forms.Padding(2);
             this.borrarUsuariosBtn.Name = "borrarUsuariosBtn";
             this.borrarUsuariosBtn.Size = new System.Drawing.Size(89, 26);
@@ -201,10 +216,10 @@
             this.modificarUsuariosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarUsuariosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarUsuariosBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.modificarUsuariosBtn.Location = new System.Drawing.Point(541, 14);
+            this.modificarUsuariosBtn.Location = new System.Drawing.Point(558, 11);
             this.modificarUsuariosBtn.Margin = new System.Windows.Forms.Padding(2);
             this.modificarUsuariosBtn.Name = "modificarUsuariosBtn";
-            this.modificarUsuariosBtn.Size = new System.Drawing.Size(89, 26);
+            this.modificarUsuariosBtn.Size = new System.Drawing.Size(89, 28);
             this.modificarUsuariosBtn.TabIndex = 11;
             this.modificarUsuariosBtn.Text = "Modificar";
             this.modificarUsuariosBtn.UseVisualStyleBackColor = false;
@@ -216,7 +231,7 @@
             this.privilegiosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.privilegiosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.privilegiosBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.privilegiosBtn.Location = new System.Drawing.Point(541, 73);
+            this.privilegiosBtn.Location = new System.Drawing.Point(558, 71);
             this.privilegiosBtn.Margin = new System.Windows.Forms.Padding(2);
             this.privilegiosBtn.Name = "privilegiosBtn";
             this.privilegiosBtn.Size = new System.Drawing.Size(88, 26);
@@ -232,7 +247,7 @@
             this.regresarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regresarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresarBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.regresarBtn.Location = new System.Drawing.Point(541, 193);
+            this.regresarBtn.Location = new System.Drawing.Point(558, 193);
             this.regresarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.regresarBtn.Name = "regresarBtn";
             this.regresarBtn.Size = new System.Drawing.Size(88, 26);
@@ -241,19 +256,19 @@
             this.regresarBtn.UseVisualStyleBackColor = false;
             this.regresarBtn.Click += new System.EventHandler(this.regresarBtn_Click);
             // 
-            // refrescarBtn
+            // nuevoUsuarioBtn
             // 
-            this.refrescarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.refrescarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refrescarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refrescarBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.refrescarBtn.Location = new System.Drawing.Point(113, 137);
-            this.refrescarBtn.Name = "refrescarBtn";
-            this.refrescarBtn.Size = new System.Drawing.Size(82, 29);
-            this.refrescarBtn.TabIndex = 6;
-            this.refrescarBtn.Text = "Refrescar";
-            this.refrescarBtn.UseVisualStyleBackColor = false;
-            this.refrescarBtn.Click += new System.EventHandler(this.refrescarBtn_Click);
+            this.nuevoUsuarioBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.nuevoUsuarioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nuevoUsuarioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoUsuarioBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nuevoUsuarioBtn.Location = new System.Drawing.Point(43, 143);
+            this.nuevoUsuarioBtn.Name = "nuevoUsuarioBtn";
+            this.nuevoUsuarioBtn.Size = new System.Drawing.Size(86, 28);
+            this.nuevoUsuarioBtn.TabIndex = 7;
+            this.nuevoUsuarioBtn.Text = "Nuevo";
+            this.nuevoUsuarioBtn.UseVisualStyleBackColor = false;
+            this.nuevoUsuarioBtn.Click += new System.EventHandler(this.nuevoUsuarioBtn_Click);
             // 
             // UsuarioMenu
             // 
@@ -270,7 +285,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "UsuarioMenu";
             this.Text = "UsuarioMenu";
-            this.Load += new System.EventHandler(this.UsuarioMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -298,5 +312,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button refrescarBtn;
+        private System.Windows.Forms.Button nuevoUsuarioBtn;
     }
 }

@@ -11,45 +11,13 @@ namespace TCS.UsuariosClases
 {
     public class CRUDUsuario
     {
-        public void agregarUsuario(UsuarioModelo user)
+        public void agregarUsuario(string nombreUsuario, string contraseña, int idPrivilegio)
         {
-            using (TCS_Entities conexion = new TCS_Entities())
-            {
-                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                conexion.Database.Connection.Open();
-
-                var nuevoUsuario = new usuario()
-                {
-                    Usuario1 = user.Usuario,
-                    Contrasena = user.password,
-                    IdPrivilegio = user.IdPrivilegio
-                };
-
-                conexion.usuario.Add(nuevoUsuario);
-                conexion.SaveChanges();
-            }
+                var nuevoUsuario = AppConfigurationManager.Instance().DbContext.usuario.Add(new usuario { Usuario1=nombreUsuario, Contrasena=contraseña, IdPrivilegio=idPrivilegio });
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
         }
 
-        public bool usuarioExiste(string nombre)
-        {
-            bool r = false;
-            using (TCS_Entities conexion = new TCS_Entities())
-            {
-                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                conexion.Database.Connection.Open();
-
-                var query = from consulta in conexion.usuario select consulta.Usuario1;
-
-                foreach (var i in query)
-                {
-                    if (i.ToString() == nombre)
-                    {
-                        r = true;
-                    }
-                }
-            }
-            return r;
-        }
+       
 
         public void consultarUsuarios(ref ListView listaDeUsuarios)
         {
@@ -94,7 +62,7 @@ namespace TCS.UsuariosClases
             }
         }
 
-        public void modificarUsuario(UsuarioModelo nombre)
+        public void modificarUsuario(string nombreUsuario, string contraseña, int idPrivilegio)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
@@ -102,13 +70,29 @@ namespace TCS.UsuariosClases
                 conexion.Database.Connection.Open();
 
                 var query = (from modificar in conexion.usuario
-                            where modificar.Usuario1 == nombre.Usuario
+                            where modificar.Usuario1 == nombreUsuario
                             select modificar).FirstOrDefault();
-                query.Usuario1 = nombre.Usuario;
-                query.Contrasena = nombre.password;
-                query.IdPrivilegio = nombre.IdPrivilegio;
 
+                query.Usuario1 = nombreUsuario;
+                query.Contrasena = contraseña;
+                query.IdPrivilegio = idPrivilegio;
                 conexion.SaveChanges();
+            }
+        }
+
+        public int devolverIdUsuario(string nombreUsuario)
+        {
+            using (TCS_Entities conexion = new TCS_Entities())
+            {
+                conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                conexion.Database.Connection.Open();
+
+                var queryObtenerId = (from obtenerId in conexion.usuario
+                                      where obtenerId.Usuario1==nombreUsuario
+                                      select obtenerId.UsuarioID).FirstOrDefault();
+
+                return queryObtenerId;
+
             }
 
         }

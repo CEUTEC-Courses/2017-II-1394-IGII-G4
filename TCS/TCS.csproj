@@ -206,13 +206,14 @@
     <Compile Include="UsuariosClases\Privilegios\PrivilegiosForm.Designer.cs">
       <DependentUpon>PrivilegiosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosClases\Privilegios\ValidacionesPrivilegios.cs" />
     <Compile Include="UsuariosClases\UsuarioMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UsuariosClases\UsuarioMenu.Designer.cs">
       <DependentUpon>UsuarioMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuariosClases\UsuarioModelo.cs" />
+    <Compile Include="UsuariosClases\ValidacionesUsuarios.cs" />
     <Compile Include="Viajes\Form_Viajes.cs">
       <SubType>Form</SubType>
     </Compile>
