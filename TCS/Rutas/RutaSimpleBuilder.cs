@@ -27,6 +27,7 @@ namespace TCS.Rutas
             if (puntoOrigen != null && puntoDestino != null)
             {
                 var nuevaRuta = AppConfigurationManager.Instance().DbContext.ruta.Add(new ruta { NombreRuta = nombre, IDPuntoOrigen = puntoOrigen.PuntoID, IDPuntoDestino = puntoDestino.PuntoID });
+                _ruta = nuevaRuta;
                 AppConfigurationManager.Instance().DbContext.SaveChanges();
                 return true;
             }

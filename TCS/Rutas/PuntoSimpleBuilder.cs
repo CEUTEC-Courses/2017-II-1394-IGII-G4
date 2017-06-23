@@ -8,7 +8,7 @@ using TCS.InitialConfiguration;
 
 namespace TCS.Rutas
 {
-    class PuntoSimpleBuilder : PuntoBuilder
+    public class PuntoSimpleBuilder : PuntoBuilder
     {
         private  punto _punto;
         public override bool crearPunto(string nombre)

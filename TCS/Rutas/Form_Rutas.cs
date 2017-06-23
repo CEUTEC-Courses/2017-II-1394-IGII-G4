@@ -333,9 +333,8 @@ namespace TCS.Rutas
             {
                 try
                 {
-                    var ruta = AppConfigurationManager.Instance().DbContext.ruta.Where(r => r.RutaID == ((ruta)listaRutasDisponibles.SelectedItem).RutaID).First();
-                    AppConfigurationManager.Instance().DbContext.ruta.Remove(ruta);
-                    AppConfigurationManager.Instance().DbContext.SaveChanges();
+                    Ruta ruta = new Ruta(((ruta)listaRutasDisponibles.SelectedItem));
+                    ruta.eliminarRuta();
                     limpiarInfoRuta();
                     limpiarInfoPunto();
                     RefreshRutas();

@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCS.Rutas;
 using TCS.MenuFlota;
+using TCS.UsuariosClases;
 
 namespace TCS
 {
     public partial class Form_Principal : Form
     {
-        UsuarioMenu um = new UsuarioMenu();
+       
         public Form_Principal()
         {
             InitializeComponent();
@@ -41,7 +42,10 @@ namespace TCS
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            um.ShowDialog();
+            Form miform;
+            FormsFactory formularios = new FormsFactory();
+            miform = formularios.getForms("UsuarioMenu");
+            miform.ShowDialog();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
@@ -68,6 +72,11 @@ namespace TCS
         private void Form_Principal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
