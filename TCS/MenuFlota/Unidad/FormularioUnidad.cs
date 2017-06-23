@@ -26,8 +26,7 @@ namespace TCS.MenuFlota.Unidad
         private void ButtonMenuFlota_Click(object sender, EventArgs e)
         {
             Form_MenuFlota formularioMenuFlota = new Form_MenuFlota();
-           formularioMenuFlota.Show();
-            this.Hide();
+            formularioMenuFlota.ShowDialog();
         }
 
         private void buttonGuardarUnidad_Click(object sender, EventArgs e)
@@ -46,11 +45,6 @@ namespace TCS.MenuFlota.Unidad
         private void listViewUnidades_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             _indexUnidadSeleccionada = e.ItemIndex;
-        }
-
-        private void FormularioUnidad_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +79,8 @@ namespace TCS.MenuFlota.Unidad
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
             UnidadModelo unidad = new UnidadModelo();
+           
+
             var idUnidad = Convert.ToInt32(listViewUnidades.Items[_indexUnidadSeleccionada].SubItems[0].Text);
             unidad.UnidadID = idUnidad;
             unidad.Placa = textBoxPlacaUnidad.Text;
@@ -96,10 +92,6 @@ namespace TCS.MenuFlota.Unidad
             _crudUnidad.MostrarListaUnidades(ref listViewUnidades);
 
         }
-
-        private void listViewUnidades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+              
     }
 }

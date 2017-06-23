@@ -26,7 +26,7 @@ namespace TCS
             LlenarCmbRutas();
         }
 
-        CRUD_Viaje cViaje = new CRUD_Viaje();
+        CRUD_Viaje cViaje = Instancia_CRUD.Instancia();
 
         public void MostrarBusquedaFecha(List<int> l)
         {
@@ -55,21 +55,7 @@ namespace TCS
             {
                 MessageBox.Show(e.ToString());
             }
-            
-        }
 
-        private string RetornarNombreRuta(int id)
-        {
-            ruta r = cViaje.RetornarRuta(id);
-
-            return r.NombreRuta;
-        }
-
-        private string RetornarPlacaUnidad(int id)
-        {
-            unidad u = cViaje.ListarUnidadPorID(id);
-
-            return u.Placa;
         }
 
         private void LlenarCmbFlota()
@@ -116,8 +102,8 @@ namespace TCS
             Limpiar();
             viaje v = cViaje.ListarViajesGeneral(indice);
             txtNumero.Text = v.ViajeID.ToString();
-            cmbUnidad.Text = RetornarPlacaUnidad(Convert.ToInt32(v.UnidadID));
-            cmbRuta.Text = RetornarNombreRuta(Convert.ToInt32(v.RutaID));
+            cmbUnidad.Text = cViaje.ListarUnidadPorID(Convert.ToInt32(v.UnidadID)).Placa;
+            cmbRuta.Text = cViaje.RetornarRuta(Convert.ToInt32(v.RutaID)).NombreRuta;
             dtpFechaPartida.Value = v.FechaPartida.Value;
             dtpFechaRegreso.Value = v.FechaRegreso.Value;
             rtxtDescripcion.Text = v.Descripcion;
@@ -155,9 +141,47 @@ namespace TCS
             }
         }
 
+        private void CrearViaje()
+        {
+            if (cmbUnidad.Text.Length > 0 || cmbRuta.Text.Length > 0)
+            {
+                cViaje.CrearViaje(cmbUnidad.Text, cmbRuta.Text, dtpFechaPartida.Value,
+                                                    dtpFechaRegreso.Value, rtxtDescripcion.Text);
+                MessageBox.Show("Viaje creado con éxito");
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar, revisar campos requeridos");
+            }
+            
+        }
+
+        private void ModificarViaje()
+        {
+            if (cmbUnidad.Text.Length > 0 || cmbRuta.Text.Length > 0)
+            {
+                cViaje.ModificarViaje(Convert.ToInt32(txtBusqueda.Text), cmbUnidad.Text, cmbRuta.Text,
+                                        dtpFechaPartida.Value, dtpFechaRegreso.Value, rtxtDescripcion.Text);
+                MessageBox.Show("Viaje modificado con éxito");
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar, revisar campos requeridos");
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cViaje.CrearViaje(cmbUnidad.Text, cmbRuta.Text, dtpFechaPartida.Value, dtpFechaRegreso.Value, rtxtDescripcion.Text);
+            if (txtBusqueda.Text.Length > 0)
+            {
+                ModificarViaje();
+            }
+            else
+            {
+                CrearViaje();
+            }
         }
 
         private void lvBusqueda_SelectedIndexChanged(object sender, EventArgs e)

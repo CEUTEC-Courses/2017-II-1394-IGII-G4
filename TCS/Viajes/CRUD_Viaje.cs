@@ -31,20 +31,6 @@ namespace TCS.Viajes
             }
         }
 
-        public List<int> ListarViajesPorNumero(int buscar)
-        {
-            using (TCS_Entities Conexion = new TCS_Entities())
-            {
-                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                Conexion.Database.Connection.Open();
-
-                var busqueda = (from cons in Conexion.viaje
-                                where cons.ViajeID == buscar
-                                select cons.ViajeID).ToList();
-                return busqueda;
-            }
-        }
-
         public viaje ListarViajesGeneral(int buscar)
         {
             using (TCS_Entities Conexion = new TCS_Entities())
@@ -59,6 +45,34 @@ namespace TCS.Viajes
             }
         }
 
+        public List<int> ListarViajesPorNumero(int buscar)
+        {
+            using (TCS_Entities Conexion = new TCS_Entities())
+            {
+                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                Conexion.Database.Connection.Open();
+
+                var busqueda = (from cons in Conexion.viaje
+                                where cons.ViajeID == buscar
+                                select cons.ViajeID).ToList();
+                return busqueda;
+            }
+        }
+
+        public List<int> ListarViajesPorFecha(DateTime dtDel, DateTime dtAl)
+        {
+            List<int> l = new List<int>();
+            using (TCS_Entities Conexion = new TCS_Entities())
+            {
+                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                Conexion.Database.Connection.Open();
+
+                var busqueda = (from cons in Conexion.viaje where (cons.FechaPartida >= dtDel && cons.FechaPartida <= dtAl) select cons.ViajeID).ToList();
+                l = busqueda;
+            }
+            return l;
+        }
+
         public List<flota> ListarFlota()
         {
             using (TCS_Entities Conexion = new TCS_Entities())
@@ -67,8 +81,8 @@ namespace TCS.Viajes
                 Conexion.Database.Connection.Open();
 
                 var flota = (from cons in Conexion.flota
-                              select cons).ToList();
-                
+                             select cons).ToList();
+
                 return flota;
             }
         }
@@ -81,8 +95,8 @@ namespace TCS.Viajes
                 Conexion.Database.Connection.Open();
 
                 var unidad = (from cons in Conexion.unidad
-                            where cons.UnidadID == buscar
-                            select cons).FirstOrDefault();
+                              where cons.UnidadID == buscar
+                              select cons).FirstOrDefault();
 
                 return unidad;
             }
@@ -140,37 +154,7 @@ namespace TCS.Viajes
                 return ruta;
             }
         }
-
-        public List<int> ListarViajesPorFecha(DateTime dtDel, DateTime dtAl)
-        {
-            List<int> l = new List<int>();
-                using (TCS_Entities Conexion = new TCS_Entities())
-                {
-                    Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                    Conexion.Database.Connection.Open();
-
-                var busqueda = (from cons in Conexion.viaje where (cons.FechaPartida >= dtDel && cons.FechaPartida <= dtAl) select cons.ViajeID).ToList();
-                    l = busqueda;
-                }
-            return l;
-        }
-
-
-
-        private void EliminarViaje(int id)
-        {
-            using (TCS_Entities Conexion = new TCS_Entities())
-            {
-                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
-                Conexion.Database.Connection.Open();
-
-                viaje eliminar = (from elim in Conexion.viaje where elim.ViajeID == id select elim).FirstOrDefault();
-
-                Conexion.viaje.Remove(eliminar);
-                Conexion.SaveChanges();
-            }
-        }
-
+        
         private int ObtenerUnidad(string unidad)
         {
             int unidadid = 0;
@@ -204,17 +188,34 @@ namespace TCS.Viajes
             }
         }
 
-        private void ModificarViaje(int id, int unidadid, string nombreunidad, DateTime fechapartida, DateTime fecharegreso, string descripcion)
+        public void EliminarViaje(int id)
         {
             using (TCS_Entities Conexion = new TCS_Entities())
             {
                 Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 Conexion.Database.Connection.Open();
 
+                viaje eliminar = (from elim in Conexion.viaje where elim.ViajeID == id select elim).FirstOrDefault();
+
+                Conexion.viaje.Remove(eliminar);
+                Conexion.SaveChanges();
+            }
+        }
+
+        public void ModificarViaje(int id, string nombreunidad, string nombreruta, DateTime fechapartida, DateTime fecharegreso, string descripcion)
+        {
+            using (TCS_Entities Conexion = new TCS_Entities())
+            {
+                Conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
+                Conexion.Database.Connection.Open();
+
+                int rutaid = ObtenerRuta(nombreruta);
+                int unidadid = ObtenerUnidad(nombreunidad);
+
                 viaje modificar = (from modif in Conexion.viaje where modif.ViajeID == id select modif).FirstOrDefault();
 
-                unidadid = ObtenerUnidad(nombreunidad);
                 modificar.UnidadID = unidadid;
+                modificar.RutaID = rutaid;
                 modificar.FechaPartida = fechapartida;
                 modificar.FechaRegreso = fecharegreso;
                 modificar.Descripcion = descripcion;

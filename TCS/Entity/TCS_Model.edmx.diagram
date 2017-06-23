@@ -25,7 +25,7 @@
         <AssociationConnector Association="TCS_DBModel.FK_usuario_privilegio" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_rutapunto_punto" ManuallyRouted="false" />
         <AssociationConnector Association="TCS_DBModel.FK_viaje_unidad" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TCS_DBModel.PersonaHorario" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TCS_DBModel.PersonaHorario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TCS_DBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="TCS_DBModel.ruta" Width="1.5" PointX="3" PointY="4.375" />
         <AssociationConnector Association="TCS_DBModel.FK_ruta_puntoDestino" />

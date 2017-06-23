@@ -11,7 +11,7 @@ namespace TCS.MenuFlota.Unidad
 {
     public class CRUDUnidad
     {
-        public void CrearUnidad(UnidadModelo unidad)
+        public bool CrearUnidad(UnidadModelo unidad)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
@@ -28,6 +28,7 @@ namespace TCS.MenuFlota.Unidad
 
                 conexion.unidad.Add(nuevaunidad);
                 conexion.SaveChanges();
+                return true;
             }
         }
 
