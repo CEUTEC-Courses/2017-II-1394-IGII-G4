@@ -26,7 +26,7 @@ namespace TCS
             LlenarCmbRutas();
         }
 
-        CRUD_Viaje cViaje = new CRUD_Viaje();
+        CRUD_Viaje cViaje = Instancia_CRUD.Instancia();
 
         public void MostrarBusquedaFecha(List<int> l)
         {
@@ -57,8 +57,6 @@ namespace TCS
             }
 
         }
-
-        //prueba
 
         private void LlenarCmbFlota()
         {
