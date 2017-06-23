@@ -222,6 +222,7 @@
     <Compile Include="Viajes\Form_Viajes.Designer.cs">
       <DependentUpon>Form_Viajes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viajes\Instancia_CRUD.cs" />
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
