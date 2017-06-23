@@ -133,7 +133,7 @@
             this.label6.Location = new System.Drawing.Point(111, 10);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 15);
+            this.label6.Size = new System.Drawing.Size(120, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = "CREAR UNIDAD";
             // 
@@ -144,7 +144,7 @@
             this.añoUnidad.Location = new System.Drawing.Point(59, 232);
             this.añoUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.añoUnidad.Name = "añoUnidad";
-            this.añoUnidad.Size = new System.Drawing.Size(73, 21);
+            this.añoUnidad.Size = new System.Drawing.Size(73, 24);
             this.añoUnidad.TabIndex = 10;
             // 
             // label5
@@ -153,7 +153,7 @@
             this.label5.Location = new System.Drawing.Point(17, 232);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 15);
+            this.label5.Size = new System.Drawing.Size(38, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Año:";
             // 
@@ -163,7 +163,7 @@
             this.comboBoxEstadoUnidad.Location = new System.Drawing.Point(74, 179);
             this.comboBoxEstadoUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEstadoUnidad.Name = "comboBoxEstadoUnidad";
-            this.comboBoxEstadoUnidad.Size = new System.Drawing.Size(140, 23);
+            this.comboBoxEstadoUnidad.Size = new System.Drawing.Size(140, 26);
             this.comboBoxEstadoUnidad.TabIndex = 8;
             // 
             // label4
@@ -172,7 +172,7 @@
             this.label4.Location = new System.Drawing.Point(14, 180);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 15);
+            this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 7;
             this.label4.Text = "Estado:";
             // 
@@ -182,7 +182,7 @@
             this.label3.Location = new System.Drawing.Point(14, 136);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 15);
+            this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Modelo:";
             // 
@@ -191,7 +191,7 @@
             this.textBoxModeloUnidad.Location = new System.Drawing.Point(74, 133);
             this.textBoxModeloUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModeloUnidad.Name = "textBoxModeloUnidad";
-            this.textBoxModeloUnidad.Size = new System.Drawing.Size(140, 21);
+            this.textBoxModeloUnidad.Size = new System.Drawing.Size(140, 24);
             this.textBoxModeloUnidad.TabIndex = 4;
             // 
             // label2
@@ -200,7 +200,7 @@
             this.label2.Location = new System.Drawing.Point(14, 92);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Marca:";
             // 
@@ -209,7 +209,7 @@
             this.textBoxMarcaUnidad.Location = new System.Drawing.Point(74, 87);
             this.textBoxMarcaUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMarcaUnidad.Name = "textBoxMarcaUnidad";
-            this.textBoxMarcaUnidad.Size = new System.Drawing.Size(140, 21);
+            this.textBoxMarcaUnidad.Size = new System.Drawing.Size(140, 24);
             this.textBoxMarcaUnidad.TabIndex = 2;
             // 
             // label1
@@ -218,7 +218,7 @@
             this.label1.Location = new System.Drawing.Point(14, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(49, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Placa:";
             // 
@@ -227,7 +227,7 @@
             this.textBoxPlacaUnidad.Location = new System.Drawing.Point(74, 41);
             this.textBoxPlacaUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPlacaUnidad.Name = "textBoxPlacaUnidad";
-            this.textBoxPlacaUnidad.Size = new System.Drawing.Size(140, 21);
+            this.textBoxPlacaUnidad.Size = new System.Drawing.Size(140, 24);
             this.textBoxPlacaUnidad.TabIndex = 0;
             // 
             // ButtonMenuFlota
@@ -270,9 +270,9 @@
             this.listViewUnidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewUnidades.FullRowSelect = true;
             this.listViewUnidades.GridLines = true;
-            this.listViewUnidades.Location = new System.Drawing.Point(4, 21);
+            this.listViewUnidades.Location = new System.Drawing.Point(4, 26);
             this.listViewUnidades.Name = "listViewUnidades";
-            this.listViewUnidades.Size = new System.Drawing.Size(453, 305);
+            this.listViewUnidades.Size = new System.Drawing.Size(453, 300);
             this.listViewUnidades.TabIndex = 0;
             this.listViewUnidades.UseCompatibleStateImageBehavior = false;
             this.listViewUnidades.View = System.Windows.Forms.View.Details;
@@ -310,29 +310,30 @@
             // 
             // contextMenuUnidad
             // 
+            this.contextMenuUnidad.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuUnidad.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualizarToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.contextMenuUnidad.Name = "contextMenuUnidad";
-            this.contextMenuUnidad.Size = new System.Drawing.Size(127, 48);
+            this.contextMenuUnidad.Size = new System.Drawing.Size(145, 52);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // FormularioUnidad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(909, 388);
