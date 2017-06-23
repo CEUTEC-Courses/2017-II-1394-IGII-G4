@@ -12,7 +12,7 @@ namespace TCS.InitialConfiguration
     public class AppConfigurationManager
     {
 
-        RegistryKey TCSKey;
+        public RegistryKey TCSKey;
         private String host;
         private String database;
         private String username;
@@ -177,7 +177,7 @@ namespace TCS.InitialConfiguration
             return status;
         }
 
-        public bool checkDatabaseParameters()
+        public bool leerDatabaseParameters()
         {
             if (TCSKey.GetValue("Host") != null)
                 host = TCSKey.GetValue("Host").ToString();
@@ -196,10 +196,23 @@ namespace TCS.InitialConfiguration
             else
                 return false;
 
-            if (String.IsNullOrEmpty(host) || String.IsNullOrEmpty(database) || String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
-                return false;
+            return true;
+        }
 
-            return checkSQLConnection();
+        public bool checkDatabaseParameters()
+        {
+
+            if (leerDatabaseParameters())
+            {
+                if (String.IsNullOrEmpty(host) || String.IsNullOrEmpty(database) || String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+                    return false;
+
+                return checkSQLConnection();
+            }
+            else
+            {
+                return false;
+            }
             
         }
 
