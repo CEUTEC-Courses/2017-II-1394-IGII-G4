@@ -13,7 +13,7 @@ namespace TCS_UnitTests
             CRUDUsuario crud_usuario = new CRUDUsuario();
             int devolverUsuario=crud_usuario.devolverIdUsuario("Administrador");
 
-            Assert.AreEqual(14, devolverUsuario);
+            Assert.AreEqual(59, devolverUsuario);
         }
     }
 }

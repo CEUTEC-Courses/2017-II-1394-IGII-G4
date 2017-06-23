@@ -112,7 +112,7 @@
             // 
             this.EntrarLoginBtn.BackColor = System.Drawing.Color.ForestGreen;
             this.EntrarLoginBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.EntrarLoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EntrarLoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.EntrarLoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntrarLoginBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.EntrarLoginBtn.Location = new System.Drawing.Point(91, 182);
