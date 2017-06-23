@@ -237,10 +237,11 @@
             this.groupBoxListaUnidades.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxListaUnidades.Name = "groupBoxListaUnidades";
             this.groupBoxListaUnidades.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxListaUnidades.Size = new System.Drawing.Size(461, 330);
+            this.groupBoxListaUnidades.Size = new System.Drawing.Size(386, 330);
             this.groupBoxListaUnidades.TabIndex = 4;
             this.groupBoxListaUnidades.TabStop = false;
             this.groupBoxListaUnidades.Text = "Lista de Unidades";
+//            this.groupBoxListaUnidades.Enter += new System.EventHandler(this.groupBoxListaUnidades_Enter);
             // 
             // listViewUnidades
             // 
@@ -257,11 +258,12 @@
             this.listViewUnidades.GridLines = true;
             this.listViewUnidades.Location = new System.Drawing.Point(4, 21);
             this.listViewUnidades.Name = "listViewUnidades";
-            this.listViewUnidades.Size = new System.Drawing.Size(453, 305);
+            this.listViewUnidades.Size = new System.Drawing.Size(378, 305);
             this.listViewUnidades.TabIndex = 0;
             this.listViewUnidades.UseCompatibleStateImageBehavior = false;
             this.listViewUnidades.View = System.Windows.Forms.View.Details;
             this.listViewUnidades.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewUnidades_ItemSelectionChanged);
+//            this.listViewUnidades.SelectedIndexChanged += new System.EventHandler(this.listViewUnidades_SelectedIndexChanged);
             // 
             // columnID
             // 
@@ -319,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(827, 388);
+            this.ClientSize = new System.Drawing.Size(755, 388);
             this.Controls.Add(this.groupBoxListaUnidades);
             this.Controls.Add(this.panelCrearUnidad);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,7 +331,7 @@
             this.MinimizeBox = false;
             this.Name = "FormularioUnidad";
             this.Text = "Unidad";
-            this.Load += new System.EventHandler(this.FormularioUnidad_Load);
+           
             this.panelCrearUnidad.ResumeLayout(false);
             this.panelCrearUnidad.PerformLayout();
             this.groupBoxListaUnidades.ResumeLayout(false);

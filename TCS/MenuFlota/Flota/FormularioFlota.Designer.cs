@@ -28,27 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxEmpresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDueño = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUnidades = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonGuardarFlota = new System.Windows.Forms.Button();
             this.ButtonAgregarUnidadEnFlota = new System.Windows.Forms.Button();
+            this.groupBoxListaFlotas = new System.Windows.Forms.GroupBox();
+            this.listViewFlotas = new System.Windows.Forms.ListView();
+            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnEmpresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnDueño = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuFlota = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnidades)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBoxListaFlotas.SuspendLayout();
+            this.contextMenuFlota.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -102,47 +112,40 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Codigo:";
             // 
-            // textBox1
+            // textBoxCodigo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(73, 100);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodigo.Location = new System.Drawing.Point(73, 100);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(5);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(163, 22);
+            this.textBoxCodigo.TabIndex = 6;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dataGridViewUnidades);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 250);
+            this.groupBox1.Size = new System.Drawing.Size(458, 250);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unidades";
             // 
-            // dataGridView1
+            // dataGridViewUnidades
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewUnidades.AllowUserToAddRows = false;
+            this.dataGridViewUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Placa,
             this.Marca,
-            this.Modelo,
-            this.Estado,
-            this.Año});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 222);
-            this.dataGridView1.TabIndex = 0;
+            this.Modelo});
+            this.dataGridViewUnidades.Location = new System.Drawing.Point(6, 22);
+            this.dataGridViewUnidades.Name = "dataGridViewUnidades";
+            this.dataGridViewUnidades.ReadOnly = true;
+            this.dataGridViewUnidades.Size = new System.Drawing.Size(440, 222);
+            this.dataGridViewUnidades.TabIndex = 0;
             // 
             // ID
             // 
@@ -168,20 +171,9 @@
             this.Modelo.Name = "Modelo";
             this.Modelo.ReadOnly = true;
             // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Año
-            // 
-            this.Año.HeaderText = "Año";
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonLimpiar);
             this.groupBox2.Controls.Add(this.buttonGuardarFlota);
             this.groupBox2.Controls.Add(this.ButtonAgregarUnidadEnFlota);
             this.groupBox2.Controls.Add(this.label1);
@@ -189,12 +181,12 @@
             this.groupBox2.Controls.Add(this.textBoxEmpresa);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBoxDueño);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxCodigo);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(677, 454);
+            this.groupBox2.Size = new System.Drawing.Size(511, 454);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Flota";
@@ -204,13 +196,14 @@
             this.buttonGuardarFlota.BackColor = System.Drawing.Color.Navy;
             this.buttonGuardarFlota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardarFlota.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonGuardarFlota.Location = new System.Drawing.Point(36, 406);
+            this.buttonGuardarFlota.Location = new System.Drawing.Point(269, 404);
             this.buttonGuardarFlota.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardarFlota.Name = "buttonGuardarFlota";
             this.buttonGuardarFlota.Size = new System.Drawing.Size(88, 41);
             this.buttonGuardarFlota.TabIndex = 13;
             this.buttonGuardarFlota.Text = "Guardar";
             this.buttonGuardarFlota.UseVisualStyleBackColor = false;
+            this.buttonGuardarFlota.Click += new System.EventHandler(this.buttonGuardarFlota_Click);
             // 
             // ButtonAgregarUnidadEnFlota
             // 
@@ -225,13 +218,105 @@
             this.ButtonAgregarUnidadEnFlota.TabIndex = 9;
             this.ButtonAgregarUnidadEnFlota.Text = "Agregar Unidad";
             this.ButtonAgregarUnidadEnFlota.UseVisualStyleBackColor = false;
+            this.ButtonAgregarUnidadEnFlota.Click += new System.EventHandler(this.ButtonAgregarUnidadEnFlota_Click);
+            // 
+            // groupBoxListaFlotas
+            // 
+            this.groupBoxListaFlotas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxListaFlotas.Controls.Add(this.listViewFlotas);
+            this.groupBoxListaFlotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxListaFlotas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBoxListaFlotas.Location = new System.Drawing.Point(530, 23);
+            this.groupBoxListaFlotas.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxListaFlotas.Name = "groupBoxListaFlotas";
+            this.groupBoxListaFlotas.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxListaFlotas.Size = new System.Drawing.Size(300, 442);
+            this.groupBoxListaFlotas.TabIndex = 10;
+            this.groupBoxListaFlotas.TabStop = false;
+            this.groupBoxListaFlotas.Text = "Lista de Flotas";
+            // 
+            // listViewFlotas
+            // 
+            this.listViewFlotas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnID,
+            this.columnEmpresa,
+            this.columnDueño,
+            this.columnCodigo});
+            this.listViewFlotas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewFlotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewFlotas.FullRowSelect = true;
+            this.listViewFlotas.GridLines = true;
+            this.listViewFlotas.Location = new System.Drawing.Point(4, 21);
+            this.listViewFlotas.Name = "listViewFlotas";
+            this.listViewFlotas.Size = new System.Drawing.Size(292, 417);
+            this.listViewFlotas.TabIndex = 0;
+            this.listViewFlotas.UseCompatibleStateImageBehavior = false;
+            this.listViewFlotas.View = System.Windows.Forms.View.Details;
+            this.listViewFlotas.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewFlotas_ItemSelectionChanged);
+            // 
+            // columnID
+            // 
+            this.columnID.Text = "ID";
+            this.columnID.Width = 29;
+            // 
+            // columnEmpresa
+            // 
+            this.columnEmpresa.Text = "Empresa";
+            this.columnEmpresa.Width = 108;
+            // 
+            // columnDueño
+            // 
+            this.columnDueño.Text = "Dueño";
+            this.columnDueño.Width = 70;
+            // 
+            // columnCodigo
+            // 
+            this.columnCodigo.Text = "Codigo";
+            this.columnCodigo.Width = 79;
+            // 
+            // contextMenuFlota
+            // 
+            this.contextMenuFlota.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actualizarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.contextMenuFlota.Name = "contextMenuFlota";
+            this.contextMenuFlota.Size = new System.Drawing.Size(127, 48);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonLimpiar.Location = new System.Drawing.Point(381, 404);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(88, 41);
+            this.buttonLimpiar.TabIndex = 15;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = false;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // FormularioFlota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(808, 478);
+            this.ClientSize = new System.Drawing.Size(902, 478);
+            this.Controls.Add(this.groupBoxListaFlotas);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -240,9 +325,11 @@
             this.Name = "FormularioFlota";
             this.Text = "Flota";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnidades)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBoxListaFlotas.ResumeLayout(false);
+            this.contextMenuFlota.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,17 +341,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxDueño;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewUnidades;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button ButtonAgregarUnidadEnFlota;
+        private System.Windows.Forms.Button buttonGuardarFlota;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button ButtonAgregarUnidadEnFlota;
-        private System.Windows.Forms.Button buttonGuardarFlota;
+        private System.Windows.Forms.GroupBox groupBoxListaFlotas;
+        private System.Windows.Forms.ListView listViewFlotas;
+        private System.Windows.Forms.ColumnHeader columnID;
+        private System.Windows.Forms.ColumnHeader columnEmpresa;
+        private System.Windows.Forms.ColumnHeader columnDueño;
+        private System.Windows.Forms.ColumnHeader columnCodigo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuFlota;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

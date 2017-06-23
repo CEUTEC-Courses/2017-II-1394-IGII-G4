@@ -134,14 +134,26 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFlota\Flota\CRUDFlota.cs" />
+    <Compile Include="MenuFlota\Flota\FlotaBuilder.cs" />
     <Compile Include="MenuFlota\Flota\FlotaModelo.cs" />
+    <Compile Include="MenuFlota\Flota\FlotaSimpleBuilder.cs" />
+    <Compile Include="MenuFlota\Flota\FlotaUnidadBuilder.cs" />
     <Compile Include="MenuFlota\Flota\FlotaUnidadModelo.cs" />
+    <Compile Include="MenuFlota\Flota\FlotaUnidadSimpleBuilder.cs" />
     <Compile Include="MenuFlota\Flota\FormularioFlota.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuFlota\Flota\FormularioFlota.Designer.cs">
       <DependentUpon>FormularioFlota.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFlota\Flota\FormularioListaUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFlota\Flota\FormularioListaUnidades.Designer.cs">
+      <DependentUpon>FormularioListaUnidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuFlota\Flota\ValidacionesFlota.cs" />
     <Compile Include="UsuariosClases\Privilegios\CRUDPrivilegio.cs" />
     <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\TCS_Model.Context.cs">
@@ -238,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFlota\Flota\FormularioFlota.resx">
       <DependentUpon>FormularioFlota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFlota\Flota\FormularioListaUnidades.resx">
+      <DependentUpon>FormularioListaUnidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFlota\Form_MenuFlota.resx">
       <DependentUpon>Form_MenuFlota.cs</DependentUpon>
