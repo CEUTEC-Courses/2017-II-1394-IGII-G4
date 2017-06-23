@@ -134,7 +134,6 @@
     <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\LoginSingleton.cs" />
     <Compile Include="UsuariosClases\FormsFactory.cs" />
     <Compile Include="UsuariosClases\Privilegios\CRUDPrivilegio.cs" />
     <Compile Include="UsuariosClases\CRUDUsuario.cs" />
