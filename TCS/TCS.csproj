@@ -215,7 +215,6 @@
       <DependentUpon>UsuarioMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuariosClases\ValidacionesUsuarios.cs" />
-    <Compile Include="UsuariosClases\UsuarioModelo.cs" />
     <Compile Include="Viajes\CRUD_Viaje.cs" />
     <Compile Include="Viajes\Form_Viajes.cs">
       <SubType>Form</SubType>
