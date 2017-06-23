@@ -93,6 +93,19 @@ namespace TCS.Rutas
             }
         }
 
+        public bool eliminarRuta()
+        {
+            if (_ruta != null && AppConfigurationManager.Instance().DbContext != null)
+            {
+                AppConfigurationManager.Instance().DbContext.ruta.Remove(_ruta);
+                AppConfigurationManager.Instance().DbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
