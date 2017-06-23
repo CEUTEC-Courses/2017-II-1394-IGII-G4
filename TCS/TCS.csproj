@@ -136,12 +136,6 @@
     </Compile>
     <Compile Include="Login\LoginSingleton.cs" />
     <Compile Include="UsuariosClases\FormsFactory.cs" />
-    <Compile Include="UsuariosClases\NuevoUsuarioForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsuariosClases\NuevoUsuarioForm.Designer.cs">
-      <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UsuariosClases\Privilegios\CRUDPrivilegio.cs" />
     <Compile Include="UsuariosClases\CRUDUsuario.cs" />
     <Compile Include="Entity\TCS_Model.Context.cs">
@@ -258,9 +252,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rutas\Form_Rutas.resx">
       <DependentUpon>Form_Rutas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UsuariosClases\NuevoUsuarioForm.resx">
-      <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosClases\Privilegios\PrivilegiosForm.resx">
       <DependentUpon>PrivilegiosForm.cs</DependentUpon>

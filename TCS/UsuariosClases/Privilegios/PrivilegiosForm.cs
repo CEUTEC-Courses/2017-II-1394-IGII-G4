@@ -16,7 +16,6 @@ namespace TCS.UsuariosClases
     public partial class PrivilegiosForm : Form
     {
         CRUDPrivilegio crud_privilegios = new CRUDPrivilegio();
-        NuevoUsuarioForm usuarioNuevoForm = new NuevoUsuarioForm();
         ValidacionesPrivilegios validaciones = new ValidacionesPrivilegios();
        
         public PrivilegiosForm()
@@ -38,9 +37,9 @@ namespace TCS.UsuariosClases
         private void guardarUsuarioBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show(validaciones.validacionesPr(privilegioTxt));
-
+            UsuarioMenu um = new UsuarioMenu();
             privilegioTxt.Text = "";
-            usuarioNuevoForm.agregarPrivilegioComboBox();
+            um.agregarPrivilegioComboBox();
             mostrarPrivilegiosLV.Items.Clear();
             agregarPrivilegio();       
         }

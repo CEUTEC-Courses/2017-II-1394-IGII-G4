@@ -11,16 +11,15 @@ namespace TCS.UsuariosClases
     {
         public Form getForms(string tipo)
         {
-            if(tipo=="NuevoUsuarioForm")
-            {
-                return new NuevoUsuarioForm();
-            }
-
             if(tipo=="PrivilegiosForm")
             {
                 return new PrivilegiosForm();
             }
 
+            if(tipo=="UsuarioMenu")
+            {
+                return new UsuarioMenu();
+            }
             return new UsuarioMenu();
         }
     }

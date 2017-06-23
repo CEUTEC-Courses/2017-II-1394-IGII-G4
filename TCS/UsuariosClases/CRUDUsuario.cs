@@ -17,9 +17,7 @@ namespace TCS.UsuariosClases
                 AppConfigurationManager.Instance().DbContext.SaveChanges();
         }
 
-       
-
-        public void consultarUsuarios(ref ListView listaDeUsuarios)
+        public void consultarUsuarios( ListView listaDeUsuarios)
         {
             using (TCS_Entities conexion = new TCS_Entities())
             {
@@ -69,8 +67,10 @@ namespace TCS.UsuariosClases
                 conexion.Database.Connection.ConnectionString = AppConfigurationManager.Instance().SQLConnectionString;
                 conexion.Database.Connection.Open();
 
+                CRUDUsuario validarId = new CRUDUsuario();
+                int id = validarId.devolverIdUsuario(nombreUsuario);
                 var query = (from modificar in conexion.usuario
-                            where modificar.Usuario1 == nombreUsuario
+                            where modificar.UsuarioID == id
                             select modificar).FirstOrDefault();
 
                 query.Usuario1 = nombreUsuario;
@@ -92,9 +92,7 @@ namespace TCS.UsuariosClases
                                       select obtenerId.UsuarioID).FirstOrDefault();
 
                 return queryObtenerId;
-
             }
-
         }
     }
 }

@@ -49,6 +49,7 @@ namespace TCS.UsuariosClases
                     if (i == idUsuario)
                     {
                         r = true;
+                        return r;                      
                     }
                 }
             }
@@ -85,13 +86,14 @@ namespace TCS.UsuariosClases
 
                 crud_Usuario.agregarUsuario(nombre.Text, contraseña.Text, crud_Privilegio.devolverIdPrivilegio(id.Text));
                 return mensaje="Usuario creado correctamente";
+                
                 nombre.Enabled = false;
                 contraseña.Enabled = false;
                 id.Enabled = false;
 
             }
 
-            return mensaje;
+            return null;
         }
     }
 }
