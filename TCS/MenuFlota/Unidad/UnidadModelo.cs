@@ -14,5 +14,6 @@ namespace TCS.MenuFlota.Unidad
         public string Modelo { get; set; }
         public string Estado { get; set; }
         public Nullable<System.DateTime> Anio { get; set; }
+
     }
 }
