@@ -56,7 +56,8 @@ namespace TCS.Login
                      if(validarContraseña(usuariosLoginTxt.Text, contraseñaLogin.Text))
                         {
                             Form_Principal abrirFormularioPrincipal = new Form_Principal();
-                            abrirFormularioPrincipal.ShowDialog();
+                            this.Hide();
+                            abrirFormularioPrincipal.Show();
                         }
                      else
                         {

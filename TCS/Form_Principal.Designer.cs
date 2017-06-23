@@ -254,6 +254,7 @@
             this.MinimizeBox = false;
             this.Name = "Form_Principal";
             this.Text = "Sistema TCS";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Principal_FormClosed);
             this.Load += new System.EventHandler(this.Form_Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
