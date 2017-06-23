@@ -65,6 +65,7 @@
     <Compile Include="Prueba_AppConfiguration.cs" />
     <Compile Include="Prueba_RutaSimpleBuilder.cs" />
     <Compile Include="Prueba_DevolverIdUsuario.cs" />
+    <Compile Include="Prueba_ListarViajesPorNumero.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TCS\TCS.csproj">
