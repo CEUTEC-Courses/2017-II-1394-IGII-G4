@@ -17,6 +17,8 @@ namespace TCS.UsuariosClases
                 AppConfigurationManager.Instance().DbContext.SaveChanges();
         }
 
+
+
         public void consultarUsuarios( ListView listaDeUsuarios)
         {
             using (TCS_Entities conexion = new TCS_Entities())
