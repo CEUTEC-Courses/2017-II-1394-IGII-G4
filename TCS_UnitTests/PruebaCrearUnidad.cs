@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TCS.MenuFlota.Unidad;
+using TCS.InitialConfiguration;
 
 namespace TCS_UnitTests
 {
@@ -16,20 +17,28 @@ namespace TCS_UnitTests
         [TestMethod]
         public void CrearUnidad()
         {
-            //Arrange
-            UnidadModelo unidad = new UnidadModelo();
-            unidad.Placa = "AM2775";
-            unidad.Marca = "Lancer";
-            unidad.Modelo = "GT";
-            unidad.Estado = "Disponibiliad";
+            if (AppConfigurationManager.Instance().checkDatabaseParameters())
+            {
+
+                //Arrange
+                UnidadModelo unidad = new UnidadModelo();
+                unidad.Placa = "AM2775";
+                unidad.Marca = "Lancer";
+                unidad.Modelo = "GT";
+                unidad.Estado = "Disponibiliad";
 
 
-            //Act
-            CRUDUnidad crearUnidad = new CRUDUnidad();
-            var resultado = crearUnidad.CrearUnidad(unidad);
+                //Act
+                CRUDUnidad crearUnidad = new CRUDUnidad();
+                var resultado = crearUnidad.CrearUnidad(unidad);
 
-            //Assert
-            Assert.AreEqual(true, resultado);
+                //Assert
+                Assert.AreEqual(true, resultado);
+            }
+            else
+            {
+                Assert.Inconclusive("No hay conexion de base de datos");
+            }
 
 
         }
