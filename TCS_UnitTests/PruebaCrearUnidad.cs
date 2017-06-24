@@ -20,6 +20,7 @@ namespace TCS_UnitTests
             if (AppConfigurationManager.Instance().checkDatabaseParameters())
             {
 
+
                 //Arrange
                 UnidadModelo unidad = new UnidadModelo();
                 unidad.Placa = "AM2775";
