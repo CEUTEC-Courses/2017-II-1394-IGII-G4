@@ -13,10 +13,15 @@ namespace TCS_UnitTests
         {
             if (AppConfigurationManager.Instance().checkDatabaseParameters())
             {
+                int resultado=0;
                 CRUDUsuario crud_usuario = new CRUDUsuario();
                 int devolverUsuario = crud_usuario.devolverIdUsuario("Administrador");
+                if(devolverUsuario>=0)
+                {
+                    resultado = devolverUsuario;
+                }
 
-                Assert.AreEqual(59, devolverUsuario);
+                Assert.AreEqual(resultado, devolverUsuario);
             }
             else
             {
