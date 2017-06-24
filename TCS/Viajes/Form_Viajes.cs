@@ -28,6 +28,7 @@ namespace TCS
 
         CRUD_Viaje cViaje = Instancia_CRUD.Instancia();
 
+
         public void MostrarBusquedaFecha(List<int> l)
         {
             l = cViaje.ListarViajesPorFecha(dtpFechaPartida.Value, dtpFechaRegreso.Value);
@@ -217,6 +218,25 @@ namespace TCS
             catch
             {
 
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtNumero.Text.Length > 0)
+            {
+                if (MessageBox.Show("Desea eliminar el viaje No." + txtNumero.Text + "?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cViaje.EliminarViaje(Convert.ToInt32(txtNumero.Text));
+                }
+                else
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija un viaje a eliminar");
             }
         }
     }

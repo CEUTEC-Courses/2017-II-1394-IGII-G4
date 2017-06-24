@@ -53,7 +53,6 @@
             this.dtpFiltroDel = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbViajes.SuspendLayout();
@@ -209,6 +208,7 @@
             this.gbViajes.Controls.Add(this.txtNumero);
             this.gbViajes.Controls.Add(this.label9);
             this.gbViajes.Controls.Add(this.cmbFlota);
+            this.gbViajes.Controls.Add(this.btnEliminar);
             this.gbViajes.Controls.Add(this.rtxtDescripcion);
             this.gbViajes.Controls.Add(this.label3);
             this.gbViajes.Controls.Add(this.label8);
@@ -294,8 +294,6 @@
             this.gbBusqueda.Controls.Add(this.dtpFiltroAl);
             this.gbBusqueda.Controls.Add(this.dtpFiltroDel);
             this.gbBusqueda.Controls.Add(this.label2);
-            this.gbBusqueda.Controls.Add(this.btnEliminar);
-            this.gbBusqueda.Controls.Add(this.btnEditar);
             this.gbBusqueda.Controls.Add(this.txtBusqueda);
             this.gbBusqueda.Controls.Add(this.label1);
             this.gbBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -385,27 +383,14 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(113, 382);
+            this.btnEliminar.Location = new System.Drawing.Point(219, 382);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 37);
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Navy;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(5, 382);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(101, 37);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtBusqueda
             // 
@@ -469,7 +454,6 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox gbBusqueda;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminar;
