@@ -61,8 +61,6 @@ namespace TCS.MenuFlota.Flota
             if (flotaBuilder.CrearFlota(flota))
             {
                 var idFlota = flotaBuilder.obtenerIDFlota();
-                MessageBox.Show(idFlota.ToString());
-
                 FlotaUnidadModelo flotaUnidad = new FlotaUnidadModelo();
                 FlotaUnidadSimpleBuilder crearFlotaUnidad = new FlotaUnidadSimpleBuilder();
 
