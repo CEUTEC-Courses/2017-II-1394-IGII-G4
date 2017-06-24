@@ -241,7 +241,6 @@
             this.groupBoxListaUnidades.TabIndex = 4;
             this.groupBoxListaUnidades.TabStop = false;
             this.groupBoxListaUnidades.Text = "Lista de Unidades";
-//            this.groupBoxListaUnidades.Enter += new System.EventHandler(this.groupBoxListaUnidades_Enter);
             // 
             // listViewUnidades
             // 
@@ -263,7 +262,6 @@
             this.listViewUnidades.UseCompatibleStateImageBehavior = false;
             this.listViewUnidades.View = System.Windows.Forms.View.Details;
             this.listViewUnidades.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewUnidades_ItemSelectionChanged);
-//            this.listViewUnidades.SelectedIndexChanged += new System.EventHandler(this.listViewUnidades_SelectedIndexChanged);
             // 
             // columnID
             // 
@@ -331,7 +329,7 @@
             this.MinimizeBox = false;
             this.Name = "FormularioUnidad";
             this.Text = "Unidad";
-           
+            this.Load += new System.EventHandler(this.FormularioUnidad_Load);
             this.panelCrearUnidad.ResumeLayout(false);
             this.panelCrearUnidad.PerformLayout();
             this.groupBoxListaUnidades.ResumeLayout(false);

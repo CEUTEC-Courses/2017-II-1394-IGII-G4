@@ -21,6 +21,8 @@ namespace TCS.MenuFlota.Unidad
             InitializeComponent();
             listViewUnidades.ContextMenuStrip = contextMenuUnidad;
             _crudUnidad.MostrarListaUnidades(ref listViewUnidades);
+            comboBoxEstadoUnidad.Items.Add("Disponible");
+            comboBoxEstadoUnidad.Items.Add("Ocupado");
         }
 
         private void ButtonMenuFlota_Click(object sender, EventArgs e)
@@ -92,6 +94,10 @@ namespace TCS.MenuFlota.Unidad
             _crudUnidad.MostrarListaUnidades(ref listViewUnidades);
 
         }
-              
+
+        private void FormularioUnidad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
