@@ -144,11 +144,15 @@
     <Compile Include="MenuFlota\Flota\FormularioFlota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuFlota\Flota\FormularioFlota.Designer.cs" />
+    <Compile Include="MenuFlota\Flota\FormularioFlota.Designer.cs">
+      <DependentUpon>FormularioFlota.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuFlota\Flota\FormularioListaUnidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuFlota\Flota\FormularioListaUnidades.Designer.cs" />
+    <Compile Include="MenuFlota\Flota\FormularioListaUnidades.Designer.cs">
+      <DependentUpon>FormularioListaUnidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuFlota\Flota\ValidacionesFlota.cs" />
     <Compile Include="UsuariosClases\FormsFactory.cs" />
     <Compile Include="UsuariosClases\Privilegios\CRUDPrivilegio.cs" />
@@ -248,8 +252,12 @@
     <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuFlota\Flota\FormularioFlota.resx" />
-    <EmbeddedResource Include="MenuFlota\Flota\FormularioListaUnidades.resx" />
+    <EmbeddedResource Include="MenuFlota\Flota\FormularioFlota.resx">
+      <DependentUpon>FormularioFlota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFlota\Flota\FormularioListaUnidades.resx">
+      <DependentUpon>FormularioListaUnidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuFlota\Form_MenuFlota.resx">
       <DependentUpon>Form_MenuFlota.cs</DependentUpon>
     </EmbeddedResource>

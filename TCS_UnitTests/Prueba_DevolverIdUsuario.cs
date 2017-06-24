@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TCS.UsuariosClases;
+using TCS.InitialConfiguration;
 
 namespace TCS_UnitTests
 {
@@ -10,10 +11,17 @@ namespace TCS_UnitTests
         [TestMethod]
         public void consultarIdUsuarioExitosamente()
         {
-            CRUDUsuario crud_usuario = new CRUDUsuario();
-            int devolverUsuario=crud_usuario.devolverIdUsuario("Administrador");
+            if (AppConfigurationManager.Instance().checkDatabaseParameters())
+            {
+                CRUDUsuario crud_usuario = new CRUDUsuario();
+                int devolverUsuario = crud_usuario.devolverIdUsuario("Admin");
 
-            Assert.AreEqual(59, devolverUsuario);
+                Assert.AreEqual(6, devolverUsuario);
+            }
+            else
+            {
+                Assert.Inconclusive("No hay conexion de base de datos");
+            }
         }
     }
 }
